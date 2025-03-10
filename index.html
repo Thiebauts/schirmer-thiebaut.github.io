@@ -19,10 +19,6 @@
 
 				<!-- Header -->
 					<header id="header">
-						<!-- Remove or comment out this div -->
-						<!--<div class="logo">
-							<span class="icon fa-gem"></span>
-						</div>-->
 						<div class="content">
 							<div class="inner">
 								<h1>Thiebaut Schirmer</h1>
@@ -37,6 +33,7 @@
 								<li><a href="#about">About</a></li>
 								<li><a href="#cv">CV</a></li>
 								<li><a href="#contact">Contact</a></li>
+								<li><a href="#" id="lang-switch">FR</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
@@ -444,6 +441,87 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				document.getElementById('lang-switch').addEventListener('click', function(e) {
+					e.preventDefault();
+					var currentLang = this.textContent;
+					if (currentLang === 'FR') {
+						this.textContent = 'EN';
+						switchToFrench();
+					} else {
+						this.textContent = 'FR';
+						switchToEnglish();
+					}
+				});
+
+				function switchToFrench() {
+					// Navigation
+					document.querySelector('nav ul li a[href="#intro"]').textContent = 'Intro';
+					document.querySelector('nav ul li a[href="#work"]').textContent = 'Recherche';
+					document.querySelector('nav ul li a[href="#about"]').textContent = 'À propos';
+					document.querySelector('nav ul li a[href="#cv"]').textContent = 'CV';
+					document.querySelector('nav ul li a[href="#contact"]').textContent = 'Contact';
+
+					// Header
+					document.querySelector('.inner p').innerHTML = 'Chercheur postdoctoral en Astrophysique<br />Université de Technologie Chalmers, Göteborg - Suède';
+
+					// Research section
+					document.querySelector('#work h2.major').textContent = 'Recherche';
+					document.querySelector('#work p').textContent = 'Mes recherches portent sur la compréhension de l\'évolution de la poussière interstellaire dans différents environnements astronomiques. J\'étudie comment les particules de poussière se comportent et se transforment dans :';
+					
+					const researchItems = document.querySelectorAll('#work ul li');
+					researchItems[0].innerHTML = '<strong>Les Régions Dominées par les Photons (PDR)</strong> - Où les champs de radiation intenses des étoiles proches interagissent avec la poussière et le gaz dans les nuages moléculaires';
+					researchItems[1].innerHTML = '<strong>Les étoiles AGB</strong> - Où la poussière se forme dans les atmosphères stellaires et est éjectée dans le milieu interstellaire';
+					
+					document.querySelector('#work p:last-child').textContent = 'À travers ces recherches, nous visons à mieux comprendre le cycle de vie de la poussière dans notre galaxie et son rôle dans divers processus astrophysiques.';
+
+					// CV section
+					document.querySelector('#cv h2.major').textContent = 'Curriculum Vitae';
+					document.querySelector('#cv h3:first-of-type').textContent = 'Formation';
+					document.querySelector('#cv h3:nth-of-type(2)').textContent = 'Expérience de Recherche';
+
+					// Contact section
+					document.querySelector('#contact h2.major').textContent = 'Contact';
+					document.querySelector('label[for="name"]').textContent = 'Nom';
+					document.querySelector('label[for="message"]').textContent = 'Message';
+					document.querySelector('input[type="submit"]').value = 'Envoyer';
+					document.querySelector('input[type="reset"]').value = 'Réinitialiser';
+				}
+
+				function switchToEnglish() {
+					// Navigation
+					document.querySelector('nav ul li a[href="#intro"]').textContent = 'Intro';
+					document.querySelector('nav ul li a[href="#work"]').textContent = 'Research';
+					document.querySelector('nav ul li a[href="#about"]').textContent = 'About';
+					document.querySelector('nav ul li a[href="#cv"]').textContent = 'CV';
+					document.querySelector('nav ul li a[href="#contact"]').textContent = 'Contact';
+
+					// Header
+					document.querySelector('.inner p').innerHTML = 'Post-doctoral researcher in Astrophysics<br />Chalmers University of Technology, Göteborg - Sweden';
+
+					// Research section
+					document.querySelector('#work h2.major').textContent = 'Research';
+					document.querySelector('#work p').textContent = 'My research focuses on understanding the evolution of interstellar dust in different astronomical environments. I study how dust particles behave and transform in:';
+					
+					const researchItems = document.querySelectorAll('#work ul li');
+					researchItems[0].innerHTML = '<strong>Photon-Dominated Regions (PDRs)</strong> - Where intense radiation fields from nearby stars interact with the dust and gas in molecular clouds';
+					researchItems[1].innerHTML = '<strong>AGB Stars</strong> - Where dust is formed in the stellar atmospheres and ejected into the interstellar medium';
+					
+					document.querySelector('#work p:last-child').textContent = 'Through this research, we aim to better understand the life cycle of dust in our galaxy and its role in various astrophysical processes.';
+
+					// CV section
+					document.querySelector('#cv h2.major').textContent = 'Curriculum Vitae';
+					document.querySelector('#cv h3:first-of-type').textContent = 'Education';
+					document.querySelector('#cv h3:nth-of-type(2)').textContent = 'Research Experience';
+
+					// Contact section
+					document.querySelector('#contact h2.major').textContent = 'Contact';
+					document.querySelector('label[for="name"]').textContent = 'Name';
+					document.querySelector('label[for="message"]').textContent = 'Message';
+					document.querySelector('input[type="submit"]').value = 'Send Message';
+					document.querySelector('input[type="reset"]').value = 'Reset';
+				}
+			</script>
 
 	</body>
 </html>
