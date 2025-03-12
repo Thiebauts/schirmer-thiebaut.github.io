@@ -53,15 +53,30 @@
 						<!-- Work -->
 							<article id="work">
 								<h2 class="major">Research</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>My research focuses on understanding the evolution of interstellar dust in different astronomical environments. I study how dust particles behave and transform in:</p>
 								
-								<ul>
-									<li><strong>Photon-Dominated Regions (PDRs)</strong> - Where intense radiation fields from nearby stars interact with the dust and gas in molecular clouds</li>
-									<li><strong>AGB Stars</strong> - Where dust is formed in the stellar atmospheres and ejected into the interstellar medium</li>
-								</ul>
-
-								<p>Through this research, we aim to better understand the life cycle of dust in our galaxy and its role in various astrophysical processes.</p>
+								<h3>Photon-Dominated Regions (PDRs)</h3>
+								<div class="image left">
+									<img src="images/HH.jpg" alt="Horsehead Nebula" />
+									<p class="image-credit">Credit: NASA, ESA, and the Hubble Heritage Team (AURA/STScI)</p>
+								</div>
+								
+								<p>My research focuses on understanding how interstellar dust evolves in regions where intense radiation from nearby stars interacts with molecular clouds. The Horsehead Nebula (shown here) is a classic example of a photon-dominated region, where ultraviolet radiation from nearby stars is sculpting the gas and dust, creating the iconic horse-head shape.</p>
+								
+								<p>In these environments, dust particles undergo significant processing due to the intense radiation field, which can alter their size distribution, composition, and optical properties. By studying these changes, we can better understand the lifecycle of dust in our galaxy.</p>
+								
+								<p>PDRs are particularly interesting because they represent transition zones between the hot ionized gas and the cold molecular clouds. The physical and chemical processes occurring in these regions are complex and provide valuable insights into the evolution of interstellar matter.</p>
+								
+								<div class="clearfix"></div>
+								
+								<h3>AGB Stars</h3>
+								<span class="image main"><img src="images/RDoradus.jpg" alt="R Doradus" /></span>
+								<p class="image-credit">Credit: ALMA (ESO/NAOJ/NRAO)/W. Vlemmings et al.</p>
+								
+								<p>Another focus of my research is the formation of dust in the atmospheres of evolved stars, particularly Asymptotic Giant Branch (AGB) stars like R Doradus (shown above). These stars are in the late stages of their evolution and are ejecting material into the interstellar medium, including newly formed dust particles.</p>
+								
+								<p>By studying the dust production in these stellar environments, we can trace the origin of interstellar dust and understand how it is injected into the interstellar medium before becoming part of new stellar systems.</p>
+								
+								<p>Through this research, we aim to better understand the complete life cycle of dust in our galaxy and its role in various astrophysical processes, from star formation to planet building.</p>
 							</article>
 
 						<!-- About -->
@@ -152,19 +167,20 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
+								
+								<form action="https://formspree.io/f/schirmer.thiebaut@gmail.com" method="POST">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											<input type="text" name="name" id="name" required />
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<input type="email" name="email" id="email" required />
 										</div>
 										<div class="field">
 											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
+											<textarea name="message" id="message" rows="4" required></textarea>
 										</div>
 									</div>
 									<ul class="actions">
@@ -172,11 +188,9 @@
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
+								
 								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://github.com/Thiebauts/" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
 								</ul>
 							</article>
 
@@ -426,7 +440,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<ul class="icons">
+							<li><a href="https://github.com/Thiebauts/" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/your-linkedin-profile/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Thiebaut Schirmer. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 						<p class="copyright">Background Image Credit: NASA, ESA, CSA, and STScI</p>
 					</footer>
 
@@ -467,13 +485,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 					// Research section
 					document.querySelector('#work h2.major').textContent = 'Recherche';
-					document.querySelector('#work p').textContent = 'Mes recherches portent sur la compréhension de l\'évolution de la poussière interstellaire dans différents environnements astronomiques. J\'étudie comment les particules de poussière se comportent et se transforment dans :';
-					
-					const researchItems = document.querySelectorAll('#work ul li');
-					researchItems[0].innerHTML = '<strong>Les Régions Dominées par les Photons (PDR)</strong> - Où les champs de radiation intenses des étoiles proches interagissent avec la poussière et le gaz dans les nuages moléculaires';
-					researchItems[1].innerHTML = '<strong>Les étoiles AGB</strong> - Où la poussière se forme dans les atmosphères stellaires et est éjectée dans le milieu interstellaire';
-					
-					document.querySelector('#work p:last-child').textContent = 'À travers ces recherches, nous visons à mieux comprendre le cycle de vie de la poussière dans notre galaxie et son rôle dans divers processus astrophysiques.';
+
+					const workHeadings = document.querySelectorAll('#work h3');
+					workHeadings[0].textContent = 'Régions Dominées par les Photons (PDR)';
+					workHeadings[1].textContent = 'Étoiles AGB';
+
+					const workParagraphs = document.querySelectorAll('#work p:not(.image-credit)');
+					workParagraphs[0].textContent = 'Mes recherches portent sur la compréhension de l\'évolution de la poussière interstellaire dans les régions où le rayonnement intense des étoiles voisines interagit avec les nuages moléculaires. La nébuleuse de la Tête de Cheval (ci-dessus) est un exemple classique de région dominée par les photons, où le rayonnement ultraviolet des étoiles voisines sculpte le gaz et la poussière, créant la forme iconique de tête de cheval.';
+					workParagraphs[1].textContent = 'Dans ces environnements, les particules de poussière subissent un traitement important en raison du champ de rayonnement intense, qui peut modifier leur distribution de taille, leur composition et leurs propriétés optiques. En étudiant ces changements, nous pouvons mieux comprendre le cycle de vie de la poussière dans notre galaxie.';
+					workParagraphs[2].textContent = 'Un autre axe de mes recherches est la formation de poussière dans les atmosphères d\'étoiles évoluées, en particulier les étoiles de la branche asymptotique des géantes (AGB) comme R Doradus (ci-dessus). Ces étoiles sont dans les dernières phases de leur évolution et éjectent de la matière dans le milieu interstellaire, y compris des particules de poussière nouvellement formées.';
+					workParagraphs[3].textContent = 'En étudiant la production de poussière dans ces environnements stellaires, nous pouvons retracer l\'origine de la poussière interstellaire et comprendre comment elle est injectée dans le milieu interstellaire avant de faire partie de nouveaux systèmes stellaires.';
+					workParagraphs[4].textContent = 'Grâce à ces recherches, nous visons à mieux comprendre le cycle de vie complet de la poussière dans notre galaxie et son rôle dans divers processus astrophysiques, de la formation d\'étoiles à la construction de planètes.';
 
 					// CV section
 					document.querySelector('#cv h2.major').textContent = 'Curriculum Vitae';
@@ -501,13 +523,16 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 					// Research section
 					document.querySelector('#work h2.major').textContent = 'Research';
-					document.querySelector('#work p').textContent = 'My research focuses on understanding the evolution of interstellar dust in different astronomical environments. I study how dust particles behave and transform in:';
-					
-					const researchItems = document.querySelectorAll('#work ul li');
-					researchItems[0].innerHTML = '<strong>Photon-Dominated Regions (PDRs)</strong> - Where intense radiation fields from nearby stars interact with the dust and gas in molecular clouds';
-					researchItems[1].innerHTML = '<strong>AGB Stars</strong> - Where dust is formed in the stellar atmospheres and ejected into the interstellar medium';
-					
-					document.querySelector('#work p:last-child').textContent = 'Through this research, we aim to better understand the life cycle of dust in our galaxy and its role in various astrophysical processes.';
+
+					const workHeadings = document.querySelectorAll('#work h3');
+					workHeadings[0].textContent = 'Photon-Dominated Regions (PDRs)';
+					workHeadings[1].textContent = 'AGB Stars';
+
+					const workParagraphs = document.querySelectorAll('#work p:not(.image-credit)');
+					workParagraphs[0].textContent = 'My research focuses on understanding the evolution of interstellar dust in different astronomical environments. I study how dust particles behave and transform in:';
+					workParagraphs[1].textContent = 'Another focus of my research is the formation of dust in the atmospheres of evolved stars, particularly Asymptotic Giant Branch (AGB) stars like R Doradus (shown above). These stars are in the late stages of their evolution and are ejecting material into the interstellar medium, including newly formed dust particles.';
+					workParagraphs[2].textContent = 'By studying the dust production in these stellar environments, we can trace the origin of interstellar dust and understand how it is injected into the interstellar medium before becoming part of new stellar systems.';
+					workParagraphs[3].textContent = 'Through this research, we aim to better understand the complete life cycle of dust in our galaxy and its role in various astrophysical processes, from star formation to planet building.';
 
 					// CV section
 					document.querySelector('#cv h2.major').textContent = 'Curriculum Vitae';

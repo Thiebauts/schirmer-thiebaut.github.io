@@ -674,8 +674,8 @@ input, select, textarea {
 
 		.image.left {
 			float: left;
-			padding: 0 1.5em 1em 0;
-			top: 0.25em;
+			margin: 0 2rem 1rem 0;
+			max-width: 33%;
 		}
 
 		.image.right {
@@ -696,12 +696,14 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			margin: 2.5rem 0;
+			margin: 2rem 0;
 			width: 100%;
 		}
 
 			.image.main img {
 				width: 100%;
+				border-radius: 4px;
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 			}
 
 		@media screen and (max-width: 736px) {
@@ -718,6 +720,23 @@ input, select, textarea {
 				margin: 1.5rem 0;
 			}
 
+		}
+
+		.image.left img {
+			width: 100%;
+			border-radius: 4px;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+		}
+
+		.image.left .image-credit {
+			text-align: left;
+			margin-top: 0.5rem;
+			margin-bottom: 0;
+		}
+
+		.clearfix {
+			clear: both;
+			height: 2rem;
 		}
 
 /* List */
@@ -1542,9 +1561,9 @@ input, select, textarea {
 			-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
 			-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
-			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
+			padding: 4.5rem 3rem 1.5rem 3rem;
 			position: relative;
-			width: 40rem;
+			width: 60rem;
 			max-width: 100%;
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 4px;
@@ -1602,7 +1621,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#main article {
-				padding: 3.5rem 2rem 0.5rem 2rem ;
+				padding: 3.5rem 2rem 0.5rem 2rem;
 			}
 
 				#main article .close:before {
@@ -1618,7 +1637,7 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			#main article {
-				padding: 3rem 1.5rem 0.5rem 1.5rem ;
+				padding: 3rem 1.5rem 0.5rem 1.5rem;
 			}
 
 		}
@@ -1689,4 +1708,73 @@ input, select, textarea {
 
 .cv-entry .location {
     text-align: right;
+}
+
+.image-credit {
+    text-align: right;
+    font-size: 0.7rem;
+    font-style: italic;
+    opacity: 0.7;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}
+
+.top-icons {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+}
+
+.top-icons .icons {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.top-icons .icons li {
+    margin-right: 1rem;
+}
+
+.top-icons .icons a {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.top-icons .icons a:hover {
+    opacity: 1;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 736px) {
+    .top-icons {
+        position: fixed;
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+}
+
+#footer .icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+#footer .icons li {
+    margin: 0 0.5rem;
+}
+
+#footer .icons a {
+    font-size: 1.2rem;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+#footer .icons a:hover {
+    opacity: 1;
 }
