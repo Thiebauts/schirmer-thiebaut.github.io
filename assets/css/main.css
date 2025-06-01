@@ -1778,3 +1778,160 @@ input, select, textarea {
 #footer .icons a:hover {
     opacity: 1;
 }
+
+.header-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.header-icons li {
+    padding: 0 0.5rem;
+}
+
+.header-icons a {
+    color: rgba(255, 255, 255, 0.75);
+    border-bottom: none;
+}
+
+.header-icons a:hover {
+    color: #ffffff;
+}
+
+/* Publications Section Styling */
+.publication-entry {
+    margin-bottom: 2.5em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.publication-entry:last-child {
+    border-bottom: none;
+}
+
+.publication-entry h4 {
+    margin-bottom: 0.75em;
+    line-height: 1.4;
+    color: #ffffff;
+}
+
+.publication-entry .authors {
+    margin-bottom: 0.5em;
+    color: #ffffff;
+    font-size: 0.9em;
+}
+
+.publication-entry .journal {
+    margin-bottom: 0.75em;
+    color: #9bf1ff;
+    font-size: 0.9em;
+}
+
+.publication-entry .description {
+    margin-bottom: 1em;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.publication-links .button.small {
+    margin: 0;
+    padding: 0.4em 0.8em;
+    font-size: 0.8em;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+}
+
+.status {
+    background-color: #f39c12;
+    color: #ffffff;
+    padding: 0.4em 0.8em;
+    border-radius: 0.25em;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.publications-intro {
+    margin-bottom: 2em;
+}
+
+#publications h3 {
+    margin-top: 2.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 2px solid #9bf1ff;
+    padding-bottom: 0.5em;
+}
+
+#publications h3:first-of-type {
+    margin-top: 1.5em;
+}
+
+.publications-footer {
+    margin-top: 3em;
+    padding-top: 2em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Talks Section Styling */
+.talk-entry {
+    margin-bottom: 2.5em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.talk-entry:last-child {
+    border-bottom: none;
+}
+
+.talk-entry h4 {
+    margin-bottom: 0.75em;
+    line-height: 1.4;
+    color: #ffffff;
+}
+
+.talk-entry .conference {
+    margin-bottom: 0.5em;
+    color: #9bf1ff;
+    font-size: 0.9em;
+}
+
+.talk-entry .location {
+    margin-bottom: 0.25em;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.talk-entry .date {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+/* Responsive adjustments for publications and talks */
+@media screen and (max-width: 736px) {
+    .publication-entry,
+    .talk-entry {
+        margin-bottom: 2em;
+    }
+    
+    .publication-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

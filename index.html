@@ -11,6 +11,1049 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Enhanced CV Styling */
+			.cv-timeline {
+				position: relative;
+				padding-left: 2rem;
+			}
+			
+			.cv-timeline::before {
+				content: '';
+				position: absolute;
+				left: 1rem;
+				top: 0;
+				bottom: 0;
+				width: 2px;
+				background: linear-gradient(to bottom, #ffffff, rgba(255,255,255,0.3));
+			}
+			
+			.cv-entry {
+				position: relative;
+				margin-bottom: 2rem;
+				padding: 1.5rem;
+				background: rgba(255, 255, 255, 0.02);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				transition: all 0.3s ease;
+			}
+			
+			.cv-entry::before {
+				content: '';
+				position: absolute;
+				left: -2.75rem;
+				top: 1.5rem;
+				width: 12px;
+				height: 12px;
+				background: #ffffff;
+				border-radius: 50%;
+				box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+			}
+			
+			.cv-entry:hover {
+				background: rgba(255, 255, 255, 0.05);
+				border-color: rgba(255, 255, 255, 0.2);
+				transform: translateX(5px);
+			}
+			
+			.cv-entry h4 {
+				color: #ffffff;
+				font-size: 1.1rem;
+				margin-bottom: 0.5rem;
+				font-weight: 600;
+			}
+			
+			.cv-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+				margin-bottom: 1rem;
+				font-size: 0.9rem;
+			}
+			
+			.cv-meta-item {
+				display: flex;
+				align-items: center;
+				gap: 0.3rem;
+				color: rgba(255, 255, 255, 0.8);
+			}
+			
+			.cv-meta-item i {
+				width: 1rem;
+				text-align: center;
+				color: rgba(255, 255, 255, 0.6);
+			}
+			
+			.cv-entry .institution {
+				color: rgba(255, 255, 255, 0.9);
+				font-weight: 500;
+			}
+			
+			.cv-entry .duration {
+				color: rgba(255, 255, 255, 0.7);
+				font-style: italic;
+			}
+			
+			.cv-entry .location {
+				color: rgba(255, 255, 255, 0.7);
+			}
+			
+			.cv-entry p:last-child {
+				color: rgba(255, 255, 255, 0.8);
+				line-height: 1.6;
+				margin: 0;
+			}
+			
+			.cv-download {
+				text-align: center;
+				margin-bottom: 2rem;
+				padding: 1.5rem;
+				background: rgba(255, 255, 255, 0.05);
+				border-radius: 8px;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+			
+			.cv-highlights {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 1.5rem;
+				margin-top: 2rem;
+			}
+			
+			.highlight-item {
+				padding: 1.5rem;
+				background: rgba(255, 255, 255, 0.03);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				transition: all 0.3s ease;
+			}
+			
+			.highlight-item:hover {
+				background: rgba(255, 255, 255, 0.06);
+				border-color: rgba(255, 255, 255, 0.2);
+			}
+			
+			.highlight-item h4 {
+				color: #ffffff;
+				margin-bottom: 0.8rem;
+				font-size: 1rem;
+			}
+			
+			.highlight-item p {
+				color: rgba(255, 255, 255, 0.8);
+				line-height: 1.6;
+				margin: 0;
+			}
+			
+			.cv-footer {
+				text-align: center;
+				margin-top: 2rem;
+				padding: 1rem;
+				color: rgba(255, 255, 255, 0.6);
+				font-style: italic;
+			}
+			
+			.cv-section-header {
+				position: relative;
+				margin: 2.5rem 0 1.5rem 0;
+			}
+			
+			.cv-section-header h3 {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 0.8rem 1.5rem;
+				border-radius: 6px;
+				border-left: 4px solid #ffffff;
+				margin: 0;
+				display: inline-block;
+			}
+			
+			@media screen and (max-width: 736px) {
+				.cv-timeline {
+					padding-left: 1rem;
+				}
+				
+				.cv-timeline::before {
+					left: 0.5rem;
+				}
+				
+				.cv-entry::before {
+					left: -2.25rem;
+				}
+				
+				.cv-meta {
+					flex-direction: column;
+					gap: 0.5rem;
+				}
+				
+				.cv-highlights {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			/* Enhanced Talks Section Styling */
+			.talks-intro {
+				text-align: center;
+				margin-bottom: 2rem;
+				padding: 1.5rem;
+				background: rgba(255, 255, 255, 0.03);
+				border-radius: 8px;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.talks-timeline {
+				position: relative;
+				padding-left: 2rem;
+			}
+			
+			.talks-timeline::before {
+				content: '';
+				position: absolute;
+				left: 1rem;
+				top: 0;
+				bottom: 0;
+				width: 2px;
+				background: linear-gradient(to bottom, #ffffff, rgba(255,255,255,0.3));
+			}
+
+			.talk-entry {
+				position: relative;
+				margin-bottom: 2rem;
+				padding: 1.5rem;
+				background: rgba(255, 255, 255, 0.02);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				transition: all 0.3s ease;
+			}
+
+			.talk-entry::before {
+				content: '';
+				position: absolute;
+				left: -2.75rem;
+				top: 1.5rem;
+				width: 12px;
+				height: 12px;
+				background: #ffffff;
+				border-radius: 50%;
+				box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+			}
+
+			.talk-entry:hover {
+				background: rgba(255, 255, 255, 0.05);
+				border-color: rgba(255, 255, 255, 0.2);
+				transform: translateX(5px);
+			}
+
+			.talk-entry h4 {
+				color: #ffffff;
+				font-size: 1.1rem;
+				margin-bottom: 0.8rem;
+				font-weight: 600;
+				line-height: 1.4;
+			}
+
+			.talk-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+				margin-bottom: 0.5rem;
+				font-size: 0.9rem;
+			}
+
+			.talk-meta-item {
+				display: flex;
+				align-items: center;
+				gap: 0.3rem;
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.talk-meta-item i {
+				width: 1rem;
+				text-align: center;
+				color: rgba(255, 255, 255, 0.6);
+			}
+
+			.talk-entry .conference {
+				color: rgba(255, 255, 255, 0.9);
+				font-weight: 500;
+				margin: 0;
+			}
+
+			.talk-entry .location {
+				color: rgba(255, 255, 255, 0.7);
+				margin: 0;
+			}
+
+			.talk-entry .date {
+				color: rgba(255, 255, 255, 0.8);
+				font-style: italic;
+				margin: 0;
+			}
+
+			.talk-type {
+				display: inline-block;
+				padding: 0.2rem 0.6rem;
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 12px;
+				font-size: 0.8rem;
+				color: rgba(255, 255, 255, 0.9);
+				margin-left: 0.5rem;
+			}
+
+			/* Enhanced Publications Section Styling */
+			.publications-intro {
+				text-align: center;
+				margin-bottom: 2rem;
+				padding: 1.5rem;
+				background: rgba(255, 255, 255, 0.03);
+				border-radius: 8px;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.publications-section {
+				margin-bottom: 3rem;
+			}
+
+			.publication-entry {
+				position: relative;
+				margin-bottom: 2rem;
+				padding: 1.5rem;
+				background: rgba(255, 255, 255, 0.02);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				transition: all 0.3s ease;
+			}
+
+			.publication-entry:hover {
+				background: rgba(255, 255, 255, 0.05);
+				border-color: rgba(255, 255, 255, 0.2);
+				transform: translateY(-2px);
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+			}
+
+			.publication-entry h4 {
+				color: #ffffff;
+				font-size: 1.1rem;
+				margin-bottom: 0.8rem;
+				font-weight: 600;
+				line-height: 1.4;
+			}
+
+			.publication-entry .authors {
+				color: rgba(255, 255, 255, 0.9);
+				margin-bottom: 0.5rem;
+				line-height: 1.5;
+			}
+
+			.publication-entry .journal {
+				color: rgba(255, 255, 255, 0.8);
+				font-style: italic;
+				margin-bottom: 0.8rem;
+			}
+
+			.publication-entry .description {
+				color: rgba(255, 255, 255, 0.7);
+				line-height: 1.6;
+				margin-bottom: 1rem;
+			}
+
+			.status {
+				display: inline-block;
+				padding: 0.3rem 0.8rem;
+				background: rgba(255, 165, 0, 0.2);
+				border: 1px solid rgba(255, 165, 0, 0.5);
+				border-radius: 12px;
+				color: #ffb366;
+				font-size: 0.8rem;
+				font-weight: 500;
+				margin-bottom: 0.8rem;
+			}
+
+			.publication-links {
+				display: flex;
+				gap: 0.5rem;
+				flex-wrap: wrap;
+			}
+
+			.publication-links .button {
+				padding: 0.4rem 0.8rem;
+				font-size: 0.8rem;
+				background: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				color: rgba(255, 255, 255, 0.9);
+				text-decoration: none;
+				border-radius: 4px;
+				transition: all 0.3s ease;
+			}
+
+			.publication-links .button:hover {
+				background: rgba(255, 255, 255, 0.2);
+				border-color: rgba(255, 255, 255, 0.4);
+				color: #ffffff;
+				transform: translateY(-1px);
+			}
+
+			.publications-footer {
+				text-align: center;
+				margin-top: 2rem;
+				padding: 1rem;
+				color: rgba(255, 255, 255, 0.6);
+				font-style: italic;
+				background: rgba(255, 255, 255, 0.02);
+				border-radius: 8px;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.pub-stats {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1rem;
+				margin: 2rem 0;
+			}
+
+			.stat-item {
+				text-align: center;
+				padding: 1rem;
+				background: rgba(255, 255, 255, 0.03);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				transition: all 0.3s ease;
+			}
+
+			.stat-item:hover {
+				background: rgba(255, 255, 255, 0.06);
+			}
+
+			.stat-number {
+				font-size: 2rem;
+				font-weight: bold;
+				color: #ffffff;
+				display: block;
+			}
+
+			.stat-label {
+				color: rgba(255, 255, 255, 0.8);
+				font-size: 0.9rem;
+				margin-top: 0.3rem;
+			}
+
+			@media screen and (max-width: 736px) {
+				.talks-timeline {
+					padding-left: 1rem;
+				}
+				
+				.talks-timeline::before {
+					left: 0.5rem;
+				}
+				
+				.talk-entry::before {
+					left: -2.25rem;
+				}
+				
+				.talk-meta {
+					flex-direction: column;
+					gap: 0.5rem;
+				}
+
+				.pub-stats {
+					grid-template-columns: 1fr 1fr;
+				}
+
+				.publication-links {
+					justify-content: center;
+				}
+			}
+
+			/* Enhanced Research Section Styling */
+			.research-intro {
+				text-align: center;
+				margin-bottom: 3rem;
+				padding: 2rem;
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+				border-radius: 12px;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+			}
+
+			.research-intro p {
+				font-size: 1.1rem;
+				line-height: 1.7;
+				color: rgba(255, 255, 255, 0.9);
+				margin: 0;
+			}
+
+			.research-stats {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1.5rem;
+				margin: 3rem 0;
+			}
+
+			.stat-card {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				padding: 1.5rem;
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+				border: 1px solid rgba(255, 255, 255, 0.15);
+				border-radius: 12px;
+				transition: all 0.4s ease;
+				backdrop-filter: blur(10px);
+			}
+
+			.stat-card:hover {
+				transform: translateY(-5px);
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
+				border-color: rgba(255, 255, 255, 0.25);
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+			}
+
+			.stat-icon {
+				width: 60px;
+				height: 60px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 50%;
+				border: 2px solid rgba(255, 255, 255, 0.2);
+			}
+
+			.stat-icon i {
+				font-size: 1.5rem;
+				color: #ffffff;
+			}
+
+			.stat-content .stat-number {
+				font-size: 2rem;
+				font-weight: 700;
+				color: #ffffff;
+				display: block;
+				line-height: 1;
+			}
+
+			.stat-content .stat-label {
+				color: rgba(255, 255, 255, 0.8);
+				font-size: 0.9rem;
+				margin-top: 0.2rem;
+			}
+
+			.research-themes {
+				margin: 4rem 0;
+			}
+
+			.research-themes h3 {
+				display: flex;
+				align-items: center;
+				gap: 0.8rem;
+				color: #ffffff;
+				font-size: 1.8rem;
+				margin-bottom: 2rem;
+				padding-bottom: 0.5rem;
+				border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+			}
+
+			.research-themes h3 i {
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.theme-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+			}
+
+			.theme-card {
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+				border: 1px solid rgba(255, 255, 255, 0.12);
+				border-radius: 12px;
+				overflow: hidden;
+				transition: all 0.4s ease;
+				backdrop-filter: blur(10px);
+			}
+
+			.theme-card:hover {
+				transform: translateY(-8px);
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%);
+				border-color: rgba(255, 255, 255, 0.2);
+				box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+			}
+
+			.theme-header {
+				display: flex;
+				align-items: center;
+				gap: 0.8rem;
+				padding: 1.5rem 1.5rem 1rem 1.5rem;
+				background: rgba(255, 255, 255, 0.05);
+			}
+
+			.theme-header i {
+				font-size: 1.3rem;
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.theme-header h4 {
+				color: #ffffff;
+				font-size: 1.1rem;
+				margin: 0;
+				font-weight: 600;
+			}
+
+			.theme-content {
+				padding: 0 1.5rem 1.5rem 1.5rem;
+			}
+
+			.theme-content p {
+				color: rgba(255, 255, 255, 0.8);
+				line-height: 1.6;
+				margin-bottom: 1rem;
+			}
+
+			.theme-keywords {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+
+			.keyword {
+				display: inline-block;
+				padding: 0.3rem 0.6rem;
+				background: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 12px;
+				font-size: 0.8rem;
+				color: rgba(255, 255, 255, 0.9);
+				transition: all 0.3s ease;
+			}
+
+			.keyword:hover {
+				background: rgba(255, 255, 255, 0.15);
+				border-color: rgba(255, 255, 255, 0.3);
+			}
+
+			.research-areas {
+				margin: 4rem 0;
+			}
+
+			.research-area {
+				margin-bottom: 4rem;
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+				border: 1px solid rgba(255, 255, 255, 0.08);
+				border-radius: 16px;
+				padding: 2rem;
+				backdrop-filter: blur(5px);
+			}
+
+			.area-header h3 {
+				display: flex;
+				align-items: center;
+				gap: 0.8rem;
+				color: #ffffff;
+				font-size: 1.6rem;
+				margin-bottom: 2rem;
+				padding-bottom: 0.5rem;
+				border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+			}
+
+			.area-header h3 i {
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.area-content {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 2rem;
+			}
+
+			.area-image {
+				position: relative;
+			}
+
+			.area-image img {
+				width: 100%;
+				border-radius: 12px;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+			}
+
+			.image-caption {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+				color: white;
+				padding: 2rem 1.5rem 1rem 1.5rem;
+				border-radius: 0 0 12px 12px;
+			}
+
+			.image-caption strong {
+				display: block;
+				font-size: 1rem;
+				margin-bottom: 0.3rem;
+			}
+
+			.image-caption .credit {
+				font-size: 0.8rem;
+				opacity: 0.8;
+				font-style: italic;
+			}
+
+			.area-text {
+				color: rgba(255, 255, 255, 0.9);
+				line-height: 1.7;
+			}
+
+			.research-list {
+				list-style: none;
+				padding: 0;
+				margin: 1.5rem 0;
+			}
+
+			.research-list li {
+				display: flex;
+				align-items: flex-start;
+				gap: 0.8rem;
+				margin-bottom: 1rem;
+				padding: 0.8rem;
+				background: rgba(255, 255, 255, 0.05);
+				border-radius: 8px;
+				border-left: 3px solid rgba(255, 255, 255, 0.3);
+			}
+
+			.research-list li i {
+				color: rgba(255, 255, 255, 0.7);
+				margin-top: 0.1rem;
+			}
+
+			.pdr-highlights,
+			.agb-research {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+
+			.highlight-item,
+			.research-highlight {
+				display: flex;
+				gap: 1rem;
+				padding: 1.5rem;
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 10px;
+				transition: all 0.3s ease;
+			}
+
+			.highlight-item:hover,
+			.research-highlight:hover {
+				background: rgba(255, 255, 255, 0.08);
+				border-color: rgba(255, 255, 255, 0.2);
+			}
+
+			.highlight-item i {
+				font-size: 1.2rem;
+				color: rgba(255, 255, 255, 0.8);
+				margin-top: 0.2rem;
+			}
+
+			.highlight-item h4,
+			.research-highlight h4 {
+				color: #ffffff;
+				font-size: 1rem;
+				margin: 0 0 0.5rem 0;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.highlight-item p,
+			.research-highlight p {
+				color: rgba(255, 255, 255, 0.8);
+				margin: 0;
+				line-height: 1.5;
+			}
+
+			.methodology-section {
+				margin: 4rem 0;
+				padding: 2rem;
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 16px;
+				backdrop-filter: blur(10px);
+			}
+
+			.methodology-section h3 {
+				display: flex;
+				align-items: center;
+				gap: 0.8rem;
+				color: #ffffff;
+				font-size: 1.8rem;
+				margin-bottom: 2rem;
+				text-align: center;
+				justify-content: center;
+			}
+
+			.methods-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+			}
+
+			.method-card {
+				text-align: center;
+				padding: 2rem 1.5rem;
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+				border: 1px solid rgba(255, 255, 255, 0.15);
+				border-radius: 12px;
+				transition: all 0.4s ease;
+			}
+
+			.method-card:hover {
+				transform: translateY(-8px);
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
+				border-color: rgba(255, 255, 255, 0.25);
+				box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+			}
+
+			.method-icon {
+				width: 80px;
+				height: 80px;
+				margin: 0 auto 1.5rem auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 50%;
+				border: 2px solid rgba(255, 255, 255, 0.2);
+			}
+
+			.method-icon i {
+				font-size: 2rem;
+				color: #ffffff;
+			}
+
+			.method-card h4 {
+				color: #ffffff;
+				font-size: 1.1rem;
+				margin-bottom: 1rem;
+				font-weight: 600;
+			}
+
+			.method-card p {
+				color: rgba(255, 255, 255, 0.8);
+				line-height: 1.6;
+				margin: 0;
+			}
+
+			.future-research {
+				margin: 4rem 0;
+				padding: 2rem;
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+				border: 1px solid rgba(255, 255, 255, 0.12);
+				border-radius: 16px;
+				backdrop-filter: blur(10px);
+			}
+
+			.future-research h3 {
+				display: flex;
+				align-items: center;
+				gap: 0.8rem;
+				color: #ffffff;
+				font-size: 1.8rem;
+				margin-bottom: 1.5rem;
+			}
+
+			.future-content p {
+				color: rgba(255, 255, 255, 0.9);
+				line-height: 1.7;
+				margin-bottom: 2rem;
+			}
+
+			.future-goals {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 1.5rem;
+			}
+
+			.goal-item {
+				display: flex;
+				gap: 1.2rem;
+				padding: 1.5rem;
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 12px;
+				transition: all 0.3s ease;
+			}
+
+			.goal-item:hover {
+				background: rgba(255, 255, 255, 0.08);
+				border-color: rgba(255, 255, 255, 0.2);
+				transform: translateX(8px);
+			}
+
+			.goal-item i {
+				font-size: 1.5rem;
+				color: rgba(255, 255, 255, 0.8);
+				margin-top: 0.2rem;
+			}
+
+			.goal-item h4 {
+				color: #ffffff;
+				font-size: 1.1rem;
+				margin: 0 0 0.5rem 0;
+				font-weight: 600;
+			}
+
+			.goal-item p {
+				color: rgba(255, 255, 255, 0.8);
+				margin: 0;
+				line-height: 1.6;
+			}
+
+			.research-impact {
+				margin: 4rem 0;
+				padding: 2rem;
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 16px;
+				backdrop-filter: blur(10px);
+			}
+
+			.impact-summary h3 {
+				display: flex;
+				align-items: center;
+				gap: 0.8rem;
+				color: #ffffff;
+				font-size: 1.8rem;
+				margin-bottom: 1.5rem;
+			}
+
+			.impact-summary p {
+				color: rgba(255, 255, 255, 0.9);
+				line-height: 1.7;
+				margin-bottom: 2rem;
+			}
+
+			.impact-areas {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1rem;
+			}
+
+			.impact-item {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				padding: 1rem 1.5rem;
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 10px;
+				transition: all 0.3s ease;
+			}
+
+			.impact-item:hover {
+				background: rgba(255, 255, 255, 0.08);
+				border-color: rgba(255, 255, 255, 0.2);
+				transform: scale(1.02);
+			}
+
+			.impact-item i {
+				font-size: 1.2rem;
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.impact-item span {
+				color: rgba(255, 255, 255, 0.9);
+				font-weight: 500;
+			}
+
+			/* Responsive Design for Research Section */
+			@media screen and (max-width: 1200px) {
+				.theme-grid {
+					grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				}
+				
+				.methods-grid {
+					grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+				}
+			}
+
+			@media screen and (max-width: 736px) {
+				.research-stats {
+					grid-template-columns: repeat(2, 1fr);
+					gap: 1rem;
+				}
+				
+				.stat-card {
+					flex-direction: column;
+					text-align: center;
+					padding: 1rem;
+				}
+				
+				.stat-icon {
+					width: 50px;
+					height: 50px;
+				}
+				
+				.stat-icon i {
+					font-size: 1.2rem;
+				}
+				
+				.theme-grid {
+					grid-template-columns: 1fr;
+				}
+				
+				.methods-grid {
+					grid-template-columns: 1fr;
+				}
+				
+				.impact-areas {
+					grid-template-columns: 1fr;
+				}
+				
+				.area-content {
+					gap: 1.5rem;
+				}
+				
+				.research-area,
+				.methodology-section,
+				.future-research,
+				.research-impact {
+					padding: 1.5rem;
+					margin: 3rem 0;
+				}
+				
+				.pdr-highlights,
+				.agb-research {
+					gap: 1rem;
+				}
+				
+				.highlight-item,
+				.research-highlight {
+					flex-direction: column;
+					padding: 1rem;
+				}
+				
+				.goal-item {
+					flex-direction: column;
+					text-align: center;
+					padding: 1rem;
+				}
+			}
+
+			@media screen and (max-width: 480px) {
+				.research-stats {
+					grid-template-columns: 1fr;
+				}
+				
+				.research-intro,
+				.research-area,
+				.methodology-section,
+				.future-research,
+				.research-impact {
+					padding: 1rem;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -28,8 +1071,9 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">Intro</a></li>
+								<li><a href="#talks">Talks</a></li>
 								<li><a href="#work">Research</a></li>
+								<li><a href="#publications">Publications</a></li>
 								<li><a href="#about">About</a></li>
 								<li><a href="#cv">CV</a></li>
 								<li><a href="#contact">Contact</a></li>
@@ -42,125 +1086,1155 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+						<!-- Talks -->
+							<article id="talks">
+								<h2 class="major">Talks</h2>
+								
+								<div class="talks-intro">
+									<p>I've had the privilege of presenting my research at various conferences and seminars. Below are some highlights of my talks:</p>
+								</div>
+								
+								<div class="talks-timeline">
+									<div class="talk-entry">
+										<h4>Towards a new paradigm in oxygen-rich AGB stars: R Doradus challenges the dust-driven wind theory</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">European Week of Astronomy and Space Science (EWASS) — <em>International conference</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Cork, Ireland</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">June 2025</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Constraining the dust properties around R Doradus</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">Institut d'Astrophysique Spatiale Visit — <em>Invited seminar</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, France</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">April 2025</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Radiative pressure on dust grains in AGB</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">AGB Workshop — <em>Departmental workshop</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Gothenburg, Sweden</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">November 2023</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Dust evolution in photon dominated regions</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">Physics and Chemistry of the Interstellar Medium (PCMI) — <em>National conference</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">October 2022</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Dust evolution in photon dominated regions</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">French Society of Astronomy and Astrophysics (SF2A) — <em>National conference</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Besançon, France</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">June 2022</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Dust evolution in photon-dominated regions</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">Dust Wallenberg Workshop — <em>Specialized workshop</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Gothenburg, Sweden</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">December 2021</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Dust evolution in the context of the JWST</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">Physics of the Two Infinities and the Origins — <em>Project meeting</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Saclay, France</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">November 2019</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Dust evolution in the Horsehead</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">Physics of the Two Infinities and the Origins — <em>JWST project meeting</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, France</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">November 2019</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Dust evolution in the Horsehead</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">European Week of Astronomy and Space Science (EWASS) — <em>International conference</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Lyon, France</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">June 2019</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Dust evolution in the Horsehead</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">Physics of the Two Infinities and the Origins — <em>JWST project meeting</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, France</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">June 2018</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Dust evolution in photodominated regions</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">French Program on ISM Physics and Chemistry — <em>National conference</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Marseille, France</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">June 2018</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Modelling photodominated regions: Gas-grain coupling</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">Physics of the Two Infinities and the Origins — <em>JWST project meeting</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, France</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">June 2017</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="talk-entry">
+										<h4>Physics of the Two Infinities and the Origins</h4>
+										<div class="talk-meta">
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="conference">Modelling photodominated regions: Gas-grain coupling — <em>JWST project meeting</em></span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, France</span>
+											</div>
+											<div class="talk-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="date">June 2017</span>
+											</div>
+											<div class="talk-meta-item">
+												<span class="talk-type">Talk</span>
+											</div>
+										</div>
+									</div>
+								</div>
 							</article>
 
 						<!-- Work -->
 							<article id="work">
 								<h2 class="major">Research</h2>
 								
-								<h3>Photon-Dominated Regions (PDRs)</h3>
-								<div class="image left">
-									<img src="images/HH.jpg" alt="Horsehead Nebula" />
-									<p class="image-credit">Credit: NASA, ESA, and the Hubble Heritage Team (AURA/STScI)</p>
+								<!-- Research Overview -->
+								<div class="research-intro">
+									<p>My research explores the fascinating world of <strong>cosmic dust</strong> — the tiny solid particles that pervade our galaxy and play crucial roles in star formation, planet building, and the evolution of the universe. Through a combination of theoretical modeling, observational analysis, and computational simulations, I investigate how dust evolves across different astrophysical environments.</p>
+								</div>
+
+								<!-- Research Statistics -->
+								<div class="research-stats">
+									<div class="stat-card">
+										<div class="stat-icon">
+											<i class="fas fa-star"></i>
+										</div>
+										<div class="stat-content">
+											<span class="stat-number">4</span>
+											<div class="stat-label">First-Author Papers</div>
+										</div>
+									</div>
+									<div class="stat-card">
+										<div class="stat-icon">
+											<i class="fas fa-telescope"></i>
+										</div>
+										<div class="stat-content">
+											<span class="stat-number">15+</span>
+											<div class="stat-label">Observatory Projects</div>
+										</div>
+									</div>
+									<div class="stat-card">
+										<div class="stat-icon">
+											<i class="fas fa-globe"></i>
+										</div>
+										<div class="stat-content">
+											<span class="stat-number">100+</span>
+											<div class="stat-label">International Collaborators</div>
+										</div>
+									</div>
+									<div class="stat-card">
+										<div class="stat-icon">
+											<i class="fas fa-award"></i>
+										</div>
+										<div class="stat-content">
+											<span class="stat-number">3</span>
+											<div class="stat-label">Nature/Science Papers</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Research Themes -->
+								<div class="research-themes">
+									<h3><i class="fas fa-microscope"></i> Research Themes</h3>
+									
+									<div class="theme-grid">
+										<div class="theme-card">
+											<div class="theme-header">
+												<i class="fas fa-wind"></i>
+												<h4>Interstellar Dust Evolution</h4>
+											</div>
+											<div class="theme-content">
+												<p>Investigating how cosmic dust particles evolve throughout their lifecycle — from formation in stellar atmospheres to processing in the harsh interstellar environment.</p>
+												<div class="theme-keywords">
+													<span class="keyword">Dust Modeling</span>
+													<span class="keyword">Grain Processing</span>
+													<span class="keyword">ISM Physics</span>
+												</div>
+											</div>
+										</div>
+
+										<div class="theme-card">
+											<div class="theme-header">
+												<i class="fas fa-sun"></i>
+												<h4>Photon-Dominated Regions</h4>
+											</div>
+											<div class="theme-content">
+												<p>Studying transition zones where intense stellar radiation shapes gas and dust properties, providing insights into feedback mechanisms in star-forming regions.</p>
+												<div class="theme-keywords">
+													<span class="keyword">PDR Chemistry</span>
+													<span class="keyword">UV Processing</span>
+													<span class="keyword">JWST Observations</span>
+												</div>
+											</div>
+										</div>
+
+										<div class="theme-card">
+											<div class="theme-header">
+												<i class="fas fa-atom"></i>
+												<h4>Stellar Dust Formation</h4>
+											</div>
+											<div class="theme-content">
+												<p>Exploring dust condensation in evolved stellar atmospheres, particularly AGB stars, to understand the primary sources of cosmic dust injection into the ISM.</p>
+												<div class="theme-keywords">
+													<span class="keyword">AGB Stars</span>
+													<span class="keyword">Mass Loss</span>
+													<span class="keyword">Radiative Transfer</span>
+												</div>
+											</div>
+										</div>
+
+										<div class="theme-card">
+											<div class="theme-header">
+												<i class="fas fa-chart-line"></i>
+												<h4>Galactic Evolution</h4>
+											</div>
+											<div class="theme-content">
+												<p>Connecting local dust processes to galaxy-wide evolution, using observations from nearby regions to inform models of cosmic dust cycles across cosmic time.</p>
+												<div class="theme-keywords">
+													<span class="keyword">Dust Budget</span>
+													<span class="keyword">Galaxy Mergers</span>
+													<span class="keyword">High-z Studies</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Detailed Research Areas -->
+								<div class="research-areas">
+									<div class="research-area">
+										<div class="area-header">
+											<h3><i class="fas fa-cloud"></i> Interstellar Dust Physics</h3>
+										</div>
+										<div class="area-content">
+											<div class="area-image">
+												<img src="images/orion_jwst_research.jpg" alt="Interstellar dust observations" />
+												<div class="image-caption">
+													<strong>JWST observations of the Orion Nebula</strong> revealing intricate dust structures shaped by stellar feedback
+												</div>
+											</div>
+											<div class="area-text">
+												<p>My research focuses on understanding the evolution of interstellar dust in different astronomical environments. Dust particles are crucial components of the interstellar medium, playing important roles in:</p>
+												<ul class="research-list">
+													<li><i class="fas fa-thermometer-half"></i> <strong>Thermal regulation</strong> of gas in molecular clouds</li>
+													<li><i class="fas fa-flask"></i> <strong>Chemical processes</strong> as catalytic surfaces for molecule formation</li>
+													<li><i class="fas fa-star"></i> <strong>Star formation</strong> by providing cooling mechanisms and opacity sources</li>
+													<li><i class="fas fa-globe"></i> <strong>Planet formation</strong> as the building blocks for rocky planets</li>
+												</ul>
+												<p>Through observational and theoretical studies, I investigate the properties, composition, and lifecycle of cosmic dust — from its formation in stellar atmospheres to its processing in the interstellar medium and its eventual incorporation into new stars and planetary systems.</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="research-area">
+										<div class="area-header">
+											<h3><i class="fas fa-radiation"></i> Photon-Dominated Regions (PDRs)</h3>
+										</div>
+										<div class="area-content">
+											<div class="area-image">
+												<img src="images/HH.jpg" alt="Horsehead Nebula" />
+												<div class="image-caption">
+													<strong>The Horsehead Nebula</strong> — a classic PDR where UV radiation sculpts gas and dust
+													<span class="credit">Credit: NASA, ESA, and the Hubble Heritage Team (AURA/STScI)</span>
+												</div>
+											</div>
+											<div class="area-text">
+												<p>Photon-dominated regions represent some of the most dynamic environments in our galaxy, where intense ultraviolet radiation from massive stars drives complex physical and chemical processes. The Horsehead Nebula exemplifies these fascinating transition zones.</p>
+												
+												<div class="pdr-highlights">
+													<div class="highlight-item">
+														<i class="fas fa-microscope"></i>
+														<div>
+															<h4>Nano-grain Depletion</h4>
+															<p>Discovered systematic depletion of smallest dust particles in PDR environments, revolutionizing our understanding of dust size distributions.</p>
+														</div>
+													</div>
+													<div class="highlight-item">
+														<i class="fas fa-atom"></i>
+														<div>
+															<h4>Chemical Networks</h4>
+															<p>Developed sophisticated models linking dust processing to gas-phase chemistry in UV-illuminated regions.</p>
+														</div>
+													</div>
+													<div class="highlight-item">
+														<i class="fas fa-satellite"></i>
+														<div>
+															<h4>Multi-wavelength Analysis</h4>
+															<p>Combined Herschel, Spitzer, and JWST observations to trace dust evolution across different PDR zones.</p>
+														</div>
+													</div>
+												</div>
+
+												<p>These environments are particularly interesting because they represent transition zones between hot ionized gas and cold molecular clouds, where dust particles undergo significant processing that alters their size distribution, composition, and optical properties.</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="research-area">
+										<div class="area-header">
+											<h3><i class="fas fa-star"></i> AGB Star Dust Factory</h3>
+										</div>
+										<div class="area-content">
+											<div class="area-image">
+												<img src="images/RDoradus.jpg" alt="R Doradus" />
+												<div class="image-caption">
+													<strong>R Doradus ALMA observations</strong> revealing complex dust structures in the stellar wind
+													<span class="credit">Credit: ALMA (ESO/NAOJ/NRAO)/W. Vlemmings et al.</span>
+												</div>
+											</div>
+											<div class="area-text">
+												<p>Asymptotic Giant Branch (AGB) stars like R Doradus are cosmic dust factories, responsible for producing a significant fraction of the dust in our galaxy. These evolved stars are in their final stages of life, ejecting their outer layers into space.</p>
+												
+												<div class="agb-research">
+													<div class="research-highlight">
+														<h4><i class="fas fa-wind"></i> Mass Loss Mechanisms</h4>
+														<p>Investigating how radiation pressure on dust grains drives powerful stellar winds, challenging traditional dust-driven wind theories through detailed radiative transfer modeling.</p>
+													</div>
+													<div class="research-highlight">
+														<h4><i class="fas fa-cogs"></i> Dust Condensation</h4>
+														<p>Studying the formation of different dust species (silicates, carbonaceous grains) in the cool, dense atmospheres of these giants using VLT and ALMA observations.</p>
+													</div>
+													<div class="research-highlight">
+														<h4><i class="fas fa-chart-area"></i> Injection Efficiency</h4>
+														<p>Quantifying how efficiently newly-formed dust is injected into the interstellar medium, informing galaxy-scale dust evolution models.</p>
+													</div>
+												</div>
+
+												<p>This research provides crucial insights into the origin of interstellar dust and helps us understand the complete lifecycle of matter in our galaxy — from stellar nucleosynthesis to the formation of new planetary systems.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Methodology Section -->
+								<div class="methodology-section">
+									<h3><i class="fas fa-tools"></i> Research Methodology</h3>
+									<div class="methods-grid">
+										<div class="method-card">
+											<div class="method-icon">
+												<i class="fas fa-calculator"></i>
+											</div>
+											<h4>Radiative Transfer Modeling</h4>
+											<p>Sophisticated numerical simulations using codes like DUSTEM and 3D Monte Carlo methods to predict dust emission and absorption properties.</p>
+										</div>
+										<div class="method-card">
+											<div class="method-icon">
+												<i class="fas fa-satellite-dish"></i>
+											</div>
+											<h4>Multi-wavelength Observations</h4>
+											<p>Analysis of data from space telescopes (JWST, Herschel, Spitzer) and ground-based facilities (ALMA, VLT) spanning IR to sub-mm wavelengths.</p>
+										</div>
+										<div class="method-card">
+											<div class="method-icon">
+												<i class="fas fa-flask"></i>
+											</div>
+											<h4>Chemical Modeling</h4>
+											<p>Detailed astrochemical networks linking dust physics to gas-phase chemistry using tools like Meudon PDR code and RADEX.</p>
+										</div>
+										<div class="method-card">
+											<div class="method-icon">
+												<i class="fas fa-chart-bar"></i>
+											</div>
+											<h4>Statistical Analysis</h4>
+											<p>Advanced data analysis techniques including Bayesian inference, machine learning approaches, and wavelet analysis for large astronomical datasets.</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Future Directions -->
+								<div class="future-research">
+									<h3><i class="fas fa-rocket"></i> Future Directions</h3>
+									<div class="future-content">
+										<p>Looking ahead, my research aims to bridge the gap between local detailed studies and galaxy-wide dust evolution. Key objectives include:</p>
+										<div class="future-goals">
+											<div class="goal-item">
+												<i class="fas fa-satellite"></i>
+												<div>
+													<h4>JWST Era Science</h4>
+													<p>Leveraging unprecedented infrared capabilities to probe dust in high-redshift galaxies and early universe conditions.</p>
+												</div>
+											</div>
+											<div class="goal-item">
+												<i class="fas fa-brain"></i>
+												<div>
+													<h4>Machine Learning Integration</h4>
+													<p>Developing AI-driven approaches to analyze complex multi-dimensional observational datasets and improve dust models.</p>
+												</div>
+											</div>
+											<div class="goal-item">
+												<i class="fas fa-globe-americas"></i>
+												<div>
+													<h4>Exoplanet Atmospheres</h4>
+													<p>Applying dust physics expertise to understand atmospheric composition and evolution in exoplanetary systems.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Research Impact -->
+								<div class="research-impact">
+									<div class="impact-summary">
+										<h3><i class="fas fa-bullseye"></i> Research Impact</h3>
+										<p>Through this comprehensive research program, we are building a unified understanding of cosmic dust that connects stellar nucleosynthesis to galaxy evolution, with implications for:</p>
+									</div>
+									<div class="impact-areas">
+										<div class="impact-item">
+											<i class="fas fa-star-formation"></i>
+											<span>Star and planet formation efficiency</span>
+										</div>
+										<div class="impact-item">
+											<i class="fas fa-galaxy"></i>
+											<span>Galaxy evolution and feedback mechanisms</span>
+										</div>
+										<div class="impact-item">
+											<i class="fas fa-globe"></i>
+											<span>Habitability and atmospheric evolution</span>
+										</div>
+										<div class="impact-item">
+											<i class="fas fa-eye"></i>
+											<span>Observational strategies for next-generation telescopes</span>
+										</div>
+									</div>
+								</div>
+							</article>
+
+						<!-- Publications -->
+							<article id="publications">
+								<h2 class="major">Publications</h2>
+								
+								<div class="publications-intro">
+									<p>My research has contributed to our understanding of cosmic dust evolution, interstellar medium physics, and astrochemistry. Below is my complete list of peer-reviewed publications, including both first-authored and collaborative works.</p>
+								</div>
+
+								<div class="pub-stats">
+									<div class="stat-item">
+										<span class="stat-number">4</span>
+										<div class="stat-label">First-Author Papers</div>
+									</div>
+									<div class="stat-item">
+										<span class="stat-number">15+</span>
+										<div class="stat-label">Co-Author Papers</div>
+									</div>
+									<div class="stat-item">
+										<span class="stat-number">3</span>
+										<div class="stat-label">Nature/Science Papers</div>
+									</div>
+									<div class="stat-item">
+										<span class="stat-number">100+</span>
+										<div class="stat-label">Collaborators</div>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3><i class="fas fa-star"></i> First-Authored Publications</h3>
 								</div>
 								
-								<p>My research focuses on understanding how interstellar dust evolves in regions where intense radiation from nearby stars interacts with molecular clouds. The Horsehead Nebula (shown here) is a classic example of a photon-dominated region, where ultraviolet radiation from nearby stars is sculpting the gas and dust, creating the iconic horse-head shape.</p>
+								<div class="publications-section">
+									<div class="publication-entry">
+										<h4>Towards a new paradigm in oxygen-rich AGB stars: R Doradus challenges the dust-driven wind theory</h4>
+										<p class="authors"><strong>Schirmer, T.-A.</strong> et al.</p>
+										<p class="journal"><em>Nature Astronomy</em>, Submitted in June 2025</p>
+										<p class="status">Submitted</p>
+									</div>
+
+									<div class="publication-entry">
+										<h4>Nano-grain depletion in photon-dominated regions</h4>
+										<p class="authors"><strong>Schirmer, T.</strong>, Ysard, N., Habart, E., Jones, A. P., Abergel, A., and Verstraete, L.</p>
+										<p class="journal"><em>A&A</em>, 666, A49 (2022)</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.1051/0004-6361/202243635" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+
+									<div class="publication-entry">
+										<h4>Influence of the nano-grain depletion in photon-dominated regions. Application to the gas physics and chemistry in the Horsehead</h4>
+										<p class="authors"><strong>Schirmer, T.</strong>, Habart, E., Ysard, N., Bron, E., Le Bourlot, J., Verstraete, L., Abergel, A., Jones, A. P., Roueff, E., and Le Petit, F.</p>
+										<p class="journal"><em>A&A</em>, 649, A148 (2021)</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.1051/0004-6361/202140671" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+
+									<div class="publication-entry">
+										<h4>Dust evolution across the Horsehead nebula</h4>
+										<p class="authors"><strong>Schirmer, T.</strong>, Abergel, A., Verstraete, L., Ysard, N., Juvela, M., Jones, A. P., and Habart, E.</p>
+										<p class="journal"><em>A&A</em>, 639, A144 (2020)</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.1051/0004-6361/202037937" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3><i class="fas fa-users"></i> Co-Authored Publications</h3>
+								</div>
 								
-								<p>In these environments, dust particles undergo significant processing due to the intense radiation field, which can alter their size distribution, composition, and optical properties. By studying these changes, we can better understand the lifecycle of dust in our galaxy.</p>
+								<div class="publications-section">
+									<div class="publication-entry">
+										<h4>ALMA Lensing Cluster Survey: Dust mass measurements as a function of redshift, stellar mass, and star formation rate from z = 1 to z = 5</h4>
+										<p class="authors">Jolly, J.-B., Knudsen, K., Laporte, N., Guerrero, A., Fujimoto, S., Kohno, K., Kokorev, V., Lagos, C. del P., <strong>Schirmer, T.-A.</strong>, Bauer, F., Dessauge-Zavadsky, M., Espada, D., Hatsukade, B., Koekemoer, A. M., Richard, J., Sun, F., and Wu, J. F.</p>
+										<p class="journal"><em>A&A</em>, 693, A190 (2025)</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.1051/0004-6361/202346239" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+
+									<div class="publication-entry">
+										<h4>PDRs4All. VIII. Mid-infrared emission line inventory of the Orion Bar</h4>
+										<p class="authors">Van De Putte, D., Meshaka, R., Trahin, B., Habart, E., Peeters, E., Berné, O., Alarcón, F., Canin, A., Chown, R., Schroetter, I., Sidhu, A., Boersma, C., Bron, E., Dartois, E., Goicoechea, J. R., Gordon, K. D., Onaka, T., Tielens, A. G. G. M., Verstraete, L., Wolfire, M. G., Abergel, A., Bergin, E. A., Bernard-Salas, J., Cami, J., Cuadrado, S., Dicken, D., Elyajouri, M., Fuente, A., Joblin, C., Khan, B., Lacinbala, O., Languignon, D., Le Gal, R., Maragkoudakis, A., Okada, Y., Pasquini, S., Pound, M. W., Robberto, M., Röllig, M., Schefter, B., <strong>Schirmer, T.</strong>, Tabone, B., Vicente, S., Zannese, M., and others (80+ authors)</p>
+										<p class="journal"><em>A&A</em>, 687, A86 (2024)</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.1051/0004-6361/202449295" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+
+									<div class="publication-entry">
+										<h4>OH as a probe of the warm-water cycle in planet-forming disks</h4>
+										<p class="authors">Zannese, M., Tabone, B., Habart, E., Goicoechea, J. R., Zanchet, A., van Dishoeck, E. F., van Hemert, M. C., Black, J. H., Tielens, A. G. G. M., Veselinova, A., Jambrina, P. G., Menendez, M., Verdasco, E., Aoiz, F. J., Gonzalez-Sanchez, L., Trahin, B., Dartois, E., Berné, O., Peeters, E., He, J., Sidhu, A., Chown, R., Schroetter, I., Van De Putte, D., Canin, A., Alarcón, F., Abergel, A., Bergin, E. A., Bernard-Salas, J., Boersma, C., Bron, E., Cami, J., Dicken, D., Elyajouri, M., Fuente, A., Gordon, K. D., Issa, L., Joblin, C., Kannavou, O., Khan, B., Languignon, D., Le Gal, R., Maragkoudakis, A., Meshaka, R., Okada, Y., Onaka, T., Pasquini, S., Pound, M. W., Robberto, M., Röllig, M., Schefter, B., <strong>Schirmer, T.</strong>, Vicente, S., and Wolfire, M. G.</p>
+										<p class="journal"><em>Nature Astronomy</em>, 8, 577–586 (2024)</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.1038/s41550-024-02203-0" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+
+									<div class="publication-entry">
+										<h4>Formation of the methyl cation by photochemistry in a protoplanetary disk</h4>
+										<p class="authors">Berné, O., Martin-Drumel, M.-A., Schroetter, I., Goicoechea, J. R., Jacovella, U., Gans, B., Dartois, E., Coudert, L. H., Bergin, E., Alarcon, F., Cami, J., Roueff, E., Black, J. H., Asvany, O., Habart, E., Peeters, E., Canin, A., Trahin, B., Joblin, C., Schlemmer, S., Thorwirth, S., Cernicharo, J., Gerin, M., Tielens, A., Zannese, M., Abergel, A., Bernard-Salas, J., Boersma, C., Bron, E., Chown, R., Cuadrado, S., Dicken, D., Elyajouri, M., Fuente, A., Gordon, K. D., Issa, L., Kannavou, O., Khan, B., Lacinbala, O., Languignon, D., Le Gal, R., Maragkoudakis, A., Meshaka, R., Okada, Y., Onaka, T., Pasquini, S., Pound, M. W., Robberto, M., Röllig, M., Schefter, B., <strong>Schirmer, T.</strong>, Sidhu, A., Tabone, B., Van De Putte, D., Vicente, S., and Wolfire, M. G.</p>
+										<p class="journal"><em>Nature</em>, 621, 56–59 (2023)</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.1038/s41586-023-06307-x" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+
+									<div class="publication-entry">
+										<h4>A far-ultraviolet–driven photoevaporation flow observed in a protoplanetary disk</h4>
+										<p class="authors">Berné, O., Habart, E., Peeters, E., Schroetter, I., Canin, A., Sidhu, A., Chown, R., Bron, E., Haworth, T. J., Klaassen, P., Trahin, B., Van De Putte, D., Alarcón, F., Zannese, M., Abergel, A., Bergin, E. A., Bernard-Salas, J., Boersma, C., Cami, J., Cuadrado, S., Dartois, E., Dicken, D., Elyajouri, M., Fuente, A., Goicoechea, J. R., Gordon, K. D., Issa, L., Joblin, C., Kannavou, O., Khan, B., Lacinbala, O., Languignon, D., Le Gal, R., Maragkoudakis, A., Meshaka, R., Okada, Y., Onaka, T., Pasquini, S., Pound, M. W., Robberto, M., Röllig, M., Schefter, B., <strong>Schirmer, T.</strong>, Simmer, T., Tabone, B., Tielens, A. G. G. M., Vicente, S., Wolfire, M. G., and others (100+ authors)</p>
+										<p class="journal"><em>Science</em>, 383, 988–992 (2024)</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.1126/science.adh2861" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+
+									<div class="publication-entry">
+										<h4>Editorial: Cosmic dust—its formation, processing, and destruction</h4>
+										<p class="authors">Gobrecht, D., Das, A., Baeyens, R., and <strong>Schirmer, T.</strong></p>
+										<p class="journal"><em>Frontiers in Astronomy and Space Sciences</em>, 10, 1242545 (2023)</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.3389/fspas.2023.1242545" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+
+									<div class="publication-entry">
+										<h4>PDRs4All: A JWST Early Release Science Program on Radiative Feedback from Massive Stars</h4>
+										<p class="authors">Berné, O., Habart, E., Peeters, E., Abergel, A., Bergin, E. A., Bernard-Salas, J., Bron, E., Cami, J., Dartois, E., Fuente, A., Goicoechea, J. R., Gordon, K. D., Okada, Y., Onaka, T., Robberto, M., Röllig, M., Tielens, A. G. G. M., Vicente, S., Wolfire, M. G., Alarcón, F., Boersma, C., Canin, A., Chown, R., Dicken, D., Languignon, D., Le Gal, R., Pound, M. W., Trahin, B., Simmer, T., Sidhu, A., Van De Putte, D., Cuadrado, S., Guilloteau, C., Maragkoudakis, A., Schefter, B. R., <strong>Schirmer, T.</strong> et al. (100+ authors)</p>
+										<p class="journal"><em>Publications of the Astronomical Society of the Pacific</em>, 134(1035), 054301 (2022)</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.1088/1538-3873/ac604c" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+
+									<div class="publication-entry">
+										<h4>Kinematic structures of the solar neighbourhood revealed by Gaia DR1/TGAS and RAVE</h4>
+										<p class="authors">Kushniruk, I., <strong>Schirmer, T.</strong>, and Bensby, T.</p>
+										<p class="journal"><em>A&A</em>, 608, A73 (2017)</p>
+										<p class="description">Analysis of kinematic groups in the Milky Way using wavelet analysis on Gaia DR1/TGAS data combined with RAVE radial velocities. Contributed to methodology section on wavelet analysis techniques.</p>
+										<div class="publication-links">
+											<a href="https://doi.org/10.1051/0004-6361/201731147" class="button small" target="_blank">
+												<i class="fas fa-external-link-alt"></i> DOI Link
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3><i class="fas fa-graduation-cap"></i> PhD Thesis</h3>
+								</div>
 								
-								<p>PDRs are particularly interesting because they represent transition zones between the hot ionized gas and the cold molecular clouds. The physical and chemical processes occurring in these regions are complex and provide valuable insights into the evolution of interstellar matter.</p>
-								
-								<div class="clearfix"></div>
-								
-								<h3>AGB Stars</h3>
-								<span class="image main"><img src="images/RDoradus.jpg" alt="R Doradus" /></span>
-								<p class="image-credit">Credit: ALMA (ESO/NAOJ/NRAO)/W. Vlemmings et al.</p>
-								
-								<p>Another focus of my research is the formation of dust in the atmospheres of evolved stars, particularly Asymptotic Giant Branch (AGB) stars like R Doradus (shown above). These stars are in the late stages of their evolution and are ejecting material into the interstellar medium, including newly formed dust particles.</p>
-								
-								<p>By studying the dust production in these stellar environments, we can trace the origin of interstellar dust and understand how it is injected into the interstellar medium before becoming part of new stellar systems.</p>
-								
-								<p>Through this research, we aim to better understand the complete life cycle of dust in our galaxy and its role in various astrophysical processes, from star formation to planet building.</p>
+								<div class="publications-section">
+									<div class="publication-entry">
+										<h4>Dust Evolution in Photon-Dominated Regions</h4>
+										<p class="authors"><strong>Schirmer, T.-A.</strong></p>
+										<p class="journal">PhD Thesis, Université Paris-Saclay (2020)</p>
+										<p class="description">Comprehensive study of dust grain processing in photon-dominated regions using THEMIS interstellar dust model coupled with 1D and 3D radiative transfer codes. Detailed analysis of the Horsehead nebula and preparation of synthetic maps for JWST Early Release Science observations.</p>
+										<div class="publication-links">
+											<a href="https://theses.hal.science/tel-03420387v1/file/91624_SCHIRMER_2020_archivage.pdf" class="button small">
+												<i class="fas fa-file-pdf"></i> PDF
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="publications-footer">
+									<p><em>For citation metrics and additional publication details, please visit my profiles on <a href="#" target="_blank">ORCID</a>, <a href="#" target="_blank">Google Scholar</a>, or <a href="#" target="_blank">ADS</a>.</em></p>
+								</div>
 							</article>
 
 						<!-- About -->
 							<article id="about">
 								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+								<span class="image main"><img src="images/Thieb_website.jpg" alt="" /></span>
+								<div id="about-content-fr">
+									<p>J'ai grandi dans l'Est de la France, près de <a href="https://fr.wikipedia.org/wiki/Belfort" target="_blank">Belfort</a>, où l'accès immédiat à la nature, aux grands espaces et aux montagnes a profondément marqué la personne que je suis aujourd'hui. Cette région, riche en traditions culinaires et viticoles, a nourri ma curiosité et mon goût pour les belles choses de la vie.</p>
+
+									<p>Depuis toujours attiré par les étoiles et les sciences, j'ai également développé une passion pour la lecture - un moyen de voyage accessible qui m'a ouvert de nombreux horizons. C'est naturellement que j'ai choisi de poursuivre des études en astrophysique, ce qui m'a mené à Paris et à l'<a href="https://ens-paris-saclay.fr/" target="_blank">École Normale Supérieure Paris-Saclay</a>.</p>
+
+									<p>Au cours de ce parcours, j'ai eu la chance d'effectuer deux stages (licence et première année de master) à l'<a href="https://obs-besancon.fr/" target="_blank">Observatoire de Besançon</a>, sous la supervision de Julien Montillaud, qui m'a transmis la rigueur scientifique nécessaire à la recherche. C'est là que j'ai véritablement découvert l'astrophysique et développé ma passion pour ce domaine. Confirmé dans mon désir de poursuivre dans cette voie, j'ai ensuite effectué mon stage de deuxième année de master à l'<a href="https://www.obspm.fr/" target="_blank">Observatoire de Meudon</a>, bénéficiant de l'encadrement enrichissant de Jacques Le Bourlot et Franck Le Petit.</p>
+
+									<p>L'étape suivante m'a mené en Suède, à l'<a href="https://www.astro.lu.se/" target="_blank">Observatoire de Lund</a>, dans le cadre de ma quatrième année d'études. Cette expérience répondait à un double objectif : approfondir mes connaissances en astrophysique, notamment sur la mission <a href="https://www.esa.int/Science_Exploration/Space_Science/Gaia" target="_blank">GAIA</a>, tout en découvrant un pays qui m'attirait depuis longtemps par sa relation harmonieuse avec la nature et la qualité de vie de ses habitants. Cette année s'est révélée être un véritable succès qui a largement dépassé toutes mes attentes !</p>
+
+									<p>De retour en France, j'ai entamé ma thèse à l'<a href="https://www.ias.u-psud.fr/" target="_blank">Institut d'Astrophysique Spatiale d'Orsay</a>, où j'ai consacré trois années passionnantes à l'étude des poussières dans les régions photodominées, sous la direction bienveillante et stimulante de Laurent Verstraete et Alain Abergel. Déterminé à poursuivre dans la recherche, j'ai ensuite eu la chance de décrocher un poste de post-doctorant à <a href="https://www.chalmers.se/" target="_blank">Chalmers</a>, à <a href="https://goteborg.se/" target="_blank">Göteborg</a> - une opportunité idéale qui me permettait de continuer mes recherches sur les grains de poussière tout en retournant en Suède, pays qui m'avait tant séduit.</p>
+
+									<p>Après près de quatre années enrichissantes de post-doctorat à Göteborg, j'ai pris la décision de m'installer définitivement dans cette ville et d'amorcer une transition professionnelle vers les sciences des données, ouvrant ainsi un nouveau chapitre stimulant de ma carrière.</p>
+
+									<p>Au-delà de la recherche, je cultive de nombreux centres d'intérêt. Bénéficiant à nouveau d'un accès privilégié à la nature et vivant près d'un lac, j'ai découvert l'univers du triathlon en Suède et renoué avec la course à pied après une interruption de huit ans consécutive à une blessure au genou contractée en pratiquant le rugby. Je suis également un passionné de culture sous toutes ses formes : littérature, musées, échanges intellectuels... À notre époque, l'accès immédiat au savoir nous offre la possibilité d'explorer constamment de nouveaux sujets - une source d'émerveillement véritablement inépuisable ! Enfin, je voue une véritable passion à la gastronomie : j'aime cuisiner, pâtisser et explorer de nouveaux restaurants. C'est d'ailleurs pourquoi j'apprécie tant la tradition suédoise du <a href="https://en.wikipedia.org/wiki/Coffee_culture#Sweden" target="_blank">"fika"</a>, ce moment privilégié où l'on savoure d'excellentes pâtisseries autour d'un bon café en agréable compagnie.</p>
+								</div>
+								
+								<div id="about-content-en" style="display: none;">
+									<p>I grew up in Eastern France, near <a href="https://en.wikipedia.org/wiki/Belfort" target="_blank">Belfort</a>, where immediate access to nature, vast open spaces, and mountains profoundly shaped the person I am today. This region, rich in culinary and wine-making traditions, nurtured my curiosity and appreciation for the finer things in life.</p>
+
+									<p>Having always been drawn to the stars and sciences, I also developed a passion for reading - an accessible means of travel that opened numerous horizons for me. It was natural that I chose to pursue studies in astrophysics, which led me to Paris and the <a href="https://ens-paris-saclay.fr/en" target="_blank">École Normale Supérieure Paris-Saclay</a>.</p>
+
+									<p>During this journey, I had the opportunity to complete two internships (bachelor's and first year of master's) at the <a href="https://obs-besancon.fr/" target="_blank">Besançon Observatory</a>, under the supervision of Julien Montillaud, who instilled in me the scientific rigor essential for research. It was there that I truly discovered astrophysics and developed my passion for this field. Confirmed in my desire to pursue this path, I then completed my second-year master's internship at the <a href="https://www.obspm.fr/en/" target="_blank">Meudon Observatory</a>, benefiting from the enriching guidance of Jacques Le Bourlot and Franck Le Petit.</p>
+
+									<p>The next step took me to Sweden, to the <a href="https://www.astro.lu.se/" target="_blank">Lund Observatory</a>, as part of my fourth year of studies. This experience served a dual purpose: deepening my knowledge in astrophysics, particularly regarding the <a href="https://www.esa.int/Science_Exploration/Space_Science/Gaia" target="_blank">GAIA mission</a>, while discovering a country that had long attracted me through its harmonious relationship with nature and the quality of life of its inhabitants. This year proved to be a tremendous success that far exceeded all my expectations!</p>
+
+									<p>Returning to France, I began my PhD at the <a href="https://www.ias.u-psud.fr/en/" target="_blank">Institut d'Astrophysique Spatiale in Orsay</a>, where I spent three fascinating years studying dust in photon-dominated regions, under the benevolent and stimulating supervision of Laurent Verstraete and Alain Abergel. Determined to continue in research, I was fortunate to secure a postdoctoral position at <a href="https://www.chalmers.se/en/" target="_blank">Chalmers</a> in <a href="https://goteborg.se/wps/portal/start/english-startpage" target="_blank">Göteborg</a> - an ideal opportunity that allowed me to continue my research on dust grains while returning to Sweden, a country that had captivated me so much.</p>
+
+									<p>After nearly four enriching years of postdoctoral research in Göteborg, I decided to settle permanently in this city and begin a professional transition toward data science, opening an exciting new chapter in my career.</p>
+
+									<p>Beyond research, I cultivate numerous interests. Once again enjoying privileged access to nature and living near a lake, I discovered the world of triathlon in Sweden and reconnected with running after an eight-year hiatus following a knee injury sustained while playing rugby. I am also passionate about culture in all its forms: literature, museums, intellectual exchanges... In our era, immediate access to knowledge offers us the opportunity to constantly explore new subjects - a truly inexhaustible source of wonder! Finally, I have a genuine passion for gastronomy: I love cooking, baking, and exploring new restaurants. This is why I particularly appreciate the Swedish tradition of <a href="https://en.wikipedia.org/wiki/Coffee_culture#Sweden" target="_blank">"fika"</a>, that special moment when one savors excellent pastries over good coffee in pleasant company.</p>
+								</div>
 							</article>
 
 						<!-- CV -->
 							<article id="cv">
 								<h2 class="major">Curriculum Vitae</h2>
 								
-								<h3>Education</h3>
+								<div class="cv-download">
+									<p><a href="#" class="button primary icon solid fa-download">Download Full CV (PDF)</a></p>
+									<p><em>Comprehensive academic and professional experience in astrophysics research</em></p>
+								</div>
 								
-								<div class="cv-entry">
-									<h4>Ecole Normale Supérieure Paris-Saclay, Observatoire de Paris</h4>
-									<p class="institution">Master degree in fundamental physics, specialisation in astrophysics</p>
-									<p class="duration">2014 - 2016</p>
-									<p class="location">Paris - France</p>
+								<div class="cv-section-header">
+									<h3><i class="fas fa-briefcase"></i> Current Position</h3>
 								</div>
-
-								<div class="cv-entry">
-									<h4>Ecole Normale Supérieure Paris-Saclay</h4>
-									<p class="institution">Bachelor degree in fundamental physics</p>
-									<p class="duration">2013 - 2014</p>
-									<p class="location">Paris - France</p>
-								</div>
-
-								<div class="cv-entry">
-									<h4>Lycée Albert Schweitzer</h4>
-									<p class="institution">Undergraduate intensive course to prepare nationwide competitive exams</p>
-									<p class="duration">2010 - 2013</p>
-									<p class="location">Mulhouse - France</p>
-								</div>
-
-								<h3>Research Experience</h3>
 								
-								<div class="cv-entry">
-									<h4>Dust evolution in photon-dominated regions</h4>
-									<p class="institution">Institut d'Astrophysique Spatiale d'Orsay</p>
-									<p class="position">Postdoctoral position</p>
-									<p class="duration">Since October 2020</p>
-									<p class="location">Orsay - France</p>
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Postdoctoral Researcher — Origin and Fate of Dust in the Universe</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Chalmers University of Technology</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Since August 2021</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Gothenburg, Sweden</span>
+											</div>
+										</div>
+										<p>Leading research on dust properties in AGB star environments using radiative transfer modeling and VLT observations. Supporting JWST studies of galaxy mergers and organizing major international conferences on cosmic dust research with 100+ participants.</p>
+									</div>
 								</div>
 
-								<div class="cv-entry">
-									<h4>Dust evolution in photon-dominated regions</h4>
-									<p class="institution">Institut d'Astrophysique Spatiale d'Orsay</p>
-									<p class="position">PhD under the supervision of Alain Abergel and Laurent Verstraete</p>
-									<p class="duration">October 2017 - October 2020</p>
-									<p class="location">Orsay - France</p>
+								<div class="cv-section-header">
+									<h3><i class="fas fa-microscope"></i> Research Experience</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Postdoctoral Researcher — Dust Evolution in PDRs</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Institut d'Astrophysique Spatiale d'Orsay</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">October 2020 - July 2021</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, France</span>
+											</div>
+										</div>
+										<p>Extended analysis of dust properties in photon-dominated regions, focusing on IC63 and Orion Bar using multi-wavelength observations and radiative transfer modeling.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>PhD Candidate — Dust Evolution in Photon-Dominated Regions</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Institut d'Astrophysique Spatiale d'Orsay</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">October 2017 - October 2020</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, France</span>
+											</div>
+										</div>
+										<p>Completed PhD thesis under supervision of Alain Abergel and Laurent Verstraete. Developed comprehensive models of dust emission using THEMIS interstellar dust model, coupled with 1D and 3D radiative transfer codes. Conducted detailed analysis of the Horsehead nebula and prepared synthetic maps for JWST Early Release Science observations.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Research Assistant — Galactic Archaeology with Gaia</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Lund Observatory</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">August 2016 - June 2017</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Lund, Sweden</span>
+											</div>
+										</div>
+										<p>Conducted 10-month pre-doctoral research under Thomas Bensby and Iryna Kushniruk. Analyzed kinematic groups in the Milky Way using wavelet analysis on Gaia DR1/TGAS data with RAVE radial velocities. Co-authored publication on kinematic structures in the solar neighborhood.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Research Intern — Dust Models in PDRs</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">LERMA / Observatoire de Paris-Meudon</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">March 2016 - July 2016</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Meudon, France</span>
+											</div>
+										</div>
+										<p>4-month master's internship with Jacques Le Bourlot and Franck Le Petit. Implemented Draine & Li dust model in Meudon PDR Code, comparing simulation results with standard MRN models to evaluate dust property influences on PDR physics.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Research Intern — 3D Galactic Dust Modeling</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Observatoire de Besançon</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">April 2015 - July 2015</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Besançon, France</span>
+											</div>
+										</div>
+										<p>Used Besançon Galaxy model to predict interstellar radiation fields throughout the Milky Way. Implemented DustEM modeling tool to create 3D maps of expected dust emission for comparison with observational data.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Research Intern — Molecular Cloud Dynamics</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Observatoire de Besançon</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">May 2014 - July 2014</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Besançon, France</span>
+											</div>
+										</div>
+										<p>First research experience studying gravitational collapse of molecular cloud G110-13. Used Radex radiative transfer code to model line emission and constrain collapse timescales through comparison with observational data.</p>
+									</div>
 								</div>
 
-								<div class="cv-entry">
-									<h4>Origin and evolution of the Milky Way in the Gaia era</h4>
-									<p class="institution">Department of Astronomy and Theoretical Physics</p>
-									<p class="position">10-month pre-doctoral internship under the supervision of Thomas Bensby</p>
-									<p class="duration">2016 - 2017</p>
-									<p class="location">Lund - Sweden</p>
+								<div class="cv-section-header">
+									<h3><i class="fas fa-graduation-cap"></i> Education</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Master in Astrophysics — AAIS Program</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Observatoire de Paris</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2015 - 2016</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<p>Advanced coursework in stellar physics, interstellar medium, and radiative transfer. Hands-on observational training at Observatoire de Haute-Provence and Meudon Observatory. Computational astrophysics projects using Fortran and Python.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Master in Fundamental Physics</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">École Normale Supérieure Paris-Saclay</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2014 - 2016</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<p>Advanced coursework in quantum physics, statistical physics, solid state physics, and astrophysics. Experimental physics training in quantum optics and surface wave hydrodynamics. Scientific communication training.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Bachelor in Fundamental Physics</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">École Normale Supérieure Paris-Saclay</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2013 - 2014</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<p>Core physics curriculum including quantum mechanics, electromagnetism, and statistical physics. Mathematical and computational methods for physicists. Laboratory work and research initiation.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Preparatory Classes (CPGE PCSI/PC)</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Lycée Albert Schweitzer</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2010 - 2013</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Mulhouse, France</span>
+											</div>
+										</div>
+										<p>Intensive 3-year program preparing for elite engineering schools. Advanced mathematics, physics, and chemistry with competitive national entrance exam preparation for prestigious institutions (ENS, École Polytechnique, Centrale).</p>
+									</div>
 								</div>
 
-								<div class="cv-entry">
-									<h4>Impact of dust models in photon-dominated regions</h4>
-									<p class="institution">LERMA / Observatoire de Paris-Meudon</p>
-									<p class="position">4-month internship under the supervision of Jacques Le Bourlot and Franck Le Petit</p>
-									<p class="duration">March 2016 - July 2016</p>
-									<p class="location">Meudon - France</p>
+								<div class="cv-section-header">
+									<h3><i class="fas fa-chalkboard-teacher"></i> Teaching & Outreach</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Science Communicator</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Palais de la Découverte</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2017 - 2020</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<p>Delivered public lectures on "The Lifecycle of Matter in the Universe" to diverse audiences. Developed interactive presentations on stellar evolution and cosmic dust formation. Guided visitors through astronomy demonstrations.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Teaching Assistant</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Lycée Raspail</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2015 - 2016</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<p>Taught preparatory classes for engineering school entrance exams (90 hours total in Physics and Technology). Provided individualized support and exam preparation for students.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Private Tutor</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">PECES</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2012 - 2015</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<p>One-on-one tutoring for students in elite engineering school preparatory tracks (BCPST, PC, MP). Developed personalized teaching strategies for competitive exam success.</p>
+									</div>
 								</div>
 
-								<div class="cv-entry">
-									<h4>Toward a 3D self-consistent model of dust and gas in the Milky Way</h4>
-									<p class="institution">Observatoire de Besançon</p>
-									<p class="position">4-month internship under the supervision of Julien Montillaud</p>
-									<p class="duration">April 2015 - July 2015</p>
-									<p class="location">Besançon - France</p>
+								<div class="cv-section-header">
+									<h3><i class="fas fa-star"></i> Key Achievements & Skills</h3>
 								</div>
-
-								<div class="cv-entry">
-									<h4>Gravitational collapsing of the molecular cloud G110-13</h4>
-									<p class="institution">Observatoire de Besançon</p>
-									<p class="position">2-month internship under the supervision of Julien Montillaud</p>
-									<p class="duration">May 2014 - July 2014</p>
-									<p class="location">Besançon - France</p>
+								
+								<div class="cv-highlights">
+									<div class="highlight-item">
+										<h4><i class="fas fa-users"></i> Conference Organization</h4>
+										<p>Chair of Local and Scientific Organizing Committees for international conference "Origin and Fate of Dust in Our Universe" (100+ participants). Organized ALMA/JWST synergy workshops and served on organizing committees for national astronomy conferences.</p>
+									</div>
+									
+									<div class="highlight-item">
+										<h4><i class="fas fa-cogs"></i> Technical Expertise</h4>
+										<p>Radiative transfer modeling (THEMIS, DustPDR, SOC), data analysis and programming (Python, Fortran), observational astronomy (VLT, ALMA, JWST, Spitzer, Herschel), Monte Carlo simulations, wavelet analysis.</p>
+									</div>
+									
+									<div class="highlight-item">
+										<h4><i class="fas fa-book"></i> Publications & Collaborations</h4>
+										<p>First author on multiple peer-reviewed publications in A&A, co-author on high-impact studies in Nature and Science. Active collaborations with international research groups on cosmic dust studies and galaxy evolution.</p>
+									</div>
+								</div>
+								
+								<div class="cv-footer">
+									<p><em>For detailed research descriptions, complete publication list, and technical specifications, please download the full CV above or visit the Publications section.</em></p>
 								</div>
 							</article>
 
@@ -168,7 +2242,7 @@
 							<article id="contact">
 								<h2 class="major">Contact</h2>
 								
-								<form action="https://formspree.io/f/schirmer.thiebaut@gmail.com" method="POST">
+								<form action="https://formspree.io/f/mqabzlew" method="POST">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
@@ -189,8 +2263,18 @@
 									</ul>
 								</form>
 								
+								<div class="contact-info">
+									<h3>Get in Touch</h3>
+									<p>Feel free to reach out for collaborations, questions about my research, or just to say hello! I'll get back to you as soon as possible.</p>
+									<ul class="contact-details">
+										<li><strong>Location:</strong> Göteborg, Sweden</li>
+										<li><strong>Response time:</strong> Usually within 24-48 hours</li>
+									</ul>
+								</div>
+								
 								<ul class="icons">
 									<li><a href="https://github.com/Thiebauts/" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/thiebaut-schirmer/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
 								</ul>
 							</article>
 
@@ -474,14 +2558,20 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				function switchToFrench() {
 					// Navigation
-					document.querySelector('nav ul li a[href="#intro"]').textContent = 'Intro';
+					document.querySelector('nav ul li a[href="#talks"]').textContent = 'Talks';
 					document.querySelector('nav ul li a[href="#work"]').textContent = 'Recherche';
+					document.querySelector('nav ul li a[href="#publications"]').textContent = 'Publications';
 					document.querySelector('nav ul li a[href="#about"]').textContent = 'À propos';
 					document.querySelector('nav ul li a[href="#cv"]').textContent = 'CV';
 					document.querySelector('nav ul li a[href="#contact"]').textContent = 'Contact';
 
 					// Header
 					document.querySelector('.inner p').innerHTML = 'Chercheur postdoctoral en Astrophysique<br />Université de Technologie Chalmers, Göteborg - Suède';
+
+					// About section
+					document.querySelector('#about h2.major').textContent = 'À propos';
+					document.getElementById('about-content-fr').style.display = 'block';
+					document.getElementById('about-content-en').style.display = 'none';
 
 					// Research section
 					document.querySelector('#work h2.major').textContent = 'Recherche';
@@ -508,18 +2598,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					document.querySelector('label[for="message"]').textContent = 'Message';
 					document.querySelector('input[type="submit"]').value = 'Envoyer';
 					document.querySelector('input[type="reset"]').value = 'Réinitialiser';
+					document.querySelector('.contact-info h3').textContent = 'Me Contacter';
+					document.querySelector('.contact-info p').textContent = 'N\'hésitez pas à me contacter pour des collaborations, des questions sur mes recherches, ou simplement pour dire bonjour ! Je vous répondrai dans les plus brefs délais.';
+					document.querySelector('.contact-details li:first-child strong').textContent = 'Localisation :';
+					document.querySelector('.contact-details li:last-child strong').textContent = 'Temps de réponse :';
 				}
 
 				function switchToEnglish() {
 					// Navigation
-					document.querySelector('nav ul li a[href="#intro"]').textContent = 'Intro';
+					document.querySelector('nav ul li a[href="#talks"]').textContent = 'Talks';
 					document.querySelector('nav ul li a[href="#work"]').textContent = 'Research';
+					document.querySelector('nav ul li a[href="#publications"]').textContent = 'Publications';
 					document.querySelector('nav ul li a[href="#about"]').textContent = 'About';
 					document.querySelector('nav ul li a[href="#cv"]').textContent = 'CV';
 					document.querySelector('nav ul li a[href="#contact"]').textContent = 'Contact';
 
 					// Header
 					document.querySelector('.inner p').innerHTML = 'Post-doctoral researcher in Astrophysics<br />Chalmers University of Technology, Göteborg - Sweden';
+
+					// About section
+					document.querySelector('#about h2.major').textContent = 'About';
+					document.getElementById('about-content-fr').style.display = 'none';
+					document.getElementById('about-content-en').style.display = 'block';
 
 					// Research section
 					document.querySelector('#work h2.major').textContent = 'Research';
@@ -545,6 +2645,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					document.querySelector('label[for="message"]').textContent = 'Message';
 					document.querySelector('input[type="submit"]').value = 'Send Message';
 					document.querySelector('input[type="reset"]').value = 'Reset';
+					document.querySelector('.contact-info h3').textContent = 'Get in Touch';
+					document.querySelector('.contact-info p').textContent = 'Feel free to reach out for collaborations, questions about my research, or just to say hello! I\'ll get back to you as soon as possible.';
+					document.querySelector('.contact-details li:first-child strong').textContent = 'Location:';
+					document.querySelector('.contact-details li:last-child strong').textContent = 'Response time:';
 				}
 			</script>
 
