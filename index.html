@@ -2025,7 +2025,7 @@
 									<div class="article-lang-switcher" id="article-lang-switcher-work">
 										<button class="article-lang-btn">
 											<span class="flag">🇬🇧</span>
-											<span>EN</span>
+											<span class="lang-code">EN</span>
 											<span class="arrow">▼</span>
 										</button>
 										<div class="article-lang-dropdown">
@@ -2037,6 +2037,8 @@
 								</nav>
 								<h2 class="major" data-lang-key="projects-title">Projects</h2>
 								
+								<!-- English Projects Content -->
+								<div id="work-content-en">
 								<!-- Project Category Navigation -->
 								<div class="project-category-nav">
 									<button class="category-btn active" data-category="academic">
@@ -2311,6 +2313,482 @@
 									</div>
 
 								</div><!-- End of Personal Projects Section -->
+								</div><!-- End work-content-en -->
+
+								<!-- French Projects Content -->
+								<div id="work-content-fr" style="display: none;">
+								<!-- Project Category Navigation -->
+								<div class="project-category-nav">
+									<button class="category-btn active" data-category="academic">
+										<i class="fas fa-graduation-cap"></i> Projets Académiques
+									</button>
+									<button class="category-btn" data-category="industry">
+										<i class="fas fa-briefcase"></i> Projets Industrie
+									</button>
+									<button class="category-btn" data-category="personal">
+										<i class="fas fa-code"></i> Projets Personnels
+									</button>
+								</div>
+
+								<!-- Academic Projects Section -->
+								<div class="project-category" id="category-academic-fr">
+									<div class="category-header">
+										<h3><i class="fas fa-graduation-cap"></i> Projets Académiques (2017–2025)</h3>
+										<p class="category-description">Projets de recherche réalisés pendant mon doctorat et mes positions postdoctorales, axés sur l'astrophysique et la modélisation computationnelle.</p>
+									</div>
+
+									<!-- Projects Overview -->
+									<div class="research-intro">
+										<p>Durant mon parcours de chercheur, mon travail académique s'est concentré sur la <strong>poussière cosmique</strong> — ces minuscules particules solides qui imprègnent notre galaxie et jouent des rôles cruciaux dans la formation des étoiles, la construction des planètes et l'enrichissement chimique de l'Univers. Ci-dessous, je présente quatre projets clés qui illustrent mon approche pour résoudre des problèmes complexes et axés sur les données en astrophysique. À travers ces projets, j'ai développé une solide expertise en <strong>modélisation du transfert radiatif</strong> — la simulation computationnelle de l'interaction de la lumière avec la matière — essentielle pour interpréter les observations astronomiques et contraindre les propriétés physiques à partir d'ensembles de données complexes. Au-delà des connaissances scientifiques du domaine, ces projets ont affiné mes compétences en <strong>développement de code Python</strong>, <strong>développement collaboratif de code</strong> avec des équipes internationales, <strong>parallélisation des calculs sur des clusters universitaires</strong>, <strong>techniques de machine learning pour réduire le temps de calcul</strong>, et <strong>techniques de visualisation pour des ensembles de données complexes et multidimensionnels</strong>.</p>
+									</div>
+
+									<!-- Project 1: R Doradus -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-star"></i> Projet 1 : Décrypter les Vents d'une Étoile Mourante</h3>
+											<span class="project-subtitle">Contraindre les Propriétés de la Poussière dans l'Atmosphère de R Doradus</span>
+										</div>
+
+										<div class="project-image">
+											<img src="images/image1.png" alt="Nuages de poussière de R Doradus" />
+											<figcaption class="image-caption">Les nuages de poussière réfléchissent la lumière stellaire autour de l'étoile R Doradus. Cette image combine la lumière visible polarisée prise avec le Very Large Telescope au Chili, et une image de la surface de l'étoile prise avec ALMA. Crédit : ESO/T. Schirmer/T. Khouri; ALMA (ESO/NAOJ/NRAO)</figcaption>
+										</div>
+										
+										<div class="star-section">
+											<h4>Le contexte scientifique : pourquoi comprendre les vents stellaires est important</h4>
+											<p>La plupart des éléments lourds de l'Univers — carbone, oxygène, silicium, fer — sont forgés à l'intérieur des étoiles puis libérés dans l'espace. Ce « recyclage cosmique » est essentiel : sans lui, il n'y aurait pas de planètes rocheuses, pas de molécules organiques, et finalement pas de vie telle que nous la connaissons. Mais comment exactement ces éléments s'échappent-ils des étoiles et se répandent-ils à travers le cosmos ?</p>
+											<p>La réponse réside en grande partie dans les <strong>étoiles de la Branche Asymptotique des Géantes (AGB)</strong> — des étoiles évoluées, mourantes, qui ont épuisé leur hydrogène et hélium centraux. Ces géantes stellaires sont des usines à poussière cosmique, produisant des quantités massives de grains de poussière dans leurs atmosphères étendues. La théorie standard suggère que la lumière stellaire pousse sur ces grains de poussière (un phénomène appelé <em>pression radiative</em>), qui entraînent ensuite le gaz environnant avec eux, créant de puissants vents stellaires qui éjectent la matière dans l'espace.</p>
+											<p><strong>R Doradus</strong> est l'une des étoiles AGB les plus proches de la Terre (~55 parsecs, soit environ 180 années-lumière), ce qui en fait un laboratoire idéal pour étudier ces processus en détail. Sa proximité nous permet de résoudre des structures spatiales dans son atmosphère qui seraient impossibles à voir dans des étoiles plus éloignées. R Doradus est également une étoile riche en oxygène, ce qui signifie qu'elle produit des grains de poussière silicatée — le même type de matériau trouvé dans les planètes rocheuses comme la Terre.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>La question de recherche : la poussière peut-elle propulser le vent ?</h4>
+											<p>La question centrale était à la fois fondamentale et difficile : <strong>Pouvons-nous déterminer les propriétés des grains de poussière se formant autour de R Doradus, et évaluer si ces grains sont capables de propulser le vent stellaire observé par la seule pression radiative ?</strong></p>
+											<p>Cela nécessitait de résoudre un problème inverse complexe : à partir d'observations de lumière à plusieurs longueurs d'onde, nous devions déduire les caractéristiques physiques des grains de poussière (leur taille, composition et distribution spatiale) puis tester si la physique de la pression radiative pouvait expliquer le taux de perte de masse que nous observons. Le défi était que le problème implique de nombreuses variables couplées — les propriétés de la poussière affectent la propagation de la lumière, ce qui affecte la structure de température, ce qui affecte où la poussière peut se former.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Mon approche : combiner observations et modélisation computationnelle</h4>
+											<p><strong>Intégration de données de plusieurs observatoires :</strong> J'ai combiné des observations de trois installations majeures : l'instrument VLT/SPHERE/ZIMPOL (fournissant des images polarimétriques haute résolution en lumière visible), ALMA (interférométrie radio révélant la structure de densité du gaz), et des données photométriques d'archives couvrant de l'optique à l'infrarouge moyen. Chaque jeu de données fournissait des contraintes complémentaires — les données de polarisation sont sensibles à la diffusion par les grains de poussière, ALMA trace la distribution du gaz, et la distribution d'énergie spectrale (SED) contraint la masse et la température globales de la poussière.</p>
+											<p><strong>Modélisation du transfert radiatif :</strong> J'ai utilisé un code sophistiqué de transfert radiatif Monte Carlo appelé RADMC-3D pour simuler comment la lumière interagit avec la poussière dans l'environnement circumstellaire. Ce code trace des millions de paquets de photons alors qu'ils diffusent, absorbent et réémettent à travers le milieu poussiéreux, nous permettant de calculer des observables synthétiques (images, cartes de polarisation, SEDs) pour n'importe quel modèle de poussière donné.</p>
+											<p><strong>Exploration de l'espace des paramètres avec contraintes physiques :</strong> Plutôt que de rechercher aveuglément dans un espace de paramètres à haute dimension (composition de la poussière, tailles des grains, distribution spatiale, taux de perte de masse — un problème à 6 dimensions), j'ai implémenté un filtrage basé sur la physique pour éliminer les combinaisons de paramètres non physiques avant d'exécuter des simulations coûteuses. Par exemple, certaines combinaisons de paramètres produiraient un milieu optiquement épais — signifiant que la lumière ne pourrait pas le traverser. Mais nous observons clairement la lumière stellaire de R Doradus, donc de telles solutions sont immédiatement exclues. Ce pré-filtrage a économisé plusieurs semaines de temps de calcul tout en garantissant que nous explorions uniquement des scénarios physiquement plausibles.</p>
+											<p><strong>Ajustement itératif et validation :</strong> J'ai comparé les observables synthétiques de milliers de runs de modèles avec les données réelles, affinant itérativement les contraintes sur les paramètres. Les prédictions du modèle ont été validées contre plusieurs observations indépendantes pour assurer la cohérence.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Résultats clés : remise en question du paradigme du vent propulsé par la poussière</h4>
+											<p><strong>Contraintes serrées sur les propriétés de la poussière :</strong> J'ai réussi à contraindre les propriétés des grains de poussière : un mélange de silicates de magnésium-fer (MgFeSiO₄, spécifiquement Mg₀.₅Fe₀.₅SiO₃) et de grains d'alumine transparente (Al₂O₃), avec des tailles autour de 0.3–0.5 micromètres. C'est significativement plus grand que les grains de poussière interstellaire typiques (~0.1 μm), suggérant que la croissance des grains se produit efficacement dans l'atmosphère interne dense.</p>
+											<p><strong>Un puzzle fondamental :</strong> Le résultat le plus frappant était négatif au sens scientifique, mais extrêmement important : <strong>les grains de poussière que nous observons ne peuvent pas propulser le vent par la seule pression radiative.</strong> Le transfert de quantité de mouvement de la lumière stellaire à la poussière est insuffisant par un facteur significatif. Cela remet en question le paradigme de longue date des vents propulsés par la poussière pour les étoiles AGB riches en oxygène.</p>
+											<p><strong>Nouvelles directions :</strong> Cette découverte ouvre des voies de recherche passionnantes pour l'avenir. Des mécanismes alternatifs — tels que des bulles convectives géantes dans l'atmosphère stellaire, des pulsations stellaires, ou des événements épisodiques de formation de poussière — peuvent jouer des rôles cruciaux dans le lancement de ces vents. Le résultat force la communauté astrophysique à repenser le mécanisme de perte de masse pour une fraction significative des étoiles AGB.</p>
+											<p><strong>Impact :</strong> L'article a été publié dans <em>Astronomy & Astrophysics</em> (2025) et a fait l'objet d'un <a href="https://www.chalmers.se/en/current/news/see-stardust-study-resets-how-life-s-atoms-spread-through-space/" target="_blank">communiqué de presse de Chalmers</a>.</p>
+										</div>
+										
+										<div class="project-skills">
+											<span class="skill-tag">Simulations Monte Carlo</span>
+											<span class="skill-tag">Transfert Radiatif</span>
+											<span class="skill-tag">Analyse Multi-longueurs d'onde</span>
+											<span class="skill-tag">Optimisation de Paramètres</span>
+											<span class="skill-tag">Modélisation avec Contraintes Physiques</span>
+											<span class="skill-tag">Python</span>
+											<span class="skill-tag">Collaboration Internationale</span>
+										</div>
+									</div>
+
+									<!-- Project 2: PDR Dust Evolution -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-radiation"></i> Projet 2 : Suivre l'Évolution de la Poussière sous Radiation Extrême</h3>
+											<span class="project-subtitle">Contraindre les Propriétés de la Poussière dans les Régions Dominées par les Photons</span>
+										</div>
+
+										<div class="project-image">
+											<img src="images/image2.jpg" alt="Nébuleuse de la Tête de Cheval" />
+											<figcaption class="image-caption">La Nébuleuse de la Tête de Cheval, imagée ici par le télescope spatial Hubble, n'est qu'une petite partie d'un énorme nuage cosmique qui donne actuellement naissance à de jeunes étoiles. Crédit : NASA, ESA, et le Hubble Heritage Team (STScI/AURA)</figcaption>
+										</div>
+										
+										<div class="star-section">
+											<h4>Le contexte scientifique : où la lumière stellaire façonne la poussière</h4>
+											<p>Les <strong>Régions Dominées par les Photons (PDRs)</strong> sont des laboratoires cosmiques où le rayonnement ultraviolet (UV) intense des étoiles massives sculpte le gaz et la poussière environnants. Ces régions se trouvent aux interfaces entre le gaz ionisé chaud (près de l'étoile) et les nuages moléculaires froids — les berceaux des nouvelles étoiles et planètes. Pensez à elles comme aux « zones météorologiques » du milieu interstellaire, où la lumière stellaire énergétique crée des structures dynamiques et stratifiées.</p>
+											<p>Les grains de poussière dans les PDRs jouent plusieurs rôles critiques en astrophysique : ils catalysent la formation de l'hydrogène moléculaire (H₂, la molécule la plus abondante de l'Univers), ils absorbent les photons UV et réémettent l'énergie dans l'infrarouge (affectant l'équilibre thermique du gaz), et ils chauffent le gaz via l'<em>effet photoélectrique</em> — les photons UV éjectent des électrons des surfaces des grains, et ces électrons énergétiques entrent en collision avec les atomes de gaz, transférant de l'énergie. Tous ces processus dépendent sensiblement des <strong>propriétés de la poussière</strong> : distribution de taille, composition et structure.</p>
+											<p>Comprendre comment la poussière évolue dans différents environnements physiques est donc essentiel pour interpréter les observations à travers le spectre électromagnétique et pour modéliser la chimie et la physique des régions de formation stellaire. Cependant, les propriétés de la poussière ne sont pas universelles — elles changent selon les conditions locales d'intensité de radiation et de densité du gaz.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>La question de recherche : comment la poussière évolue-t-elle sous radiation extrême ?</h4>
+											<p>L'objectif principal était de <strong>contraindre les propriétés des grains de poussière (distribution de taille, composition, structure) à travers plusieurs PDRs avec différentes conditions physiques</strong>, puis de <strong>comprendre comment la poussière répond aux changements d'irradiation UV et de densité du gaz</strong>.</p>
+											<p>Cela nécessitait d'étudier non pas un seul objet, mais un échantillon systématique de PDRs couvrant une gamme de conditions : de l'iconique <strong>Nébuleuse de la Tête de Cheval</strong> (une PDR relativement modérée) à des régions plus intensément irradiées comme <strong>Orion</strong> et <strong>Carine</strong>. En comparant les propriétés de la poussière à travers ces environnements, nous pouvions distinguer les variations intrinsèques de l'évolution induite par l'environnement.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Mon approche : comparaison systématique à travers plusieurs environnements</h4>
+											<p><strong>Campagnes d'observation multi-longueurs d'onde :</strong> J'ai analysé des données de plusieurs observatoires spatiaux et au sol : <em>Herschel</em> (infrarouge lointain), <em>Spitzer</em> (infrarouge moyen), et des installations au sol. Chaque gamme de longueurs d'onde sonde différents aspects de la population de poussière — l'émission infrarouge moyen trace les petits grains chauds près de la surface illuminée, tandis que l'émission infrarouge lointain sonde l'essentiel de la masse de poussière froide plus profondément dans le nuage.</p>
+											<p><strong>Analyse spatialement résolue :</strong> Plutôt que de traiter chaque PDR comme un point unique, j'ai effectué une analyse spatialement résolue pour suivre comment les propriétés de la poussière changent avec la profondeur dans le nuage (c.-à-d. avec la distance à l'étoile illuminatrice). Cela nécessitait une gestion soigneuse de la résolution spatiale variable entre différents instruments et longueurs d'onde.</p>
+											<p><strong>Modélisation sophistiquée de la poussière :</strong> J'ai utilisé des modèles de poussière à la pointe de la technologie (THEMIS — The Heterogeneous dust Evolution Model for Interstellar Solids, et DustEM) qui traitent la poussière comme une population de grains avec différentes tailles, compositions et propriétés optiques. Ces modèles peuvent prédire les spectres d'émission pour n'importe quel mélange de poussière donné, permettant une modélisation directe des propriétés de la poussière aux observables.</p>
+											<p><strong>Transfert radiatif dans les environnements PDR :</strong> J'ai couplé les modèles de poussière avec des codes PDR (code PDR de Meudon, DustPDR) qui calculent de manière auto-cohérente le champ de radiation UV, la température du gaz et la chimie en fonction de la profondeur dans le nuage. C'était essentiel car le champ de radiation local détermine quels grains sont détruits et lesquels survivent.</p>
+											<p><strong>Comparaison systématique entre objets :</strong> En appliquant la même méthodologie à plusieurs PDRs, j'ai pu identifier quelles variations des propriétés de la poussière étaient robustes entre les environnements et lesquelles étaient spécifiques aux conditions locales. Cette approche comparative est analogue à l'étude du même phénomène à travers plusieurs jeux de données pour distinguer le signal du bruit.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Résultats clés : les petits grains de poussière détruits par la radiation UV</h4>
+											<p><strong>Déplétion des nano-grains dans les régions irradiées :</strong> Un résultat clé était que les plus petits grains de poussière (nano-grains, avec des tailles inférieures à ~10 nanomètres) sont systématiquement déplétés dans les zones illuminées par UV des PDRs. Cette déplétion augmente avec l'intensité du champ de radiation — plus l'UV est intense, moins de petits grains survivent. C'est cohérent avec les prédictions théoriques selon lesquelles les petits grains sont détruits par les photons UV via des processus comme la photodissociation et le sputtering.</p>
+											<p><strong>Évolution avec les conditions physiques :</strong> J'ai quantifié comment la distribution de taille de la poussière change en fonction de l'intensité UV et de la densité du gaz. Les régions de plus haute densité fournissent une certaine protection pour les petits grains, tandis que les zones de basse densité fortement irradiées montrent la déplétion la plus dramatique. Cela a des implications importantes pour comprendre l'évolution de la poussière dans les galaxies avec différentes intensités de formation stellaire.</p>
+											<p><strong>Implications pour les futures observations :</strong> Ces résultats ont été instrumentaux dans la préparation des observations avec le <em>télescope spatial James Webb</em> (JWST). J'étais membre de l'extended core team du programme <a href="https://www.pdrs4all.org" target="_blank">PDRs4All</a> Early Release Science, et mon travail a aidé la collaboration à obtenir ce programme réussi et à interpréter les données JWST sans précédent de la Barre d'Orion.</p>
+											<p><strong>Publications :</strong> Ce travail a abouti à deux articles en premier auteur dans <em>Astronomy & Astrophysics</em> (2020, 2022), établissant un cadre pour interpréter l'émission de poussière dans les PDRs qui continue d'être appliqué aux observations JWST.</p>
+										</div>
+										
+										<div class="project-skills">
+											<span class="skill-tag">Analyse de Données Multi-longueurs d'onde</span>
+											<span class="skill-tag">Modélisation du Transfert Radiatif</span>
+											<span class="skill-tag">Comparaison Statistique</span>
+											<span class="skill-tag">Ingénierie des Features</span>
+											<span class="skill-tag">Analyse de Données Spatiales</span>
+											<span class="skill-tag">Python</span>
+											<span class="skill-tag">Préparation JWST</span>
+										</div>
+									</div>
+
+									<!-- Project 3: Gas Physics Impact -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-fire-alt"></i> Projet 3 : Quand la Poussière Change, le Gaz le Ressent</h3>
+											<span class="project-subtitle">Impact de l'Évolution de la Poussière sur le Chauffage du Gaz dans les PDRs</span>
+										</div>
+										
+										<div class="star-section">
+											<h4>Le contexte scientifique : relier la physique de la poussière et du gaz</h4>
+											<p>Dans le projet précédent, j'ai établi que les propriétés de la poussière évoluent significativement dans les PDRs — en particulier que les petits grains sont déplétés dans les zones irradiées par UV. Mais la poussière et le gaz dans le milieu interstellaire ne sont pas des systèmes isolés ; ils sont intimement couplés par de multiples processus physiques.</p>
+											<p>L'un des mécanismes de couplage les plus importants est l'<strong>effet photoélectrique</strong> : lorsque les photons UV frappent les grains de poussière, ils peuvent éjecter des électrons de la surface du grain. Ces « photoélectrons » énergétiques entrent ensuite en collision avec les atomes et molécules de gaz, transférant leur énergie cinétique et chauffant le gaz. C'est le mécanisme de chauffage dominant pour le gaz neutre dans de nombreux environnements astrophysiques.</p>
+											<p>Voici le lien critique : <strong>le taux de chauffage photoélectrique dépend fortement de la surface totale des grains de poussière</strong>. Les petits grains ont beaucoup plus de surface par unité de masse que les gros grains (la géométrie l'impose — la surface varie en r², le volume en r³). Si les petits grains sont déplétés, comme je l'ai trouvé dans le Projet 2, alors la surface totale des grains diminue, et donc le taux de chauffage photoélectrique aussi. Cela pourrait avoir des implications profondes pour les températures du gaz dans les PDRs et au-delà.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>La question de recherche : comment l'évolution de la poussière affecte-t-elle le chauffage du gaz ?</h4>
+											<p>L'objectif était de <strong>quantifier comment l'évolution de la poussière observée dans les PDRs affecte l'équilibre thermique du gaz</strong>, spécifiquement le chauffage photoélectrique. Cela nécessitait de propager les contraintes sur les propriétés de la poussière du Projet 2 à travers des modèles de physique du gaz pour prédire des conséquences observables.</p>
+											<p>Un objectif secondaire était de <strong>tester si cela pouvait aider à résoudre un problème de longue date</strong> : les modèles de PDRs ont historiquement eu du mal à reproduire les températures de gaz observées — ils prédisent souvent des températures trop basses, suggérant qu'un mécanisme de chauffage est manquant ou sous-estimé.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Mon approche : intégrer les propriétés de la poussière dans les modèles de gaz</h4>
+											<p><strong>Couplage des modèles de poussière et de gaz :</strong> J'ai intégré les propriétés de la poussière évoluée (du Projet 2) dans des codes PDR qui calculent l'équilibre thermique du gaz. Cela nécessitait de modifier comment le taux de chauffage photoélectrique est calculé, en utilisant les distributions de taille de poussière réellement contraintes plutôt que des hypothèses standard.</p>
+											<p><strong>Modélisation auto-cohérente :</strong> Le calcul n'est pas trivial car les propriétés de la poussière, le champ UV et la température du gaz sont tous couplés. Le champ UV détermine quels grains survivent ; les grains survivants déterminent le taux de chauffage ; le taux de chauffage détermine la température du gaz ; et la température du gaz affecte la chimie et la dynamique. J'ai implémenté une approche itérative pour atteindre l'auto-cohérence.</p>
+											<p><strong>Prédictions pour les raies d'émission du gaz :</strong> La température du gaz affecte directement l'intensité des raies d'émission des atomes et molécules. J'ai calculé les intensités de raies prédites pour des espèces diagnostiques clés (comme [C II] à 158 μm) qui peuvent être comparées aux observations de facilités comme <em>Herschel</em> et SOFIA.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Résultats clés : un puzzle qui s'approfondit, pointant vers une physique manquante</h4>
+											<p><strong>Chauffage du gaz réduit :</strong> Comme prévu, tenir compte de la déplétion des petits grains conduit à des taux de chauffage photoélectrique significativement réduits — par des facteurs de 2 à 5 dans les zones les plus irradiées. Cette réduction est substantielle et a des conséquences mesurables pour les températures de gaz prédites et les intensités de raies d'émission.</p>
+											<p><strong>Un puzzle qui s'approfondit :</strong> Fait intéressant, ce résultat <em>aggrave</em> en fait le « problème du chauffage » de longue date dans les PDRs. Si quelque chose, les modèles prédisaient déjà trop peu de chauffage ; maintenant, avec la poussière évoluée, ils en prédisent encore moins. Ce n'est pas un échec — c'est un résultat précieux qui pointe vers une physique manquante. La découverte motive la recherche de mécanismes de chauffage supplémentaires (chauffage mécanique par la turbulence, chauffage par les rayons cosmiques, ou autres) qui doivent opérer dans ces environnements.</p>
+											<p><strong>Préparation pour JWST :</strong> Ce travail était directement pertinent pour la collaboration PDRs4All. En quantifiant comment l'évolution de la poussière affecte les observables du gaz, nous pouvions mieux interpréter les observations combinées de poussière et de gaz de JWST. Les prédictions que j'ai faites sont maintenant testées avec les données JWST réelles de la Barre d'Orion.</p>
+											<p><strong>Publication :</strong> Publié dans <em>Astronomy & Astrophysics</em> (2021), cet article fait le pont entre la physique de la poussière et la physique du gaz, démontrant l'importance de traiter le milieu interstellaire comme un système couplé plutôt que d'étudier la poussière et le gaz isolément.</p>
+										</div>
+										
+										<div class="project-skills">
+											<span class="skill-tag">Modélisation Physique</span>
+											<span class="skill-tag">Systèmes Couplés</span>
+											<span class="skill-tag">Algorithmes Itératifs</span>
+											<span class="skill-tag">Prédiction & Validation</span>
+											<span class="skill-tag">Communication Scientifique</span>
+											<span class="skill-tag">Test d'Hypothèses</span>
+										</div>
+									</div>
+
+									<!-- Project 4: Milky Way Kinematic Structures -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-galaxy"></i> Projet 4 : Trouver des Motifs Cachés dans la Voie Lactée</h3>
+											<span class="project-subtitle">Détection de Structures Cinématiques par Analyse en Ondelettes</span>
+										</div>
+
+										<div class="project-image">
+											<img src="images/image4.jpg" alt="Vaisseau spatial Gaia et Voie Lactée" />
+											<figcaption class="image-caption">Impression d'artiste du vaisseau spatial Gaia, avec la Voie Lactée en arrière-plan. Gaia, opéré par l'Agence Spatiale Européenne (ESA), cartographie le ciel depuis l'orbite terrestre pour créer la plus grande et la plus précise carte tridimensionnelle de notre Galaxie. La mission Gaia a permis des études transformationnelles dans de nombreux domaines de l'astronomie, abordant la structure, l'origine et l'évolution de la Voie Lactée. Crédit : ESA/ATG medialab; image d'arrière-plan : ESO/S. Brunier</figcaption>
+										</div>
+										
+										<div class="star-section">
+											<h4>Le contexte scientifique : des structures cachées dans les mouvements stellaires</h4>
+											<p>Le voisinage solaire — la région de la Voie Lactée à quelques centaines de parsecs du Soleil — contient des milliers d'étoiles se déplaçant dans toutes les directions. Mais ces mouvements ne sont pas aléatoires. Cachées dans le chaos apparent se trouvent des <strong>structures cinématiques</strong> : des groupes d'étoiles qui partagent des vitesses similaires, indiquant une origine commune ou une histoire dynamique partagée.</p>
+											<p>Ces structures sont des fossiles du passé de la Galaxie. Certaines sont des vestiges d'amas d'étoiles dissous ; d'autres sont causées par des résonances avec les bras spiraux en rotation ou la barre centrale de la Voie Lactée. Détecter et caractériser ces structures nous renseigne sur la dynamique galactique, l'histoire de la formation stellaire, et le potentiel gravitationnel de notre galaxie.</p>
+											<p>Le défi est que ces structures sont des surdensités subtiles dans l'espace des vitesses, enfouies dans un fond bruité d'étoiles du champ. Les détecter nécessite des techniques statistiques sophistiquées qui peuvent identifier des caractéristiques localisées à plusieurs échelles tout en tenant compte des incertitudes observationnelles et du bruit de Poisson.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>La question de recherche : pouvons-nous détecter des structures cinématiques de manière robuste ?</h4>
+											<p>L'objectif était d'<strong>appliquer l'analyse en ondelettes au plus grand jeu de données cinématiques stellaires disponible</strong> (combinant les relevés Gaia DR1/TGAS et RAVE, plus de 55 000 étoiles avec des vitesses 3D précises) <strong>pour détecter et valider des structures cinématiques dans le voisinage solaire</strong>.</p>
+											<p>Une exigence clé était la rigueur statistique : toute structure détectée devait être validée contre la possibilité d'être une détection parasite due au bruit. Les études précédentes avaient utilisé des jeux de données plus petits ou des méthodes de validation moins robustes.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Mon approche : analyse en ondelettes avec validation Monte Carlo</h4>
+											<p><strong>Préparation des données et contrôle qualité :</strong> J'ai travaillé avec un catalogue de positions et vitesses stellaires, mais toutes les mesures ne sont pas également fiables. J'ai implémenté des coupures de qualité basées sur les incertitudes de vitesse (gardant seulement les étoiles avec σ_U et σ_V < 4 km/s) et la qualité des parallaxes, résultant en un échantillon propre de 55 831 étoiles avec des vitesses spatiales bien déterminées. Un nettoyage approprié des données était essentiel — inclure des mesures non fiables aurait introduit des caractéristiques parasites.</p>
+											<p><strong>Décomposition en ondelettes :</strong> J'ai appliqué l'<strong>algorithme d'ondelettes « à trous »</strong> — une technique d'analyse multi-échelle qui décompose la distribution 2D des vitesses en différentes échelles spatiales. Contrairement au simple binning histogramme, les ondelettes peuvent détecter des structures de tailles variables simultanément et fournissent des informations sur la localisation et l'échelle des caractéristiques. L'algorithme est implémenté dans le logiciel MR développé par J.L. Starck et F. Murtagh.</p>
+											<p><strong>Filtrage du bruit de Poisson :</strong> Comme nous avons un échantillon fini d'étoiles, l'histogramme des vitesses contient du bruit de Poisson. J'ai utilisé la méthode de l'histogramme d'auto-convolution pour filtrer les caractéristiques induites par le bruit, gardant seulement les structures qui sont statistiquement significatives au niveau 3σ (99,86% de confiance que la structure n'est pas due aux fluctuations de Poisson).</p>
+											<p><strong>Validation Monte Carlo :</strong> C'était une innovation cruciale. Même après le filtrage de Poisson, les structures pourraient être des artefacts des incertitudes de mesure des vitesses — si la vraie vitesse d'une étoile est incertaine, elle pourrait être assignée au mauvais bin, créant ou détruisant potentiellement des structures apparentes. J'ai développé une <strong>approche Monte Carlo</strong> : générer 2 000 jeux de données synthétiques en perturbant aléatoirement la vitesse de chaque étoile selon son incertitude de mesure, exécuter l'analyse en ondelettes complète sur chaque réalisation, et suivre quelles structures apparaissent de manière cohérente. Seules les structures détectées dans >50% des réalisations étaient considérées robustes.</p>
+											<p><strong>Caractérisation des structures :</strong> Pour chaque structure validée, j'ai extrait les paramètres : position dans l'espace des vitesses (U, V), taille, nombre d'étoiles membres, et significativité statistique. J'ai comparé les structures détectées avec la littérature pour identifier les groupes mouvants connus et signaler les découvertes potentiellement nouvelles.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Résultats clés : validation de structures connues et découverte d'une nouvelle</h4>
+											<p><strong>Détection robuste des structures connues :</strong> L'analyse a retrouvé avec succès toutes les structures cinématiques majeures précédemment identifiées dans le voisinage solaire : les Pléiades, les Hyades, Sirius, Coma Berenice, Hercule, et d'autres. Les positions et tailles correspondaient aux valeurs de la littérature, validant la méthodologie.</p>
+											<p><strong>Découverte d'une nouvelle structure cinématique :</strong> Parmi les détections robustes se trouvait une surdensité non rapportée auparavant à (U, V) ≈ (37, 8) km/s. Cette structure a passé tous les tests de validation — elle apparaît de manière cohérente à travers les réalisations Monte Carlo et est statistiquement significative à >3σ. Son origine reste à expliquer, possiblement liée à des résonances avec la barre galactique ou un amas dissous.</p>
+											<p><strong>Contribution méthodologique :</strong> Le cadre de validation Monte Carlo que j'ai développé fournit un modèle pour les études futures utilisant des données améliorées (Gaia DR2, DR3, et au-delà). L'approche de propager les incertitudes de mesure à travers tout le pipeline d'analyse est maintenant une pratique standard dans les études cinématiques.</p>
+											<p><strong>Impact :</strong> Publié dans <em>Astronomy & Astrophysics</em> (2017), cet article a été cité 33+ fois et a contribué à la fondation pour les études subséquentes utilisant les données Gaia. La méthodologie ondelettes + Monte Carlo a été adoptée par d'autres groupes étudiant la dynamique galactique.</p>
+										</div>
+										
+										<div class="project-skills">
+											<span class="skill-tag">Traitement du Signal</span>
+											<span class="skill-tag">Analyse en Ondelettes</span>
+											<span class="skill-tag">Méthodes Monte Carlo</span>
+											<span class="skill-tag">Validation Statistique</span>
+											<span class="skill-tag">Analyse de Grands Jeux de Données</span>
+											<span class="skill-tag">Reconnaissance de Motifs</span>
+											<span class="skill-tag">Contrôle Qualité des Données</span>
+										</div>
+									</div>
+
+								</div><!-- End of Academic Projects Section FR -->
+
+								<!-- Industry Projects Section -->
+								<div class="project-category" id="category-industry-fr" style="display: none;">
+									<div class="category-header">
+										<h3><i class="fas fa-briefcase"></i> Projets Industrie (2026–Présent)</h3>
+										<p class="category-description">Projets de data science réalisés dans des positions industrielles, appliquant des compétences analytiques et de machine learning à des problèmes business réels.</p>
+									</div>
+
+									<div class="coming-soon">
+										<i class="fas fa-rocket"></i>
+										<h4>Bientôt Disponible</h4>
+										<p>Je suis actuellement en transition vers des rôles en industrie. Les projets de mes futures positions seront ajoutés ici dès qu'ils seront disponibles et pourront être partagés publiquement.</p>
+									</div>
+								</div><!-- End of Industry Projects Section FR -->
+
+								<!-- Personal Projects Section -->
+								<div class="project-category" id="category-personal-fr" style="display: none;">
+									<div class="category-header">
+										<h3><i class="fas fa-code"></i> Projets Personnels</h3>
+										<p class="category-description">Projets annexes développés sur mon temps libre pour apprendre de nouvelles technologies, explorer des idées et contribuer aux communautés qui me tiennent à cœur.</p>
+									</div>
+
+									<!-- Personal Project 1: Triathlon Väst Dashboard -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-running"></i> Dashboard Triathlon Väst</h3>
+											<span class="project-subtitle">Application Data Full-Stack pour la Gestion de Club Sportif</span>
+										</div>
+									
+										<div class="star-section">
+											<h4>Aperçu du projet</h4>
+											<p>Une application dashboard web construite pour le club de sport Triathlon Väst à Göteborg, Suède. Ce projet combine ingénierie des données, visualisation et développement web pour fournir aux membres et administrateurs du club des insights sur les activités d'entraînement, les statistiques d'adhésion et la participation aux événements.</p>
+											<p><em>Plus de détails bientôt...</em></p>
+										</div>
+
+										<div class="project-skills">
+											<span class="skill-tag">Python</span>
+											<span class="skill-tag">Dash/Plotly</span>
+											<span class="skill-tag">Visualisation de Données</span>
+											<span class="skill-tag">Développement Web</span>
+											<span class="skill-tag">Déploiement Railway</span>
+										</div>
+									</div>
+
+								</div><!-- End of Personal Projects Section FR -->
+								</div><!-- End work-content-fr -->
+
+								<!-- Swedish Projects Content -->
+								<div id="work-content-sv" style="display: none;">
+								<!-- Project Category Navigation -->
+								<div class="project-category-nav">
+									<button class="category-btn active" data-category="academic">
+										<i class="fas fa-graduation-cap"></i> Akademiska Projekt
+									</button>
+									<button class="category-btn" data-category="industry">
+										<i class="fas fa-briefcase"></i> Industriprojekt
+									</button>
+									<button class="category-btn" data-category="personal">
+										<i class="fas fa-code"></i> Personliga Projekt
+									</button>
+								</div>
+
+								<!-- Academic Projects Section -->
+								<div class="project-category" id="category-academic-sv">
+									<div class="category-header">
+										<h3><i class="fas fa-graduation-cap"></i> Akademiska Projekt (2017–2025)</h3>
+										<p class="category-description">Forskningsprojekt genomförda under min doktorandperiod och postdoktorala tjänster, med fokus på astrofysik och beräkningsmodellering.</p>
+									</div>
+
+									<!-- Projects Overview -->
+									<div class="research-intro">
+										<p>Under min tid som forskare fokuserade mitt akademiska arbete på <strong>kosmiskt stoft</strong> — de små fasta partiklar som genomsyrar vår galax och spelar avgörande roller i stjärnbildning, planetbyggande och kemisk anrikning av universum. Nedan presenterar jag fyra nyckelprojekt som illustrerar mitt tillvägagångssätt för att lösa komplexa, datadrivna problem inom astrofysik. Genom dessa projekt utvecklade jag en stark expertis inom <strong>strålningstransportmodellering</strong> — beräkningssimulering av hur ljus interagerar med materia — vilket är essentiellt för att tolka astronomiska observationer och begränsa fysikaliska egenskaper från komplexa dataset. Utöver den vetenskapliga domänkunskapen finslipade dessa projekt mina färdigheter i <strong>Python-kodutveckling</strong>, <strong>kollaborativ kodutveckling</strong> med internationella team, <strong>parallellisering av beräkningar på universitetskluster</strong>, <strong>maskininlärningstekniker för att minska beräkningstiden</strong>, och <strong>visualiseringstekniker för komplexa, flerdimensionella dataset</strong>.</p>
+									</div>
+
+									<!-- Project 1: R Doradus -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-star"></i> Projekt 1: Avkoda Vindarna från en Döende Stjärna</h3>
+											<span class="project-subtitle">Begränsa Stoftegenskaper i R Doradus Atmosfär</span>
+										</div>
+
+										<div class="project-image">
+											<img src="images/image1.png" alt="R Doradus stoftmoln" />
+											<figcaption class="image-caption">Stoftmoln reflekterar stjärnljus runt stjärnan R Doradus. Denna bild kombinerar polariserat synligt ljus taget med Very Large Telescope i Chile och en bild av stjärnans yta tagen med ALMA. Kredit: ESO/T. Schirmer/T. Khouri; ALMA (ESO/NAOJ/NRAO)</figcaption>
+										</div>
+										
+										<div class="star-section">
+											<h4>Det vetenskapliga sammanhanget: varför förståelse av stjärnvindar är viktigt</h4>
+											<p>De flesta av de tunga grundämnena i universum — kol, syre, kisel, järn — smids inuti stjärnor och släpps sedan ut i rymden. Denna "kosmiska återvinning" är essentiell: utan den skulle det inte finnas några steniga planeter, inga organiska molekyler, och i slutändan inget liv som vi känner det. Men hur exakt undkommer dessa grundämnen från stjärnor och sprids genom kosmos?</p>
+											<p>Svaret ligger till stor del hos <strong>Asymptotic Giant Branch (AGB)-stjärnor</strong> — utvecklade, döende stjärnor som har uttömt sitt kärnväte och helium. Dessa stjärnjättar är kosmiska stoftfabriker som producerar massiva mängder stoftkorn i sina utvidgade atmosfärer. Standardteorin föreslår att stjärnljus trycker på dessa stoftkorn (ett fenomen kallat <em>strålningstryck</em>), som sedan drar med sig den omgivande gasen och skapar kraftfulla stjärnvindar som kastar ut material i rymden.</p>
+											<p><strong>R Doradus</strong> är en av de närmaste AGB-stjärnorna till jorden (~55 parsec, ungefär 180 ljusår bort), vilket gör den till ett idealiskt laboratorium för att studera dessa processer i detalj. Dess närhet tillåter oss att upplösa rumsliga strukturer i dess atmosfär som skulle vara omöjliga att se i mer avlägsna stjärnor. R Doradus är också en syrerik stjärna, vilket betyder att den producerar silikatstoftkorn — samma typ av material som finns i steniga planeter som jorden.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Forskningsfrågan: kan stoft driva vinden?</h4>
+											<p>Den centrala frågan var både fundamental och utmanande: <strong>Kan vi bestämma egenskaperna hos stoftkorn som bildas runt R Doradus, och bedöma om dessa korn kan driva den observerade stjärnvinden genom strålningstryck enbart?</strong></p>
+											<p>Detta krävde att lösa ett komplext inversproblem: från observationer av ljus vid flera våglängder behövde vi härleda de fysikaliska egenskaperna hos stoftkorn (deras storlek, sammansättning och rumsliga fördelning) och sedan testa om fysiken för strålningstryck kunde förklara den massförlustgrad vi observerar. Utmaningen var att problemet involverar många kopplade variabler — stoftegenskaper påverkar hur ljus propagerar, vilket i sin tur påverkar temperaturstrukturen, vilket påverkar var stoft kan bildas.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Mitt tillvägagångssätt: kombinera observationer med beräkningsmodellering</h4>
+											<p><strong>Dataintegration från flera observatorier:</strong> Jag kombinerade observationer från tre stora anläggningar: VLT/SPHERE/ZIMPOL-instrumentet (som tillhandahåller högupplösta polarimetriska bilder i synligt ljus), ALMA (radiointerferometri som avslöjar gasdensitetsstrukturen), och arkiverade fotometriska data som spänner från optiska till mellaninfraröda våglängder. Varje dataset gav kompletterande begränsningar — polarisationsdata är känslig för spridning av stoftkorn, ALMA spårar gasfördelningen, och spektral energifördelning (SED) begränsar den totala stoftmassan och temperaturen.</p>
+											<p><strong>Strålningstransportmodellering:</strong> Jag använde en sofistikerad Monte Carlo-strålningstransportkod kallad RADMC-3D för att simulera hur ljus interagerar med stoft i den circumstellära miljön. Denna kod spårar miljontals fotonpaket när de sprids, absorberas och återutsänds genom det stoftiga mediet, vilket tillåter oss att beräkna syntetiska observabler (bilder, polarisationskartor, SEDs) för vilken given stoftmodell som helst.</p>
+											<p><strong>Parameterutforskningar med fysikaliska begränsningar:</strong> Istället för att blint söka i ett högdimensionellt parameterutrymme (stoftsammansättning, kornstorlekar, rumslig fördelning, massförlustgrad — ett 6-dimensionellt problem), implementerade jag fysikbaserad filtrering för att eliminera ofysikaliska parameterkombinationer innan jag körde kostsamma simuleringar. Till exempel skulle vissa parameterkombinationer producera ett optiskt tjockt medium — vilket betyder att ljus inte kunde resa genom det. Men vi observerar tydligt stjärnljus från R Doradus, så sådana lösningar utesluts omedelbart. Denna förfiltrering sparade uppskattningsvis flera veckors beräkningstid samtidigt som vi säkerställde att vi endast utforskade fysiskt trovärdiga scenarier.</p>
+											<p><strong>Iterativ anpassning och validering:</strong> Jag jämförde syntetiska observabler från tusentals modellkörningar mot verkliga data, iterativt förfinande parameterbegränsningarna. Modellförutsägelserna validerades mot flera oberoende observationer för att säkerställa konsistens.</p>
+										</div>
+										
+										<div class="star-section">
+											<h4>Nyckelresultat: utmana paradigmet för stoftdrivna vindar</h4>
+											<p><strong>Snäva begränsningar på stoftegenskaper:</strong> Jag lyckades begränsa stoftkornens egenskaper: en blandning av magnesium-järnsilikater (MgFeSiO₄, specifikt Mg₀.₅Fe₀.₅SiO₃) och transparenta aluminiumoxidkorn (Al₂O₃), med storlekar runt 0.3–0.5 mikrometer. Detta är signifikant större än typiska interstellära stoftkorn (~0.1 μm), vilket antyder att korntillväxt sker effektivt i den täta inre atmosfären.</p>
+											<p><strong>Ett fundamentalt pussel:</strong> Det mest slående resultatet var negativt i vetenskaplig mening, men extremt viktigt: <strong>stoftkornen vi observerar kan inte driva vinden genom strålningstryck enbart.</strong> Impulsöverföringen från stjärnljus till stoft är otillräcklig med en signifikant faktor. Detta utmanar det långvariga paradigmet för stoftdrivna vindar för syrerika AGB-stjärnor.</p>
+											<p><strong>Nya riktningar:</strong> Denna upptäckt öppnar spännande vägar för framtida forskning. Alternativa mekanismer — såsom jättelika konvektiva bubblor i stjärnatmosfären, stjärnpulsationer, eller episodiska stoftbildningshändelser — kan spela avgörande roller i att starta dessa vindar. Resultatet tvingar det astrofysiska samfundet att ompröva massförlustmekanismen för en betydande andel av AGB-stjärnor.</p>
+											<p><strong>Genomslag:</strong> Artikeln publicerades i <em>Astronomy & Astrophysics</em> (2025) och presenterades i ett <a href="https://www.chalmers.se/en/current/news/see-stardust-study-resets-how-life-s-atoms-spread-through-space/" target="_blank">Chalmers pressmeddelande</a>.</p>
+										</div>
+										
+										<div class="project-skills">
+											<span class="skill-tag">Monte Carlo-simuleringar</span>
+											<span class="skill-tag">Strålningstransport</span>
+											<span class="skill-tag">Multivåglängdsanalys</span>
+											<span class="skill-tag">Parameteroptimering</span>
+											<span class="skill-tag">Fysikalisk Begränsningsmodellering</span>
+											<span class="skill-tag">Python</span>
+											<span class="skill-tag">Internationellt Samarbete</span>
+										</div>
+									</div>
+
+									<!-- Abbreviated versions of other projects for Swedish -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-radiation"></i> Projekt 2: Spåra Stoftevolution under Extrem Strålning</h3>
+											<span class="project-subtitle">Begränsa Stoftegenskaper i Fotondominerade Regioner</span>
+										</div>
+
+										<div class="project-image">
+											<img src="images/image2.jpg" alt="Hästhuvudnebulosan" />
+											<figcaption class="image-caption">Hästhuvudnebulosan, avbildad här av Hubble-rymdteleskopet, är bara en liten del av ett enormt kosmiskt moln som för närvarande föder unga stjärnor. Kredit: NASA, ESA, och Hubble Heritage Team (STScI/AURA)</figcaption>
+										</div>
+										
+										<div class="star-section">
+											<h4>Projektöversikt</h4>
+											<p><strong>Fotondominerade regioner (PDR)</strong> är kosmiska laboratorier där intensiv ultraviolett (UV) strålning från massiva stjärnor skulpterar den omgivande gasen och stoftet. Jag studerade hur stoftegenskaper (storleksfördelning, sammansättning, struktur) förändras över flera PDR med olika fysikaliska förhållanden, från den ikoniska <strong>Hästhuvudnebulosan</strong> till mer intensivt bestrålade regioner som <strong>Orion</strong> och <strong>Carina</strong>.</p>
+											<p>Nyckelresultat visade att de minsta stoftkornen (nanokorn, med storlekar under ~10 nanometer) systematiskt utarmas i UV-belysta zoner av PDR. Denna utarmning ökar med strålningsfältets intensitet. Arbetet resulterade i två förstaförfattarartiklar i <em>Astronomy & Astrophysics</em> (2020, 2022) och var instrumentellt i förberedelserna för JWST-observationer.</p>
+										</div>
+										
+										<div class="project-skills">
+											<span class="skill-tag">Multivåglängds Dataanalys</span>
+											<span class="skill-tag">Statistisk Jämförelse</span>
+											<span class="skill-tag">Rumslig Dataanalys</span>
+											<span class="skill-tag">JWST-förberedelse</span>
+										</div>
+									</div>
+
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-fire-alt"></i> Projekt 3: När Stoft Förändras, Känner Gasen Det</h3>
+											<span class="project-subtitle">Påverkan av Stoftevolution på Gasuppvärmning i PDR</span>
+										</div>
+										
+										<div class="star-section">
+											<h4>Projektöversikt</h4>
+											<p>Jag kvantifierade hur den observerade stoftevolutionen i PDR påverkar gasens termiska balans, specifikt den fotoelektriska uppvärmningen. Genom att integrera de utvecklade stoftegenskaperna i PDR-koder som beräknar gasens termiska balans, visade jag att att ta hänsyn till utarmningen av små korn leder till signifikant reducerade fotoelektriska uppvärmningshastigheter — med faktorer på 2-5 i de mest bestrålade zonerna.</p>
+											<p>Intressant nog förvärrar detta resultat faktiskt det långvariga "uppvärmningsproblemet" i PDR, vilket pekar mot saknad fysik som motiverar sökningen efter ytterligare uppvärmningsmekanismer. Publicerat i <em>Astronomy & Astrophysics</em> (2021).</p>
+										</div>
+										
+										<div class="project-skills">
+											<span class="skill-tag">Fysikalisk Modellering</span>
+											<span class="skill-tag">Kopplade System</span>
+											<span class="skill-tag">Förutsägelse & Validering</span>
+										</div>
+									</div>
+
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-galaxy"></i> Projekt 4: Hitta Dolda Mönster i Vintergatan</h3>
+											<span class="project-subtitle">Detektera Kinematiska Strukturer med Wavelet-analys</span>
+										</div>
+
+										<div class="project-image">
+											<img src="images/image4.jpg" alt="Gaia-rymdfarkosten och Vintergatan" />
+											<figcaption class="image-caption">Konstnärens intryck av Gaia-rymdfarkosten, med Vintergatan i bakgrunden. Gaia, opererad av European Space Agency (ESA), kartlägger himlen från jordens omloppsbana för att skapa den största, mest precisa, tredimensionella kartan över vår galax. Kredit: ESA/ATG medialab; bakgrundsbild: ESO/S. Brunier</figcaption>
+										</div>
+										
+										<div class="star-section">
+											<h4>Projektöversikt</h4>
+											<p>Jag tillämpade wavelet-analys på det största tillgängliga stellära kinematiska datasetet (kombinerade Gaia DR1/TGAS och RAVE-kartläggningar, över 55 000 stjärnor med precisa 3D-hastigheter) för att detektera och validera kinematiska strukturer i solkvarteret. Nyckelinnovationen var ett <strong>Monte Carlo-valideringsramverk</strong>: generera 2 000 syntetiska dataset genom att slumpmässigt störa varje stjärnas hastighet enligt dess mätosäkerhet, köra hela wavelet-analysen på varje realisering, och spåra vilka strukturer som framträder konsekvent.</p>
+											<p>Analysen återfann framgångsrikt alla större kinematiska strukturer och upptäckte en tidigare orapporterad överdensitet vid (U, V) ≈ (37, 8) km/s. Publicerat i <em>Astronomy & Astrophysics</em> (2017), citerad 33+ gånger.</p>
+										</div>
+										
+										<div class="project-skills">
+											<span class="skill-tag">Signalbehandling</span>
+											<span class="skill-tag">Wavelet-analys</span>
+											<span class="skill-tag">Monte Carlo-metoder</span>
+											<span class="skill-tag">Stor Datasetanalys</span>
+										</div>
+									</div>
+
+								</div><!-- End of Academic Projects Section SV -->
+
+								<!-- Industry Projects Section -->
+								<div class="project-category" id="category-industry-sv" style="display: none;">
+									<div class="category-header">
+										<h3><i class="fas fa-briefcase"></i> Industriprojekt (2026–Nuvarande)</h3>
+										<p class="category-description">Data science-projekt genomförda i industripositioner, tillämpar analytiska och maskininlärningsfärdigheter på verkliga affärsproblem.</p>
+									</div>
+
+									<div class="coming-soon">
+										<i class="fas fa-rocket"></i>
+										<h4>Kommer Snart</h4>
+										<p>Jag håller för närvarande på att övergå till industriroller. Projekt från mina framtida positioner kommer att läggas till här när de blir tillgängliga och kan delas offentligt.</p>
+									</div>
+								</div><!-- End of Industry Projects Section SV -->
+
+								<!-- Personal Projects Section -->
+								<div class="project-category" id="category-personal-sv" style="display: none;">
+									<div class="category-header">
+										<h3><i class="fas fa-code"></i> Personliga Projekt</h3>
+										<p class="category-description">Sidoprojekt utvecklade på min fritid för att lära mig ny teknik, utforska idéer och bidra till gemenskaper jag bryr mig om.</p>
+									</div>
+
+									<!-- Personal Project 1: Triathlon Väst Dashboard -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-running"></i> Triathlon Väst Dashboard</h3>
+											<span class="project-subtitle">Full-Stack Data-applikation för Sportklubbshantering</span>
+										</div>
+									
+										<div class="star-section">
+											<h4>Projektöversikt</h4>
+											<p>En webbaserad dashboard-applikation byggd för sportklubben Triathlon Väst i Göteborg, Sverige. Detta projekt kombinerar datateknik, visualisering och webbutveckling för att ge klubbmedlemmar och administratörer insikter i träningsaktiviteter, medlemsstatistik och evenemangsdeltagande.</p>
+											<p><em>Fler detaljer kommer snart...</em></p>
+										</div>
+
+										<div class="project-skills">
+											<span class="skill-tag">Python</span>
+											<span class="skill-tag">Dash/Plotly</span>
+											<span class="skill-tag">Datavisualisering</span>
+											<span class="skill-tag">Webbutveckling</span>
+											<span class="skill-tag">Railway-driftsättning</span>
+										</div>
+									</div>
+
+								</div><!-- End of Personal Projects Section SV -->
+								</div><!-- End work-content-sv -->
 
 							</article>
 
@@ -2341,6 +2819,8 @@
 								</nav>
 								<h2 class="major">Publications</h2>
 								
+								<!-- English Publications Content -->
+								<div id="publications-content-en">
 								<!-- Publication Category Navigation -->
 								<div class="project-category-nav">
 									<button class="category-btn active" data-pub-category="academic">
@@ -2753,6 +3233,61 @@
 										<p>I am currently transitioning to industry roles. Publications and technical contributions from my future positions will be added here as they become available.</p>
 									</div>
 								</div><!-- End of Industry & Personal Publications Section -->
+								</div><!-- End publications-content-en -->
+
+								<!-- French Publications Content -->
+								<div id="publications-content-fr" style="display: none;">
+								<!-- Publication Category Navigation -->
+								<div class="project-category-nav">
+									<button class="category-btn active" data-pub-category="academic">
+										<i class="fas fa-graduation-cap"></i> Publications Académiques
+									</button>
+									<button class="category-btn" data-pub-category="talks">
+										<i class="fas fa-microphone"></i> Présentations
+									</button>
+									<button class="category-btn" data-pub-category="industry">
+										<i class="fas fa-briefcase"></i> Industrie & Personnel
+									</button>
+								</div>
+
+								<div class="publications-intro">
+									<p>Voici la liste des articles que j'ai écrits ou co-écrits pendant ma carrière académique de 2017 à 2025. Ma thèse de doctorat est également disponible à la fin de cette liste.</p>
+									<p><em>Note : Les titres des publications et les noms des auteurs sont conservés en anglais car ce sont les références officielles.</em></p>
+								</div>
+
+								<div class="coming-soon">
+									<i class="fas fa-book"></i>
+									<h4>Publications</h4>
+									<p>Pour la liste complète des publications avec liens vers les articles, veuillez consulter la version anglaise de cette page. Les titres et références académiques sont conservés dans leur langue originale de publication.</p>
+								</div>
+								</div><!-- End publications-content-fr -->
+
+								<!-- Swedish Publications Content -->
+								<div id="publications-content-sv" style="display: none;">
+								<!-- Publication Category Navigation -->
+								<div class="project-category-nav">
+									<button class="category-btn active" data-pub-category="academic">
+										<i class="fas fa-graduation-cap"></i> Akademiska Publikationer
+									</button>
+									<button class="category-btn" data-pub-category="talks">
+										<i class="fas fa-microphone"></i> Presentationer
+									</button>
+									<button class="category-btn" data-pub-category="industry">
+										<i class="fas fa-briefcase"></i> Industri & Personligt
+									</button>
+								</div>
+
+								<div class="publications-intro">
+									<p>Här är en lista över de artiklar jag har skrivit eller medförfattat under min akademiska karriär från 2017 till 2025. Min doktorsavhandling finns också tillgänglig i slutet av denna lista.</p>
+									<p><em>Notera: Publikationstitlar och författarnamn behålls på engelska eftersom de är officiella referenser.</em></p>
+								</div>
+
+								<div class="coming-soon">
+									<i class="fas fa-book"></i>
+									<h4>Publikationer</h4>
+									<p>För den fullständiga listan över publikationer med länkar till artiklarna, vänligen se den engelska versionen av denna sida. Akademiska titlar och referenser behålls på deras ursprungliga publiceringsspråk.</p>
+								</div>
+								</div><!-- End publications-content-sv -->
 
 							</article>
 
@@ -2859,6 +3394,8 @@
 								</nav>
 								<h2 class="major">Curriculum Vitae</h2>
 								
+								<!-- English CV Content -->
+								<div id="cv-content-en">
 								<div class="cv-download">
 									<div class="cv-download-buttons">
 										<a href="documents/main_industry.pdf" class="button primary icon solid fa-download" download>Download Industry CV (PDF)</a>
@@ -3438,7 +3975,1169 @@
 										<p>Available upon request</p>
 									</div>
 								</div>
+								</div><!-- End cv-content-en -->
 								
+								<!-- French CV Content -->
+								<div id="cv-content-fr" style="display: none;">
+								<div class="cv-download">
+									<div class="cv-download-buttons">
+										<a href="documents/main_industry.pdf" class="button primary icon solid fa-download" download>Télécharger le CV Industrie (PDF)</a>
+										<a href="documents/main_academic.pdf" class="button icon solid fa-download" download>Télécharger le CV Académique (PDF)</a>
+									</div>
+									<p class="cv-updated"><em>Dernière mise à jour : Janvier 2026</em></p>
+								</div>
+								
+								<div class="cv-section-header">
+									<h3>Expérience Professionnelle</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Data Scientist & Chercheur Post-doctoral en Astrophysique</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Chalmers University of Technology</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Août 2021 - Août 2025</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Suède</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Direction d'un projet de recherche utilisant un code de transfert radiatif open-source parallélisé sur le cluster universitaire pour explorer des grilles de paramètres contraignant les propriétés physiques d'objets astrophysiques — résultant en une présentation en conférence, une publication dans Astronomy & Astrophysics, et un communiqué de presse</li>
+											<li>Optimisation du pipeline computationnel utilisant le Machine Learning (Random Forest) pour réduire significativement le temps de calcul</li>
+											<li>Co-encadrement d'un doctorant avec Prof. Susanne Aalto, mentorat sur l'analyse de données et la communication scientifique</li>
+											<li>Président des Comités d'Organisation Local et Scientifique d'une conférence internationale (110+ participants, équipe de 12 personnes) — <a href="https://cosmic-dust-sweden.sciencesconf.org" target="_blank">cosmic-dust-sweden.sciencesconf.org</a></li>
+											<li>Organisation d'un atelier technique sur les synergies ALMA/JWST (20+ participants)</li>
+											<li>Collaboration au sein d'une équipe internationale de 50+ membres sur un projet NASA/ESA (PDRs4All)</li>
+											<li>Co-fondateur de SENECA — le Réseau Suédois pour Jeunes Astronomes</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Data Scientist & Chercheur Post-doctoral en Astrophysique</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Institut d'Astrophysique Spatiale</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Octobre 2020 - Juillet 2021</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, France</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Poursuite des travaux de recherche doctorale avec des simulations de transfert radiatif pour explorer des grilles de paramètres physiques, optimisation des hyperparamètres du code open-source « SOC » et comparaison avec les observations du satellite Spitzer pour étudier la Barre d'Orion et la nébuleuse IC63</li>
+											<li>Représentant des doctorants/post-doctorants au conseil de laboratoire, contribuant à la vie de l'institut</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Data Scientist — Doctorant en Astrophysique</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Institut d'Astrophysique Spatiale</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Octobre 2017 - Octobre 2020</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, France</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Contribution au développement du code de transfert radiatif « SOC » (basé Python) en collaboration régulière avec Mika Juvela (Université d'Helsinki), incluant des séjours de travail à Helsinki</li>
+											<li>Conception et implémentation d'un pipeline utilisant SOC pour explorer efficacement des espaces de paramètres N-dimensionnels, parallélisé sur le cluster de calcul universitaire</li>
+											<li>Optimisation des calculs par ajustement des hyperparamètres et ingénierie des features</li>
+											<li>Développement de techniques de visualisation pour interpréter les résultats de simulations à grande échelle</li>
+											<li>Participation active à la vulgarisation scientifique au Palais de la Découverte (département d'astrophysique)</li>
+											<li>Représentant des doctorants/post-doctorants au conseil de laboratoire</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Data Scientist — Assistant de Recherche</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Lund University</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Août 2016 - Juin 2017</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Lund, Suède</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Application de l'analyse par ondelettes aux données de vitesse galactocentrique 3D du télescope GAIA pour détecter des surdensités dans les populations stellaires de la Voie Lactée</li>
+											<li>Utilisation de l'algorithme « à trous » combiné à des simulations MCMC pour évaluer la significativité statistique des motifs détectés</li>
+											<li>Co-auteur d'une publication dans Astronomy & Astrophysics, entièrement responsable de la composante analyse de données</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Communication & Mentorat</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Mentor Technique (Co-encadrement de Doctorat)</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Chalmers University of Technology</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2023 - 2025</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Suède</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Co-encadrement du doctorat de Gustav Olander avec Prof. Susanne Aalto sur la poussière interstellaire dans les noyaux compacts obscurcis utilisant le télescope spatial James Webb</li>
+											<li>Réunions hebdomadaires et accompagnement continu selon les besoins</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Conférencier & Médiateur Scientifique</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Palais de la Découverte (Musée des Sciences)</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2017 - 2020</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Présentations de 45 minutes + 15 minutes de questions-réponses sur le cycle de vie de la matière dans l'Univers, 2 à 4 fois chaque week-end</li>
+											<li>Interaction avec des publics de 5 à 99 ans aux parcours très différents — adaptation du contenu pour être compris par tous</li>
+											<li>Animation de démonstrations d'astronomie interactives et visites d'expositions, explication de concepts comme l'évolution stellaire et la formation de poussière cosmique</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Colleur — Lycée Raspail</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Lycée Raspail</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2015 - 2016</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Enseignement en classes préparatoires aux concours des grandes écoles d'ingénieurs (60 heures en PT* et 30 heures en TSI)</li>
+											<li>Accompagnement individualisé et préparation aux examens en physique et mathématiques</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Professeur Particulier — PECES</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">PECES</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2012 - 2015</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Cours particuliers pour étudiants en classes préparatoires aux grandes écoles en filières BCPST, PC et MP</li>
+											<li>Enseignement de sujets avancés en physique, chimie et mathématiques</li>
+											<li>Développement de stratégies pédagogiques personnalisées pour aider les étudiants à réussir les concours</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Leadership Événementiel & Projets</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Projet Wallenberg — L'Origine et le Destin de la Poussière dans l'Univers</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Août 2021 - Août 2025</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Suède</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Membre principal d'un projet de recherche collaboratif financé par la Fondation Knut et Alice Wallenberg, réunissant astronomes et chimistes théoriciens de Chalmers University of Technology et de l'Université de Göteborg</li>
+											<li>Direction de projets de recherche indépendants sur l'évolution de la poussière dans les environnements stellaires et le milieu interstellaire, tout en contribuant activement aux projets collaboratifs menés par d'autres membres de l'équipe</li>
+											<li>Organisation et animation des réunions hebdomadaires de collaboration pendant 3 ans, assurant une communication et coordination efficaces au sein d'une équipe interdisciplinaire</li>
+											<li>Objectif du projet : Comprendre les particules de poussière cosmique depuis leur formation dans les environnements stellaires, leur destruction et croissance dans le milieu interstellaire galactique et à haut redshift, jusqu'à leur interaction avec le rayonnement des noyaux actifs de galaxies</li>
+											<li>Dans le cadre de cette collaboration : organisation d'une grande conférence internationale (110+ chercheurs, septembre 2023), coordination d'un atelier JWST/ALMA (décembre 2024), et co-encadrement de recherche doctorale sur les observations JWST de noyaux compacts obscurcis</li>
+											<li>Site du projet : <a href="https://cosmic-dust.se" target="_blank">cosmic-dust.se</a></li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Président d'Atelier — Synergies JWST/ALMA</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Décembre 2024</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Suède</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Présidence d'un atelier local (20+ participants) explorant les capacités complémentaires du télescope spatial James Webb et de l'Atacama Large Millimeter Array</li>
+											<li>Co-organisation avec Matthias Maercker et le Nordic ALMA Regional Center (ARC)</li>
+											<li>Coordination de sessions de formation pratique développées par Karl Gordon (STScI) et les spécialistes du Nordic ALMA Node, couvrant la rédaction de propositions JWST et ALMA, le traitement des données et le développement de propositions conjointes</li>
+											<li>Gestion complète de la logistique incluant inscriptions, coordination du lieu et supports d'atelier complets (<a href="documents/ALMA_JWST_workshop_v3-2.pdf" download>guide de 150+ pages</a>)</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Président de Conférence Internationale — Origin and Fate of Dust in Our Universe</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Septembre 2023</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Suède</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Organisation d'une conférence internationale de 5 jours dans le cadre de la collaboration Cosmic Dust financée par la Fondation Knut et Alice Wallenberg, réunissant 110+ chercheurs d'horizons divers</li>
+											<li>Présidence du Comité Scientifique d'Organisation (SOC), coordonnant l'évaluation des résumés, la planification des sessions et la sélection des conférenciers invités</li>
+											<li>Présidence du Comité Local d'Organisation (LOC), supervisant les arrangements du lieu, l'inscription, le programme scientifique, les activités sociales et la gestion du site web</li>
+											<li>Direction d'une équipe organisatrice de 12 membres et supervision de la planification et de l'exécution du budget</li>
+											<li>Création et maintenance du site de la conférence : <a href="https://cosmic-dust-sweden.sciencesconf.org" target="_blank">cosmic-dust-sweden.sciencesconf.org</a></li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>SENECA — Le Réseau Suédois pour Jeunes Astronomes</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2022 - Présent</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Suède</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Membre fondateur avec Bibiana Prinoth et Linn Boldt-Christmas</li>
+											<li>Co-organisation d'un atelier en ligne présentant les institutions astrophysiques suédoises et invitant des post-doctorants ayant réussi à partager leurs expériences d'obtention de financements</li>
+											<li>Contribution à la maintenance de l'espace Slack du réseau pour la communication communautaire</li>
+											<li>Organisation d'événements satellites pour doctorants et post-doctorants lors des Astronomdagarna à Göteborg (2022) et Lund (2024)</li>
+											<li>Contribution à l'établissement d'une communauté de soutien pour les jeunes astronomes en Suède — <a href="https://seneca-astro.github.io" target="_blank">seneca-astro.github.io</a></li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Conférence Nationale — Astronomdagarna 2022</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">6-8 Octobre 2022</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Suède</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Membre du Comité Local d'Organisation (LOC) pour Astronomdagarna, une conférence nationale biennale réunissant 100+ astronomes suédois</li>
+											<li>Contribution au guide des participants avec informations locales et détails de la conférence (<a href="documents/Astronomdagarna2022_booklet_Sep-30.pdf" download>télécharger le livret</a>)</li>
+											<li>Organisation du dîner de conférence incluant sélection du lieu et planification du menu</li>
+											<li>Coordination des activités de réseautage pour jeunes chercheurs, incluant un événement pub et une session de « présentation en 1 minute » sous l'initiative SENECA</li>
+											<li>Assistance logistique générale incluant accueil, support technique et assistance aux participants sur place</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>PDRs4All — Programme JWST Early Release Science</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2017 - 2025</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-globe"></i>
+												<span class="location">International</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Membre de l'Extended Core Team d'un programme majeur JWST Early Release Science étudiant le feedback radiatif des étoiles massives</li>
+											<li>Collaboration avec une équipe internationale de 50+ chercheurs d'institutions à travers l'Europe, l'Amérique du Nord et l'Asie</li>
+											<li>Apport d'expertise sur l'évolution de la poussière dans les régions dominées par les photons (PDRs)</li>
+											<li>Soutien à l'analyse des observations JWST de la Barre d'Orion et d'autres PDRs — <a href="https://www.pdrs4all.org/team/" target="_blank">pdrs4all.org</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Formation</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Doctorat en Astrophysique & Data Science</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Institut d'Astrophysique Spatiale, Université Paris-Saclay</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2017 - 2020</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, France</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Observatoire de Paris</h4>
+										<p class="cv-degree"><em>Master en astrophysique — Astronomie, Astrophysique et Ingénierie Spatiale (AAIS)</em></p>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2015 - 2016</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Cours avancés en physique stellaire : Astérosismologie et intérieurs stellaires, physique et évolution stellaire, magnétohydrodynamique</li>
+											<li>Cours spécialisés en physique du milieu interstellaire, transfert radiatif, atomes/molécules/solides et formation des galaxies</li>
+											<li>Formation pratique en observation : semaine d'observation à l'Observatoire de Haute-Provence (télescope IR 120cm, spectroscopie 152cm) et observations infrarouges à l'Observatoire de Meudon sur le complexe BN/KL</li>
+											<li>Projets d'astrophysique computationnelle : développement de simulations numériques en Fortran pour systèmes dissipatifs, utilisation du code PDR de Meudon et du code de choc Paris-Durham en Python</li>
+											<li>Stage de recherche de 4 mois au LERMA/Observatoire de Paris-Meudon sur les modèles de poussière dans les régions dominées par les photons</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>École Normale Supérieure Paris-Saclay</h4>
+										<p class="cv-degree"><em>Master en physique fondamentale</em></p>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2014 - 2016</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Cours avancés en physique quantique et physique statistique, physique du solide, physique de la matière molle et optique quantique</li>
+											<li>Cours spécialisés en physique nucléaire et des particules, physique de l'environnement, et astrophysique et cosmologie</li>
+											<li>Formation en physique expérimentale : photoluminescence d'objets quantiques, hydrodynamique des ondes de surface et travaux pratiques d'optique avancée</li>
+											<li>Formation en anglais scientifique et communication professionnelle</li>
+											<li>Stage de 4 mois à l'Observatoire de Besançon sur la modélisation 3D auto-cohérente de la poussière et du gaz</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>École Normale Supérieure Paris-Saclay</h4>
+										<p class="cv-degree"><em>Licence en physique fondamentale</em></p>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2013 - 2014</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, France</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Tronc commun en physique : fondamentaux de mécanique quantique, électromagnétisme, physique statistique et états de la matière</li>
+											<li>Cours spécialisés en cohésion de la matière, optique et lasers, instrumentation et électronique, et traitement de l'information</li>
+											<li>Méthodes mathématiques et numériques pour physiciens, incluant techniques computationnelles</li>
+											<li>Travaux pratiques de physique expérimentale et cours de chimie</li>
+											<li>Initiation à la recherche par stage à l'Observatoire de Besançon sur la modélisation de l'effondrement gravitationnel</li>
+											<li>Formation en anglais scientifique et pratique</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Lycée Albert Schweitzer</h4>
+										<p class="cv-degree"><em>Classes préparatoires (CPGE PCSI/PC) — Programme intensif pour les concours des grandes écoles d'ingénieurs</em></p>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2010 - 2013</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Mulhouse, France</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li><strong>PCSI (Première année) :</strong> Mathématiques, Physique, Chimie, Sciences de l'Ingénieur, Français/Philosophie, Anglais, plus travaux pratiques et TD</li>
+											<li><strong>PC (Deuxième année) :</strong> Mathématiques avancées, Physique, Chimie, Français/Philosophie, Anglais, TIPE (projet de recherche personnel encadré)</li>
+											<li><strong>Focus du programme :</strong> Calcul différentiel et intégral, algèbre linéaire, analyse complexe, mécanique classique, thermodynamique, électromagnétisme, chimie organique et inorganique, science des matériaux</li>
+											<li><strong>Aperçu du programme :</strong> Préparation rigoureuse aux grandes écoles d'ingénieurs et universités à travers un emploi du temps intensif (35+ heures), préparation aux concours nationaux pour les institutions de premier plan (ENS, École Polytechnique, Centrale, Mines), avec un programme STEM de niveau universitaire mettant l'accent sur la résolution de problèmes et la modélisation mathématique</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Cours Intensif de Suédois</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Folkuniversitetet</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Septembre 2025 - Octobre 2025</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Cours de suédois tous les matins pendant 2 mois</li>
+											<li>Progression des niveaux A1 et A2 jusqu'à atteindre le niveau B1</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Projets Personnels & Portfolio</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Dashboard Club Sportif (Application Data Full-Stack)</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2025 - Présent</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Développement et déploiement d'un dashboard interactif basé Python utilisant Dash/Plotly</li>
+											<li>Service à 100+ utilisateurs avec visualisation de données et suivi de performance</li>
+											<li>Déployé sur Railway avec conteneurisation Docker en cours</li>
+											<li>Expérimentation d'une interface conversationnelle alimentée par LLM pour les requêtes de données</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Compétitions Kaggle (Pratique ML)</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2025 - Présent</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Participation active pour affûter mes compétences pratiques en ML</li>
+											<li>Focus : PyTorch, scikit-learn, optimisation des hyperparamètres (Optuna)</li>
+											<li>Ingénierie des features, méthodes d'ensemble, évaluation des modèles</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Certifications</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Spécialisation Machine Learning</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">DeepLearning.AI & Coursera</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Juillet - Octobre 2025</span>
+											</div>
+										</div>
+										<p>Complété 5 cours spécialisés : Advanced Learning Algorithms, Unsupervised Learning, Recommenders, Reinforcement Learning, et Supervised Machine Learning: Regression and Classification. Acquisition de compétences en Machine Learning, Scikit-Learn, TensorFlow, Random Forest, XGBoost et Réseaux de Neurones.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Databricks Fundamentals</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Databricks Academy Accreditation</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Octobre 2025</span>
+											</div>
+										</div>
+										<p>Accréditation de l'Académie démontrant la compréhension des concepts fondamentaux liés à la plateforme Databricks Data Intelligence.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Parcours Microsoft Azure Data Scientist</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Microsoft Azure & Coursera</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Octobre 2025 - Janvier 2026</span>
+											</div>
+										</div>
+										<p>Complété 2 cours : Create Machine Learning Models in Microsoft Azure, et Microsoft Azure Machine Learning for Data Scientists. Apprentissage de la création d'environnements de travail pour les charges de travail data science sur Azure, entraînement et déploiement de modèles prédictifs utilisant Azure Machine Learning.</p>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Langues & Informations Complémentaires</h3>
+								</div>
+								
+								<div class="cv-highlights">
+									<div class="highlight-item">
+										<h4>Langues</h4>
+										<p>Français (Langue maternelle), Anglais (Courant/C1), Suédois (B1)</p>
+									</div>
+									
+									<div class="highlight-item">
+										<h4>Centres d'Intérêt</h4>
+										<p>Trail Running, Triathlon, Cuisine, Pâtisserie, Nature, Littérature</p>
+									</div>
+									
+									<div class="highlight-item">
+										<h4>Références</h4>
+										<p>Disponibles sur demande</p>
+									</div>
+								</div>
+								</div><!-- End cv-content-fr -->
+								
+								<!-- Swedish CV Content -->
+								<div id="cv-content-sv" style="display: none;">
+								<div class="cv-download">
+									<div class="cv-download-buttons">
+										<a href="documents/main_industry.pdf" class="button primary icon solid fa-download" download>Ladda ner Industri-CV (PDF)</a>
+										<a href="documents/main_academic.pdf" class="button icon solid fa-download" download>Ladda ner Akademiskt CV (PDF)</a>
+									</div>
+									<p class="cv-updated"><em>Senast uppdaterad: Januari 2026</em></p>
+								</div>
+								
+								<div class="cv-section-header">
+									<h3>Arbetslivserfarenhet</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Data Scientist & Postdoktor i Astrofysik</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Chalmers tekniska högskola</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Augusti 2021 - Augusti 2025</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Sverige</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Ledde ett forskningsprojekt med en öppen källkod för strålningstransport parallelliserad på universitetets kluster för att utforska parameterrutnät som begränsar fysikaliska egenskaper hos astrofysiska objekt — resulterade i ett konferensbidrag, en publikation i Astronomy & Astrophysics och ett pressmeddelande</li>
+											<li>Optimerade beräkningspipelinen med maskininlärning (Random Forest) för att avsevärt minska beräkningstiden</li>
+											<li>Handledarassistent för doktorand tillsammans med Prof. Susanne Aalto, mentorskap inom dataanalys och vetenskaplig kommunikation</li>
+											<li>Ordförande för de lokala och vetenskapliga organisationskommittéerna för en internationell konferens (110+ deltagare, 12-personersteam) — <a href="https://cosmic-dust-sweden.sciencesconf.org" target="_blank">cosmic-dust-sweden.sciencesconf.org</a></li>
+											<li>Organiserade en teknisk workshop om ALMA/JWST-synergier (20+ deltagare)</li>
+											<li>Samarbetade inom ett internationellt team på 50+ medlemmar på ett NASA/ESA-projekt (PDRs4All)</li>
+											<li>Medgrundare av SENECA — Swedish Network for Early Career Astronomers</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Data Scientist & Postdoktor i Astrofysik</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Institut d'Astrophysique Spatiale</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Oktober 2020 - Juli 2021</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, Frankrike</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Fortsatte doktorsforskningsarbetet med strålningstransportsimuleringar för att utforska rutnät av fysikaliska parametrar, optimerade hyperparametrar för öppen källkod "SOC" och jämförde resultat med Spitzer-satellitobservationer för att studera Orion Bar och IC63-nebulosorna</li>
+											<li>Tjänstgjorde som doktorand/postdok-representant i laboratorierådet, bidrog till institutets verksamhet</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Data Scientist — Doktorand i Astrofysik</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Institut d'Astrophysique Spatiale</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Oktober 2017 - Oktober 2020</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, Frankrike</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Bidrog till utvecklingen av strålningstransportkoden "SOC" (Python-baserad) genom regelbundet samarbete med Mika Juvela (Helsingfors universitet), inklusive arbetsresor till Helsingfors</li>
+											<li>Designade och implementerade en pipeline med SOC för att effektivt utforska N-dimensionella parameterutrymmen, parallelliserad på universitetets beräkningskluster</li>
+											<li>Optimerade beräkningar genom hyperparameterjustering och feature engineering</li>
+											<li>Utvecklade visualiseringstekniker för att tolka resultat från storskaliga simuleringar</li>
+											<li>Aktivt engagerad i populärvetenskaplig verksamhet vid Palais de la Découverte (astrofysikavdelningen)</li>
+											<li>Tjänstgjorde som doktorand/postdok-representant i laboratorierådet</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Data Scientist — Forskningsassistent</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Lunds universitet</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Augusti 2016 - Juni 2017</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Lund, Sverige</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Tillämpade wavelet-analys på 3D galaktocentriska hastighetsdata från GAIA-teleskopet för att upptäcka överdensiteter i Vintergatans stjärnpopulationer</li>
+											<li>Använde "à trous"-algoritmen kombinerad med MCMC-simuleringar för att bedöma statistisk signifikans hos detekterade mönster</li>
+											<li>Medförfattare till en publikation i Astronomy & Astrophysics, fullt ansvarig för dataanalyskomponenten</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Kommunikation & Mentorskap</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Teknisk Mentor (Doktorandhandledning)</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Chalmers tekniska högskola</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2023 - 2025</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Sverige</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Biträdande handledare för Gustav Olanders doktorandprojekt tillsammans med Prof. Susanne Aalto om interstellärt stoft i kompakta skymda kärnor med James Webb-rymdteleskopet</li>
+											<li>Genomförde veckovisa möten och gav löpande mentorsstöd vid behov</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Föreläsare & Vetenskapskommunikatör</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Palais de la Découverte (Vetenskapsmuseum)</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2017 - 2020</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, Frankrike</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Höll 45-minuters presentationer + 15-minuters frågestunder om materiens livscykel i universum, 2-4 gånger varje helg</li>
+											<li>Engagerade publik i åldrarna 5 till 99 med mycket olika bakgrunder — anpassade innehållet för att vara begripligt för alla</li>
+											<li>Guidade besökare genom interaktiva astronomidemonstreringar och utställningar, förklarade koncept som stjärnutveckling och kosmisk stoftbildning</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Lärarassistent — Lycée Raspail</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">Lycée Raspail</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2015 - 2016</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, Frankrike</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Undervisade förberedande klasser för ingenjörsskolors antagningsprov (60 timmar i PT* och 30 timmar i TSI)</li>
+											<li>Gav individuellt stöd och provförberedelser för studenter i fysik och matematik</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Privatlärare — PECES</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-building"></i>
+												<span class="institution">PECES</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2012 - 2015</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, Frankrike</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Gav enskild undervisning för studenter i förberedande klasser för elitingenjörsskolor inom BCPST, PC och MP</li>
+											<li>Täckte avancerade ämnen inom fysik, kemi och matematik</li>
+											<li>Utvecklade personliga undervisningsstrategier för att hjälpa studenter lyckas på konkurrensprov</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Evenemang & Projektledarskap</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Wallenberg-projektet — Stoftets Ursprung och Öde i Universum</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Augusti 2021 - Augusti 2025</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Sverige</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Kärnmedlem i ett kollaborativt forskningsprojekt finansierat av Knut och Alice Wallenbergs Stiftelse, som sammanför astronomer och teoretiska kemister från Chalmers tekniska högskola och Göteborgs universitet</li>
+											<li>Ledde oberoende forskningsprojekt om stoftutveckling i stjärnmiljöer och det interstellära mediet, samtidigt som jag aktivt bidrog till kollaborativa projekt ledda av andra teammedlemmar</li>
+											<li>Organiserade och faciliterade veckovisa samarbetsmöten i 3 år, säkerställde effektiv kommunikation och koordinering i det tvärvetenskapliga teamet</li>
+											<li>Projektomfattning: Förståelse av kosmiska stoftpartiklar från deras bildning i stjärnmiljöer, genom förstörelse och tillväxt i det galaktiska och högrödförskjutna ISM, till deras interaktion med strålning från aktiva galaxkärnor</li>
+											<li>Inom detta samarbete: organiserade stor internationell konferens (110+ forskare, september 2023), koordinerade JWST/ALMA-workshop (december 2024), och biträdande handledare för doktorandforskning om JWST-observationer av kompakta skymda kärnor</li>
+											<li>Projektwebbplats: <a href="https://cosmic-dust.se" target="_blank">cosmic-dust.se</a></li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Workshop-ordförande — JWST/ALMA-synergier</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">December 2024</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Sverige</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Ordförande för lokal workshop (20+ deltagare) som utforskade de kompletterande kapaciteterna hos James Webb-rymdteleskopet och Atacama Large Millimeter Array</li>
+											<li>Samorganiserade med Matthias Maercker och Nordic ALMA Regional Center (ARC)</li>
+											<li>Koordinerade praktiska utbildningssessioner utvecklade av Karl Gordon (STScI) och specialister vid Nordic ALMA Node, täckande JWST- och ALMA-proposalskrivning, databehandling och utveckling av gemensamma proposaler</li>
+											<li>Hanterade fullständig evenemangslogistik inklusive registrering, lokalkoordinering och omfattande workshopmaterial (<a href="documents/ALMA_JWST_workshop_v3-2.pdf" download>150+ sidors guide</a>)</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Internationell Konferensordförande — Origin and Fate of Dust in Our Universe</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">September 2023</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Sverige</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Organiserade 5-dagars internationell konferens inom Knut och Alice Wallenberg-stiftelsefinansierade Cosmic Dust-samarbetet, samlade 110+ forskare från olika bakgrunder</li>
+											<li>Ordförande för den vetenskapliga organisationskommittén (SOC), koordinerade abstractgranskning, sessionsplanering och urval av inbjudna talare</li>
+											<li>Ordförande för den lokala organisationskommittén (LOC), övervakade lokalarrangemang, registrering, vetenskapligt program, sociala aktiviteter och webbplatshantering</li>
+											<li>Ledde organiseringsteam på 12 medlemmar och övervakade budgetplanering och genomförande</li>
+											<li>Skapade och underhöll konferenswebbplatsen: <a href="https://cosmic-dust-sweden.sciencesconf.org" target="_blank">cosmic-dust-sweden.sciencesconf.org</a></li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>SENECA — Swedish Network for Early Career Astronomers</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2022 - Nuvarande</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Sverige</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Grundande medlem tillsammans med Bibiana Prinoth och Linn Boldt-Christmas</li>
+											<li>Samorganiserade online-workshop som presenterade svenska astrofysiska institutioner och bjöd in framgångsrika postdoktorer att dela sina erfarenheter av att vinna forskningsanslag</li>
+											<li>Bidrog till att underhålla nätverkets Slack-workspace för kommunikation inom gemenskapen</li>
+											<li>Organiserade satellitevenemang för doktorander och postdoktorer under Astronomdagarna i Göteborg (2022) och Lund (2024)</li>
+											<li>Bidrog till att etablera en stödjande gemenskap för unga astronomer i Sverige — <a href="https://seneca-astro.github.io" target="_blank">seneca-astro.github.io</a></li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Nationell Konferens — Astronomdagarna 2022</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">6-8 Oktober 2022</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Göteborg, Sverige</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Medlem i den lokala organisationskommittén (LOC) för Astronomdagarna, en tvåårig nationell konferens som samlar 100+ svenska astronomer</li>
+											<li>Bidrog till deltagarguiden med lokal information och konferensdetaljer (<a href="documents/Astronomdagarna2022_booklet_Sep-30.pdf" download>ladda ner häfte</a>)</li>
+											<li>Organiserade konferensmiddagen inklusive val av lokal och menyplanering</li>
+											<li>Koordinerade nätverksaktiviteter för unga forskare, inklusive pubevenemang och "1-minuts presentation"-session under SENECA-initiativet</li>
+											<li>Assisterade med allmän logistik inklusive receptionen, teknisk support och assistans till deltagare på plats</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>PDRs4All — JWST Early Release Science-program</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2017 - 2025</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-globe"></i>
+												<span class="location">Internationellt</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Extended Core Team-medlem i ett stort JWST Early Release Science-program som studerar radiativ feedback från massiva stjärnor</li>
+											<li>Samarbetade med ett internationellt team på 50+ forskare från institutioner i Europa, Nordamerika och Asien</li>
+											<li>Tillhandahöll expertis inom stoftutveckling i fotondominerade regioner (PDR)</li>
+											<li>Stödde analys av JWST-observationer av Orion Bar och andra PDR — <a href="https://www.pdrs4all.org/team/" target="_blank">pdrs4all.org</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Utbildning</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Doktorsexamen i Astrofysik & Data Science</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Institut d'Astrophysique Spatiale, Université Paris-Saclay</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2017 - 2020</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Orsay, Frankrike</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Observatoire de Paris</h4>
+										<p class="cv-degree"><em>Masterexamen i astrofysik — Astronomi, Astrofysik och Rymdteknik (AAIS)</em></p>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2015 - 2016</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, Frankrike</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Avancerade kurser i stjärnfysik: Asteroseismologi och stjärninnanmäten, stjärnfysik och evolution, magnetohydrodynamik</li>
+											<li>Specialiserade kurser i interstellär mediumfysik, strålningstransport, atomer/molekyler/fasta ämnen och galaxbildning</li>
+											<li>Praktisk observationsträning: en veckas observationsperiod vid Observatoire de Haute-Provence (120cm IR-teleskop, 152cm spektroskopi) och infraröda observationer vid Meudon-observatoriet med fokus på BN/KL-komplexet</li>
+											<li>Beräkningsastrofysikprojekt: utvecklade numeriska simuleringar i Fortran för dissipativa system, använde Meudon PDR-kod och Paris-Durham chockkod i Python</li>
+											<li>Genomförde 4-månaders forskningspraktik vid LERMA/Observatoire de Paris-Meudon om stoftmodeller i fotondominerade regioner</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>École Normale Supérieure Paris-Saclay</h4>
+										<p class="cv-degree"><em>Masterexamen i fundamental fysik</em></p>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2014 - 2016</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, Frankrike</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Avancerade kurser i kvantfysik och statistisk fysik, fasta tillståndets fysik, mjuk materia-fysik och kvantoptik</li>
+											<li>Specialiserade kurser i kärn- och partikelfysik, miljöfysik samt astrofysik och kosmologi</li>
+											<li>Experimentell fysikträning: fotoluminescens av kvantobjekt, ytvågshydrodynamik och avancerat optiklaboratoriearbete</li>
+											<li>Vetenskaplig engelska och professionell kommunikationsträning</li>
+											<li>Genomförde 4-månaders laboratoriepraktik vid Observatoire de Besançon om 3D självkonsistent modellering av stoft och gas</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>École Normale Supérieure Paris-Saclay</h4>
+										<p class="cv-degree"><em>Kandidatexamen i fundamental fysik</em></p>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2013 - 2014</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Paris, Frankrike</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Grundläggande fysikkurser: kvantmekanikens grunder, elektromagnetism, statistisk fysik och materiens tillstånd</li>
+											<li>Specialiserade kurser i materiekohesion, optik och lasrar, instrumentering och elektronik samt informationsbehandling</li>
+											<li>Matematiska och numeriska metoder för fysiker, inklusive beräkningstekniker</li>
+											<li>Experimentellt fysiklaboratoriearbete och kemikurser</li>
+											<li>Forskningsinitiering genom praktik vid Observatoire de Besançon om gravitationell kollapsmodellering</li>
+											<li>Vetenskaplig och praktisk engelskträning</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Lycée Albert Schweitzer</h4>
+										<p class="cv-degree"><em>Förberedande klasser (CPGE PCSI/PC) — Intensivt program för elitingenjörsskolors antagningsprov</em></p>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2010 - 2013</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-map-marker-alt"></i>
+												<span class="location">Mulhouse, Frankrike</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li><strong>PCSI (Första året):</strong> Matematik, Fysik, Kemi, Ingenjörsvetenskap, Franska/Filosofi, Engelska, plus laboratoriearbete och övningar</li>
+											<li><strong>PC (Andra året):</strong> Avancerad matematik, Fysik, Kemi, Franska/Filosofi, Engelska, TIPE (handlett personligt forskningsprojekt)</li>
+											<li><strong>Läroplanssfokus:</strong> Differential- och integralkalkyl, linjär algebra, komplex analys, klassisk mekanik, termodynamik, elektromagnetism, organisk och oorganisk kemi, materialvetenskap</li>
+											<li><strong>Programöversikt:</strong> Rigorös förberedelse för prestigefyllda ingenjörsskolor och universitet genom intensivt schema (35+ timmar), förberedelse för nationella antagningsprov till ledande institutioner (ENS, École Polytechnique, Centrale, Mines), med STEM-läroplan på universitetsnivå med betoning på problemlösning och matematisk modellering</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Intensiv Svenskkurs</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Folkuniversitetet</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">September 2025 - Oktober 2025</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Följde svenskkurser varje förmiddag i 2 månader</li>
+											<li>Avancerade från A1- och A2-nivåer till B1-färdighet</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Sidoprojekt & Portfolio</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Sportklubb-Dashboard (Full-Stack Data-app)</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2025 - Nuvarande</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Byggde och driftsatte Python-baserad interaktiv dashboard med Dash/Plotly</li>
+											<li>Betjänar 100+ användare med datavisualisering och prestationsspårning</li>
+											<li>Driftsatt på Railway med pågående Docker-containerisering</li>
+											<li>Experimenterar med LLM-drivet konversationsgränssnitt för datafrågor</li>
+										</ul>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Kaggle-tävlingar (ML-övning)</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">2025 - Nuvarande</span>
+											</div>
+										</div>
+										<ul class="cv-bullets">
+											<li>Aktivt deltagande för att vässa praktiska ML-färdigheter</li>
+											<li>Fokus: PyTorch, scikit-learn, hyperparameterjustering (Optuna)</li>
+											<li>Feature engineering, ensemblemetoder, modellutvärdering</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Certifieringar</h3>
+								</div>
+								
+								<div class="cv-timeline">
+									<div class="cv-entry">
+										<h4>Machine Learning-specialisering</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">DeepLearning.AI & Coursera</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Juli - Oktober 2025</span>
+											</div>
+										</div>
+										<p>Slutförde 5 specialiserade kurser: Advanced Learning Algorithms, Unsupervised Learning, Recommenders, Reinforcement Learning och Supervised Machine Learning: Regression and Classification. Förvärvade kompetens inom Machine Learning, Scikit-Learn, TensorFlow, Random Forest, XGBoost och Neurala Nätverk.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Databricks Fundamentals</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Databricks Academy Accreditation</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Oktober 2025</span>
+											</div>
+										</div>
+										<p>Akademiackreditering som visar förståelse för grundläggande koncept relaterade till Databricks Data Intelligence Platform.</p>
+									</div>
+
+									<div class="cv-entry">
+										<h4>Microsoft Azure Data Scientist-väg</h4>
+										<div class="cv-meta">
+											<div class="cv-meta-item">
+												<i class="fas fa-university"></i>
+												<span class="institution">Microsoft Azure & Coursera</span>
+											</div>
+											<div class="cv-meta-item">
+												<i class="fas fa-calendar"></i>
+												<span class="duration">Oktober 2025 - Januari 2026</span>
+											</div>
+										</div>
+										<p>Slutförde 2 kurser: Create Machine Learning Models in Microsoft Azure och Microsoft Azure Machine Learning for Data Scientists. Lärde mig skapa arbetsmiljöer för data science-arbetsbelastningar på Azure, träna och driftsätta prediktiva modeller med Azure Machine Learning.</p>
+									</div>
+								</div>
+
+								<div class="cv-section-header">
+									<h3>Språk & Övrig Information</h3>
+								</div>
+								
+								<div class="cv-highlights">
+									<div class="highlight-item">
+										<h4>Språk</h4>
+										<p>Franska (Modersmål), Engelska (Flytande/C1), Svenska (B1)</p>
+									</div>
+									
+									<div class="highlight-item">
+										<h4>Intressen</h4>
+										<p>Terränglöpning, Triathlon, Matlagning, Bakning, Natur, Litteratur</p>
+									</div>
+									
+									<div class="highlight-item">
+										<h4>Referenser</h4>
+										<p>Tillgängliga på begäran</p>
+									</div>
+								</div>
+								</div><!-- End cv-content-sv -->
 				
 							</article>
 
@@ -4131,6 +5830,45 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					sv: { flag: '🇸🇪', name: 'SV' }
 				};
 
+				// Function to update ALL language switcher displays (main and article-level)
+				function updateAllLanguageDisplays(lang) {
+					// Update main button display
+					document.getElementById('current-flag').textContent = langData[lang].flag;
+					document.getElementById('current-lang').textContent = langData[lang].name;
+					
+					// Update main dropdown active states
+					document.querySelectorAll('.lang-btn').forEach(function(b) {
+						b.classList.remove('active');
+						if (b.getAttribute('data-lang') === lang) {
+							b.classList.add('active');
+						}
+					});
+					
+					// Update article-level dropdown active states
+					document.querySelectorAll('.article-lang-option').forEach(function(b) {
+						b.classList.remove('active');
+						if (b.getAttribute('data-lang') === lang) {
+							b.classList.add('active');
+						}
+					});
+					
+					// Update ALL article-level language switcher buttons
+					document.querySelectorAll('.article-lang-btn').forEach(function(btn) {
+						var flagSpan = btn.querySelector('.flag');
+						if (flagSpan) flagSpan.textContent = langData[lang].flag;
+						
+						// Find the language code span (not flag, not arrow)
+						var spans = btn.querySelectorAll('span');
+						for (var i = 0; i < spans.length; i++) {
+							var span = spans[i];
+							if (!span.classList.contains('flag') && !span.classList.contains('arrow')) {
+								span.textContent = langData[lang].name;
+								break;
+							}
+						}
+					});
+				}
+
 				// Add click handlers for language buttons
 				document.querySelectorAll('.lang-btn').forEach(btn => {
 					btn.addEventListener('click', function(e) {
@@ -4139,12 +5877,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						if (lang !== currentLang) {
 							currentLang = lang;
 							switchLanguage(lang);
-							// Update active state
-							document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-							this.classList.add('active');
-							// Update button display
-							document.getElementById('current-flag').textContent = langData[lang].flag;
-							document.getElementById('current-lang').textContent = langData[lang].name;
+							updateAllLanguageDisplays(lang);
 						}
 						// Close dropdown
 						langSwitcher.classList.remove('open');
@@ -4255,11 +5988,29 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 					// CV section
 					document.querySelector('#cv h2.major').textContent = t.cvTitle;
-					const cvHeaders = document.querySelectorAll('#cv .cv-section-header h3');
-					if (cvHeaders.length >= 2) {
-						cvHeaders[0].innerHTML = '<i class="fas fa-briefcase"></i> ' + t.cvSection1;
-						cvHeaders[1].innerHTML = '<i class="fas fa-microscope"></i> ' + t.cvSection2;
-					}
+					const cvContentEn = document.getElementById('cv-content-en');
+					const cvContentFr = document.getElementById('cv-content-fr');
+					const cvContentSv = document.getElementById('cv-content-sv');
+					if (cvContentEn) cvContentEn.style.display = lang === 'en' ? 'block' : 'none';
+					if (cvContentFr) cvContentFr.style.display = lang === 'fr' ? 'block' : 'none';
+					if (cvContentSv) cvContentSv.style.display = lang === 'sv' ? 'block' : 'none';
+
+					// Projects/Work section
+					document.querySelector('#work h2.major').textContent = t.navWork;
+					const workContentEn = document.getElementById('work-content-en');
+					const workContentFr = document.getElementById('work-content-fr');
+					const workContentSv = document.getElementById('work-content-sv');
+					if (workContentEn) workContentEn.style.display = lang === 'en' ? 'block' : 'none';
+					if (workContentFr) workContentFr.style.display = lang === 'fr' ? 'block' : 'none';
+					if (workContentSv) workContentSv.style.display = lang === 'sv' ? 'block' : 'none';
+
+					// Publications section
+					const pubContentEn = document.getElementById('publications-content-en');
+					const pubContentFr = document.getElementById('publications-content-fr');
+					const pubContentSv = document.getElementById('publications-content-sv');
+					if (pubContentEn) pubContentEn.style.display = lang === 'en' ? 'block' : 'none';
+					if (pubContentFr) pubContentFr.style.display = lang === 'fr' ? 'block' : 'none';
+					if (pubContentSv) pubContentSv.style.display = lang === 'sv' ? 'block' : 'none';
 
 					// Contact section
 					document.querySelector('#contact h2.major').textContent = t.contactTitle;
@@ -4267,10 +6018,48 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					document.querySelector('label[for="message"]').textContent = t.labelMessage;
 					document.querySelector('input[type="submit"]').value = t.submitBtn;
 					document.querySelector('input[type="reset"]').value = t.resetBtn;
-					document.querySelector('.contact-info h3').textContent = t.contactInfoTitle;
-					document.querySelector('.contact-info p').textContent = t.contactInfoText;
-					document.querySelector('.contact-details li:first-child strong').textContent = t.locationLabel;
-					document.querySelector('.contact-details li:last-child strong').textContent = t.responseLabel;
+					var contactInfoH3 = document.querySelector('.contact-info h3');
+					var contactInfoP = document.querySelector('.contact-info p');
+					if (contactInfoH3) contactInfoH3.textContent = t.contactInfoTitle;
+					if (contactInfoP) contactInfoP.textContent = t.contactInfoText;
+					
+					// These elements may not exist - check before updating
+					var locationEl = document.querySelector('.contact-details li:first-child strong');
+					var responseEl = document.querySelector('.contact-details li:last-child strong');
+					if (locationEl) locationEl.textContent = t.locationLabel;
+					if (responseEl) responseEl.textContent = t.responseLabel;
+
+					// Update all language switcher button displays
+					document.getElementById('current-flag').textContent = langData[lang].flag;
+					document.getElementById('current-lang').textContent = langData[lang].name;
+					
+					// Update main dropdown active states
+					document.querySelectorAll('.lang-btn').forEach(function(b) {
+						b.classList.remove('active');
+						if (b.getAttribute('data-lang') === lang) {
+							b.classList.add('active');
+						}
+					});
+					
+					// Update article-level buttons and dropdown active states
+					document.querySelectorAll('.article-lang-option').forEach(function(b) {
+						b.classList.remove('active');
+						if (b.getAttribute('data-lang') === lang) {
+							b.classList.add('active');
+						}
+					});
+					
+					document.querySelectorAll('.article-lang-btn').forEach(function(btn) {
+						var flagSpan = btn.querySelector('.flag');
+						if (flagSpan) flagSpan.textContent = langData[lang].flag;
+						var spans = btn.querySelectorAll('span');
+						for (var i = 0; i < spans.length; i++) {
+							if (!spans[i].classList.contains('flag') && !spans[i].classList.contains('arrow')) {
+								spans[i].textContent = langData[lang].name;
+								break;
+							}
+						}
+					});
 				}
 
 				// Initialize with English (default)
@@ -4342,25 +6131,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						if (lang !== currentLang) {
 							currentLang = lang;
 							switchLanguage(lang);
-							
-							// Update all language switchers (both main and in-article)
-							document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-							document.querySelectorAll('.lang-btn[data-lang="' + lang + '"]').forEach(b => b.classList.add('active'));
-							
-							document.querySelectorAll('.article-lang-option').forEach(b => b.classList.remove('active'));
-							document.querySelectorAll('.article-lang-option[data-lang="' + lang + '"]').forEach(b => b.classList.add('active'));
-							
-							// Update all flag and lang displays
-							document.getElementById('current-flag').textContent = langData[lang].flag;
-							document.getElementById('current-lang').textContent = langData[lang].name;
-							
-							// Update article lang switcher displays
-							document.querySelectorAll('.article-lang-switcher').forEach(switcher => {
-								const flagEl = switcher.querySelector('.flag');
-								const langEl = switcher.querySelector('.article-lang-btn span:not(.flag):not(.arrow)');
-								if (flagEl) flagEl.textContent = langData[lang].flag;
-								if (langEl) langEl.textContent = langData[lang].name;
-							});
+							updateAllLanguageDisplays(lang);
 						}
 						// Close dropdown
 						this.closest('.article-lang-switcher').classList.remove('open');
