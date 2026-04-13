@@ -2290,25 +2290,80 @@
 										<p class="category-description">Side projects developed in my free time to learn new technologies, explore ideas, and contribute to communities I care about.</p>
 									</div>
 
-									<!-- Personal Project 1: Triathlon Väst Dashboard -->
+									<!-- Personal Project 1: Mean Blood Pressure + BP OCR Bench -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-heartbeat"></i> Mean Blood Pressure &amp; BP OCR Bench</h3>
+											<span class="project-subtitle">Vision LLM Pipeline for Handwritten Medical Logs</span>
+										</div>
+
+										<div class="star-section">
+											<h4>Project overview</h4>
+											<p>Built for someone who needed to read handwritten blood pressure logs several times a day, compute daily averages, and track trends over time. The app lets you photograph a handwritten log, sends the image to a vision LLM via <a href="https://openrouter.ai/" target="_blank" rel="noopener">OpenRouter</a>, and returns structured readings that can be reviewed, edited, and exported as a PDF report.</p>
+											<p>To choose the right model, I built a separate benchmarking tool, <a href="https://github.com/Thiebauts/bp-ocr-bench" target="_blank" rel="noopener">BP OCR Bench</a>. With a friend, I created a dataset of handwritten notes at varying difficulty levels, then evaluated 18 vision models (from Google, OpenAI, Anthropic, Mistral, and others) on extraction accuracy, cost per request, and response time. The result: Gemini Flash 3.0 and Gemini 3.1 Flash Lite sit on the Pareto frontier, achieving 95-98% accuracy at ~$0.001/request, two orders of magnitude cheaper than frontier models for comparable precision.</p>
+											<p><strong>Links:</strong> <a href="https://github.com/Thiebauts/MeanBloodPressure" target="_blank" rel="noopener">MeanBloodPressure repo</a> &middot; <a href="https://mean-blood-pressure.vercel.app/" target="_blank" rel="noopener">Live demo</a> &middot; <a href="https://github.com/Thiebauts/bp-ocr-bench" target="_blank" rel="noopener">bp-ocr-bench repo</a></p>
+										</div>
+
+										<div class="project-skills">
+											<span class="skill-tag">TypeScript</span>
+											<span class="skill-tag">Next.js</span>
+											<span class="skill-tag">React</span>
+											<span class="skill-tag">OpenRouter API</span>
+											<span class="skill-tag">Vite</span>
+											<span class="skill-tag">IndexedDB</span>
+										</div>
+									</div>
+
+									<!-- Personal Project 2: Triathlon Väst Dashboard -->
 									<div class="research-project">
 										<div class="project-header">
 											<h3><i class="fas fa-running"></i> Triathlon Väst Dashboard</h3>
-											<span class="project-subtitle">Full-Stack Data Application for Sports Club Management</span>
+											<span class="project-subtitle">Bilingual Results Dashboard for a Gothenburg Sports Club</span>
 										</div>
-									
+
 										<div class="star-section">
 											<h4>Project overview</h4>
-											<p>A web-based dashboard application built for the Triathlon Väst sports club in Gothenburg, Sweden. This project combines data engineering, visualization, and web development to provide club members and administrators with insights into training activities, membership statistics, and event participation.</p>
-											<p><em>More details coming soon...</em></p>
+											<p>I'm a member of <a href="https://www.triathlonvast.se/" target="_blank" rel="noopener">Triathlon Väst</a> in Gothenburg, a club that organises competitions in running, swimming, cycling, triathlon, duathlon, and swimrun throughout the year. That generates a lot of results data, so I built a dashboard where members can browse competition results, view athlete profiles, track accumulated points, and explore club rankings across seasons (2021-2025). The data comes from CSV exports of the competition management system, parsed and bundled at build time. The app is bilingual (Swedish/English) and open to contributions: members can request features or submit pull requests directly.</p>
+											<p><strong>Links:</strong> <a href="https://github.com/Thiebauts/triathlon-vast-dashboard" target="_blank" rel="noopener">GitHub repo</a></p>
+										</div>
+
+										<div class="project-skills">
+											<span class="skill-tag">TypeScript</span>
+											<span class="skill-tag">Next.js</span>
+											<span class="skill-tag">React</span>
+											<span class="skill-tag">Recharts</span>
+											<span class="skill-tag">Tailwind CSS</span>
+											<span class="skill-tag">Vercel</span>
+										</div>
+									</div>
+
+									<!-- Personal Project 3: Kaggle Competitions -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-trophy"></i> Kaggle Competitions</h3>
+											<span class="project-subtitle">End-to-End Machine Learning on Real-World Datasets</span>
+										</div>
+
+										<div class="star-section">
+											<h4>Project overview</h4>
+											<p>A collection of end-to-end machine learning projects from Kaggle Playground Series competitions and NeurIPS challenges. Each repo covers data exploration, feature engineering, model selection, hyperparameter tuning (Optuna), and ensemble strategies, with experiment tracking via MLflow or Azure ML. Topics range from churn prediction and flood forecasting to polymer property regression from molecular SMILES. All Kaggle project repositories are named with the <code>kaggle-</code> prefix.</p>
+											<ul>
+												<li><a href="https://github.com/Thiebauts/kaggle-polymer-properties" target="_blank" rel="noopener"><strong>kaggle-polymer-properties</strong></a> -- 5 polymer properties from SMILES | Random Forest + ChemBERTa (NeurIPS 2025)</li>
+												<li><a href="https://github.com/Thiebauts/kaggle-irrigation-prediction" target="_blank" rel="noopener"><strong>kaggle-irrigation-prediction</strong></a> -- Irrigation classification | BA = 0.971 | class weighting + ensemble</li>
+												<li><a href="https://github.com/Thiebauts/kaggle-customer-churn" target="_blank" rel="noopener"><strong>kaggle-customer-churn</strong></a> -- Churn classification | AUC = 0.914 | greedy ensemble from 75 experiments</li>
+												<li><a href="https://github.com/Thiebauts/kaggle-flood-prediction" target="_blank" rel="noopener"><strong>kaggle-flood-prediction</strong></a> -- Flood prediction regression | R² = 0.869 | LightGBM + feature engineering</li>
+											</ul>
 										</div>
 
 										<div class="project-skills">
 											<span class="skill-tag">Python</span>
-											<span class="skill-tag">Dash/Plotly</span>
-											<span class="skill-tag">Data Visualization</span>
-											<span class="skill-tag">Web Development</span>
-											<span class="skill-tag">Railway Deployment</span>
+											<span class="skill-tag">Scikit-learn</span>
+											<span class="skill-tag">LightGBM</span>
+											<span class="skill-tag">XGBoost</span>
+											<span class="skill-tag">CatBoost</span>
+											<span class="skill-tag">Optuna</span>
+											<span class="skill-tag">MLflow</span>
+											<span class="skill-tag">PyTorch</span>
 										</div>
 									</div>
 
@@ -2568,25 +2623,80 @@
 										<p class="category-description">Projets annexes développés sur mon temps libre pour apprendre de nouvelles technologies, explorer des idées et contribuer aux communautés qui me tiennent à cœur.</p>
 									</div>
 
-									<!-- Personal Project 1: Triathlon Väst Dashboard -->
+									<!-- Personal Project 1: Mean Blood Pressure + BP OCR Bench -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-heartbeat"></i> Mean Blood Pressure &amp; BP OCR Bench</h3>
+											<span class="project-subtitle">Pipeline LLM Vision pour Carnets Médicaux Manuscrits</span>
+										</div>
+
+										<div class="star-section">
+											<h4>Aperçu du projet</h4>
+											<p>Conçue pour quelqu'un qui devait lire des carnets de tension artérielle manuscrits plusieurs fois par jour, calculer des moyennes journalières et suivre les tendances au fil du temps. L'application permet de photographier un carnet manuscrit, envoie l'image à un LLM vision via <a href="https://openrouter.ai/" target="_blank" rel="noopener">OpenRouter</a>, et renvoie des relevés structurés que l'on peut consulter, modifier et exporter en rapport PDF.</p>
+											<p>Pour choisir le bon modèle, j'ai construit un outil de benchmark dédié, <a href="https://github.com/Thiebauts/bp-ocr-bench" target="_blank" rel="noopener">BP OCR Bench</a>. Avec un ami, j'ai constitué un jeu de données de notes manuscrites de difficulté variable, puis évalué 18 modèles vision (Google, OpenAI, Anthropic, Mistral, et autres) sur la précision d'extraction, le coût par requête et le temps de réponse. Résultat : Gemini Flash 3.0 et Gemini 3.1 Flash Lite se trouvent sur la frontière de Pareto, atteignant 95-98 % de précision à ~0,001 $/requête, soit deux ordres de grandeur moins cher que les modèles frontières pour une précision comparable.</p>
+											<p><strong>Liens :</strong> <a href="https://github.com/Thiebauts/MeanBloodPressure" target="_blank" rel="noopener">Dépôt MeanBloodPressure</a> &middot; <a href="https://mean-blood-pressure.vercel.app/" target="_blank" rel="noopener">Démo en ligne</a> &middot; <a href="https://github.com/Thiebauts/bp-ocr-bench" target="_blank" rel="noopener">Dépôt bp-ocr-bench</a></p>
+										</div>
+
+										<div class="project-skills">
+											<span class="skill-tag">TypeScript</span>
+											<span class="skill-tag">Next.js</span>
+											<span class="skill-tag">React</span>
+											<span class="skill-tag">OpenRouter API</span>
+											<span class="skill-tag">Vite</span>
+											<span class="skill-tag">IndexedDB</span>
+										</div>
+									</div>
+
+									<!-- Personal Project 2: Triathlon Väst Dashboard -->
 									<div class="research-project">
 										<div class="project-header">
 											<h3><i class="fas fa-running"></i> Dashboard Triathlon Väst</h3>
-											<span class="project-subtitle">Application Data Full-Stack pour la Gestion de Club Sportif</span>
+											<span class="project-subtitle">Dashboard Bilingue de Résultats pour un Club Sportif de Göteborg</span>
 										</div>
-									
+
 										<div class="star-section">
 											<h4>Aperçu du projet</h4>
-											<p>Une application dashboard web construite pour le club de sport Triathlon Väst à Göteborg, Suède. Ce projet combine ingénierie des données, visualisation et développement web pour fournir aux membres et administrateurs du club des insights sur les activités d'entraînement, les statistiques d'adhésion et la participation aux événements.</p>
-											<p><em>Plus de détails bientôt...</em></p>
+											<p>Je suis membre de <a href="https://www.triathlonvast.se/" target="_blank" rel="noopener">Triathlon Väst</a> à Göteborg, un club qui organise tout au long de l'année des compétitions de course à pied, natation, cyclisme, triathlon, duathlon et swimrun. Cela génère beaucoup de données de résultats, alors j'ai construit un dashboard où les membres peuvent parcourir les résultats des compétitions, consulter les profils d'athlètes, suivre les points cumulés et explorer les classements du club au fil des saisons (2021-2025). Les données proviennent d'exports CSV du système de gestion des compétitions, parsées et regroupées au moment du build. L'application est bilingue (suédois/anglais) et ouverte aux contributions : les membres peuvent demander des fonctionnalités ou soumettre des pull requests directement.</p>
+											<p><strong>Liens :</strong> <a href="https://github.com/Thiebauts/triathlon-vast-dashboard" target="_blank" rel="noopener">Dépôt GitHub</a></p>
+										</div>
+
+										<div class="project-skills">
+											<span class="skill-tag">TypeScript</span>
+											<span class="skill-tag">Next.js</span>
+											<span class="skill-tag">React</span>
+											<span class="skill-tag">Recharts</span>
+											<span class="skill-tag">Tailwind CSS</span>
+											<span class="skill-tag">Vercel</span>
+										</div>
+									</div>
+
+									<!-- Personal Project 3: Kaggle Competitions -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-trophy"></i> Compétitions Kaggle</h3>
+											<span class="project-subtitle">Machine Learning de Bout en Bout sur des Jeux de Données Réels</span>
+										</div>
+
+										<div class="star-section">
+											<h4>Aperçu du projet</h4>
+											<p>Une collection de projets de machine learning de bout en bout issus des Kaggle Playground Series et de challenges NeurIPS. Chaque dépôt couvre l'exploration des données, le feature engineering, la sélection de modèles, l'optimisation d'hyperparamètres (Optuna) et les stratégies d'ensemble, avec un suivi d'expériences via MLflow ou Azure ML. Les sujets vont de la prédiction de churn et la prévision d'inondations à la régression de propriétés de polymères à partir de SMILES moléculaires. Tous les dépôts Kaggle sont nommés avec le préfixe <code>kaggle-</code>.</p>
+											<ul>
+												<li><a href="https://github.com/Thiebauts/kaggle-polymer-properties" target="_blank" rel="noopener"><strong>kaggle-polymer-properties</strong></a> -- 5 propriétés de polymères à partir de SMILES | Random Forest + ChemBERTa (NeurIPS 2025)</li>
+												<li><a href="https://github.com/Thiebauts/kaggle-irrigation-prediction" target="_blank" rel="noopener"><strong>kaggle-irrigation-prediction</strong></a> -- Classification d'irrigation | BA = 0,971 | pondération de classes + ensemble</li>
+												<li><a href="https://github.com/Thiebauts/kaggle-customer-churn" target="_blank" rel="noopener"><strong>kaggle-customer-churn</strong></a> -- Classification de churn | AUC = 0,914 | ensemble glouton à partir de 75 expériences</li>
+												<li><a href="https://github.com/Thiebauts/kaggle-flood-prediction" target="_blank" rel="noopener"><strong>kaggle-flood-prediction</strong></a> -- Régression de prédiction d'inondations | R² = 0,869 | LightGBM + feature engineering</li>
+											</ul>
 										</div>
 
 										<div class="project-skills">
 											<span class="skill-tag">Python</span>
-											<span class="skill-tag">Dash/Plotly</span>
-											<span class="skill-tag">Visualisation de Données</span>
-											<span class="skill-tag">Développement Web</span>
-											<span class="skill-tag">Déploiement Railway</span>
+											<span class="skill-tag">Scikit-learn</span>
+											<span class="skill-tag">LightGBM</span>
+											<span class="skill-tag">XGBoost</span>
+											<span class="skill-tag">CatBoost</span>
+											<span class="skill-tag">Optuna</span>
+											<span class="skill-tag">MLflow</span>
+											<span class="skill-tag">PyTorch</span>
 										</div>
 									</div>
 
@@ -2765,25 +2875,80 @@
 										<p class="category-description">Sidoprojekt utvecklade på min fritid för att lära mig ny teknik, utforska idéer och bidra till gemenskaper jag bryr mig om.</p>
 									</div>
 
-									<!-- Personal Project 1: Triathlon Väst Dashboard -->
+									<!-- Personal Project 1: Mean Blood Pressure + BP OCR Bench -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-heartbeat"></i> Mean Blood Pressure &amp; BP OCR Bench</h3>
+											<span class="project-subtitle">Vision-LLM-Pipeline för Handskrivna Medicinska Loggar</span>
+										</div>
+
+										<div class="star-section">
+											<h4>Projektöversikt</h4>
+											<p>Byggd för någon som behövde läsa handskrivna blodtrycksloggar flera gånger om dagen, beräkna dagliga medelvärden och följa trender över tid. Appen låter dig fotografera en handskriven logg, skickar bilden till en vision-LLM via <a href="https://openrouter.ai/" target="_blank" rel="noopener">OpenRouter</a>, och returnerar strukturerade avläsningar som kan granskas, redigeras och exporteras som en PDF-rapport.</p>
+											<p>För att välja rätt modell byggde jag ett separat benchmark-verktyg, <a href="https://github.com/Thiebauts/bp-ocr-bench" target="_blank" rel="noopener">BP OCR Bench</a>. Tillsammans med en vän skapade jag ett dataset av handskrivna anteckningar med varierande svårighetsgrad, och utvärderade sedan 18 vision-modeller (från Google, OpenAI, Anthropic, Mistral och andra) på extraktionsnoggrannhet, kostnad per förfrågan och svarstid. Resultatet: Gemini Flash 3.0 och Gemini 3.1 Flash Lite ligger på Pareto-fronten, och uppnår 95-98 % noggrannhet till ~$0,001/förfrågan, två storleksordningar billigare än frontier-modeller med jämförbar precision.</p>
+											<p><strong>Länkar:</strong> <a href="https://github.com/Thiebauts/MeanBloodPressure" target="_blank" rel="noopener">MeanBloodPressure-repo</a> &middot; <a href="https://mean-blood-pressure.vercel.app/" target="_blank" rel="noopener">Live-demo</a> &middot; <a href="https://github.com/Thiebauts/bp-ocr-bench" target="_blank" rel="noopener">bp-ocr-bench-repo</a></p>
+										</div>
+
+										<div class="project-skills">
+											<span class="skill-tag">TypeScript</span>
+											<span class="skill-tag">Next.js</span>
+											<span class="skill-tag">React</span>
+											<span class="skill-tag">OpenRouter API</span>
+											<span class="skill-tag">Vite</span>
+											<span class="skill-tag">IndexedDB</span>
+										</div>
+									</div>
+
+									<!-- Personal Project 2: Triathlon Väst Dashboard -->
 									<div class="research-project">
 										<div class="project-header">
 											<h3><i class="fas fa-running"></i> Triathlon Väst Dashboard</h3>
-											<span class="project-subtitle">Full-Stack Data-applikation för Sportklubbshantering</span>
+											<span class="project-subtitle">Tvåspråkig Resultat-dashboard för en Göteborgsklubb</span>
 										</div>
-									
+
 										<div class="star-section">
 											<h4>Projektöversikt</h4>
-											<p>En webbaserad dashboard-applikation byggd för sportklubben Triathlon Väst i Göteborg, Sverige. Detta projekt kombinerar datateknik, visualisering och webbutveckling för att ge klubbmedlemmar och administratörer insikter i träningsaktiviteter, medlemsstatistik och evenemangsdeltagande.</p>
-											<p><em>Fler detaljer kommer snart...</em></p>
+											<p>Jag är medlem i <a href="https://www.triathlonvast.se/" target="_blank" rel="noopener">Triathlon Väst</a> i Göteborg, en klubb som året om arrangerar tävlingar i löpning, simning, cykling, triathlon, duathlon och swimrun. Det genererar mycket resultatdata, så jag byggde en dashboard där medlemmar kan bläddra bland tävlingsresultat, se atletprofiler, följa ackumulerade poäng och utforska klubbrankingar över säsonger (2021-2025). Datan kommer från CSV-exporter från tävlingshanteringssystemet, parsade och paketerade vid build-tid. Appen är tvåspråkig (svenska/engelska) och öppen för bidrag: medlemmar kan begära funktioner eller skicka pull requests direkt.</p>
+											<p><strong>Länkar:</strong> <a href="https://github.com/Thiebauts/triathlon-vast-dashboard" target="_blank" rel="noopener">GitHub-repo</a></p>
+										</div>
+
+										<div class="project-skills">
+											<span class="skill-tag">TypeScript</span>
+											<span class="skill-tag">Next.js</span>
+											<span class="skill-tag">React</span>
+											<span class="skill-tag">Recharts</span>
+											<span class="skill-tag">Tailwind CSS</span>
+											<span class="skill-tag">Vercel</span>
+										</div>
+									</div>
+
+									<!-- Personal Project 3: Kaggle Competitions -->
+									<div class="research-project">
+										<div class="project-header">
+											<h3><i class="fas fa-trophy"></i> Kaggle-tävlingar</h3>
+											<span class="project-subtitle">End-to-End Maskininlärning på Verkliga Datamängder</span>
+										</div>
+
+										<div class="star-section">
+											<h4>Projektöversikt</h4>
+											<p>En samling end-to-end maskininlärningsprojekt från Kaggle Playground Series-tävlingar och NeurIPS-utmaningar. Varje repo täcker datautforskning, feature engineering, modellval, hyperparameter-tuning (Optuna) och ensemble-strategier, med experimentspårning via MLflow eller Azure ML. Ämnena spänner från churn-prediktion och översvämningsprognoser till regression av polymeregenskaper från molekylära SMILES. Alla Kaggle-projektrepor är namngivna med prefixet <code>kaggle-</code>.</p>
+											<ul>
+												<li><a href="https://github.com/Thiebauts/kaggle-polymer-properties" target="_blank" rel="noopener"><strong>kaggle-polymer-properties</strong></a> -- 5 polymeregenskaper från SMILES | Random Forest + ChemBERTa (NeurIPS 2025)</li>
+												<li><a href="https://github.com/Thiebauts/kaggle-irrigation-prediction" target="_blank" rel="noopener"><strong>kaggle-irrigation-prediction</strong></a> -- Bevattningsklassificering | BA = 0,971 | klassviktning + ensemble</li>
+												<li><a href="https://github.com/Thiebauts/kaggle-customer-churn" target="_blank" rel="noopener"><strong>kaggle-customer-churn</strong></a> -- Churn-klassificering | AUC = 0,914 | girig ensemble från 75 experiment</li>
+												<li><a href="https://github.com/Thiebauts/kaggle-flood-prediction" target="_blank" rel="noopener"><strong>kaggle-flood-prediction</strong></a> -- Översvämningsprediktion (regression) | R² = 0,869 | LightGBM + feature engineering</li>
+											</ul>
 										</div>
 
 										<div class="project-skills">
 											<span class="skill-tag">Python</span>
-											<span class="skill-tag">Dash/Plotly</span>
-											<span class="skill-tag">Datavisualisering</span>
-											<span class="skill-tag">Webbutveckling</span>
-											<span class="skill-tag">Railway-driftsättning</span>
+											<span class="skill-tag">Scikit-learn</span>
+											<span class="skill-tag">LightGBM</span>
+											<span class="skill-tag">XGBoost</span>
+											<span class="skill-tag">CatBoost</span>
+											<span class="skill-tag">Optuna</span>
+											<span class="skill-tag">MLflow</span>
+											<span class="skill-tag">PyTorch</span>
 										</div>
 									</div>
 
@@ -3695,7 +3860,7 @@
 
 									<p>Beyond research, I cultivate numerous interests. Once again enjoying privileged access to nature and living near a lake, I discovered the world of triathlon in Sweden and reconnected with running after an eight-year hiatus following a knee injury sustained while playing rugby. I am also passionate about culture in all its forms: literature, museums, intellectual exchanges... In our era, immediate access to knowledge offers us the opportunity to constantly explore new subjects - a truly inexhaustible source of wonder! Finally, I have a genuine passion for gastronomy: I love cooking, baking, and exploring new restaurants. This is why I particularly appreciate the Swedish tradition of <a href="https://en.wikipedia.org/wiki/Coffee_culture#Sweden" target="_blank">"fika"</a>, that special moment when one savors excellent pastries over good coffee in pleasant company.</p>
 								</div>
-
+								
 								<div id="about-content-fr" style="display: none;">
 									<p>J'ai grandi dans l'Est de la France, près de <a href="https://fr.wikipedia.org/wiki/Belfort" target="_blank">Belfort</a>, où l'accès immédiat à la nature, aux grands espaces et aux montagnes a profondément marqué la personne que je suis aujourd'hui. Cette région, riche en traditions culinaires et viticoles, a nourri ma curiosité et mon goût pour les belles choses de la vie.</p>
 
@@ -3710,7 +3875,7 @@
 									<p>Après près de quatre années enrichissantes de post-doctorat à Göteborg, j'ai pris la décision de m'installer définitivement dans cette ville et d'amorcer une transition professionnelle vers les sciences des données, ouvrant ainsi un nouveau chapitre stimulant de ma carrière.</p>
 
 									<p>Au-delà de la recherche, je cultive de nombreux centres d'intérêt. Bénéficiant à nouveau d'un accès privilégié à la nature et vivant près d'un lac, j'ai découvert l'univers du triathlon en Suède et renoué avec la course à pied après une interruption de huit ans consécutive à une blessure au genou contractée en pratiquant le rugby. Je suis également un passionné de culture sous toutes ses formes : littérature, musées, échanges intellectuels... À notre époque, l'accès immédiat au savoir nous offre la possibilité d'explorer constamment de nouveaux sujets - une source d'émerveillement véritablement inépuisable ! Enfin, je voue une véritable passion à la gastronomie : j'aime cuisiner, pâtisser et explorer de nouveaux restaurants. C'est d'ailleurs pourquoi j'apprécie tant la tradition suédoise du <a href="https://en.wikipedia.org/wiki/Coffee_culture#Sweden" target="_blank">"fika"</a>, ce moment privilégié où l'on savoure d'excellentes pâtisseries autour d'un bon café en agréable compagnie.</p>
-</div>
+								</div>
 
 								<div id="about-content-sv" style="display: none;">
 									<p>Jag växte upp i östra Frankrike, nära <a href="https://sv.wikipedia.org/wiki/Belfort" target="_blank">Belfort</a>, där omedelbar tillgång till naturen, vidsträckta landskap och bergen formade den person jag är idag. Denna region, rik på kulinariska traditioner och vinframställning, odlade min nyfikenhet och uppskattning för livets finare sidor.</p>
@@ -6441,8 +6606,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						if (parentContainer) {
 							// Show/hide categories within this container only
 							parentContainer.querySelectorAll('.project-category').forEach(cat => {
-								cat.style.display = 'none';
-							});
+							cat.style.display = 'none';
+						});
 							const targetCategory = parentContainer.querySelector('.project-category[data-category="' + category + '"]');
 							if (targetCategory) {
 								targetCategory.style.display = 'block';
@@ -6465,8 +6630,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						if (parentContainer) {
 							// Show/hide publication categories within this container only
 							parentContainer.querySelectorAll('.publication-category').forEach(cat => {
-								cat.style.display = 'none';
-							});
+							cat.style.display = 'none';
+						});
 							const targetCategory = parentContainer.querySelector('.publication-category[data-pub-category="' + category + '"]');
 							if (targetCategory) {
 								targetCategory.style.display = 'block';
